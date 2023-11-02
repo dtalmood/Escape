@@ -68,7 +68,7 @@ public class FPSController : MonoBehaviour
         if (isRunning)
         {
             state = MovementState.running;
-            Debug.Log("Player is running");
+            //Debug.Log("Player is running");
         }
 
         // crouching 
@@ -102,7 +102,7 @@ public class FPSController : MonoBehaviour
             moveDirection.y = jumpPower;
             // set jump state
             state = MovementState.air;
-            Debug.Log("Player is jumping");
+            //Debug.Log("Player is jumping");
         }
         else
         {
@@ -119,7 +119,7 @@ public class FPSController : MonoBehaviour
         if (!isJumping && !isRunning && !isCrouching)
         {
             state = MovementState.walking;
-            Debug.Log("Player is walking");
+            //Debug.Log("Player is walking");
         }
         
  

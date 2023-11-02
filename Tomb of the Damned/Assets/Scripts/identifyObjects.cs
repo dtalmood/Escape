@@ -5,10 +5,11 @@ using UnityEngine;
 public class identifyObjects : MonoBehaviour
 {
     public Camera playerCamera;
-    public float maxDistance = 10f;
+    public float maxDistance = 1f;
 
     public string objectName;
     public string objectTag;
+    public string objectRigidBodyOrNot;
 
     void Update()
     {
@@ -23,9 +24,13 @@ public class identifyObjects : MonoBehaviour
             objectTag = hitObject.tag;
             Debug.Log("Looking at: " + objectName);
 
+            // Check if the object has a Rigidbody
+            objectRigidBodyOrNot = hitObject.GetComponent<Rigidbody>() != null ? "Rigidbody" : "Not Rigidbody";
+
             // Send data to the script that handles picking up objects such as gold
             pickingUpObjects.recieveObjectName = objectName;
             pickingUpObjects.recieveObjectTag = objectTag;
+            pickingUpObjects.recieveObjectRigidBodyOrNot = objectRigidBodyOrNot;
         }
     }
 }
