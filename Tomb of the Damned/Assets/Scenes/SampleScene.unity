@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -387,18 +387,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae1c3c1682455349819468f4826ba20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCamera: {fileID: 2052759684}
-  walkSpeed: 6
-  runSpeed: 12
-  jumpPower: 7
-  gravity: 10
-  crouchSpeed: 3
-  crouchYscale: 0
-  crouchKey: 306
-  lookSpeed: 2
-  lookXLimit: 45
-  state: 0
-  canMove: 1
 --- !u!143 &205727722
 CharacterController:
   m_ObjectHideFlags: 0
@@ -439,8 +427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 2052759684}
   maxDistance: 10
-  objectName: 
-  objectTag: 
+  throwForce: 10
 --- !u!114 &205727725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1251,8 +1238,8 @@ Transform:
   m_GameObject: {fileID: 1811732832}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 28.62429, y: 17.401392, z: 5.9797564}
-  m_LocalScale: {x: 0.7, y: 28, z: 0.7}
+  m_LocalPosition: {x: 28.62429, y: 10, z: 5.9797564}
+  m_LocalScale: {x: 2, y: 20, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1557268585}
