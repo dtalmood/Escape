@@ -18,6 +18,11 @@ public class PlayerMovement : MonoBehaviour
     public float airMultiplier;
     bool readyToJump;
 
+    // we will use this to grab height of player before after after jump
+    bool grabInitial = false;
+    float jumpInitialHeight;
+    float jumpAfterHeight;
+
     /*[HideInInspector] public float walkSpeed;
     [HideInInspector] public float sprintSpeed;*/
 
@@ -54,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
     public MovementState state;
     public enum MovementState
     {
-        walking, sprinting, air, crouching
+        walking, sprinting, air, crouching, idle
     }
 
     private void Start()
@@ -75,7 +80,8 @@ public class PlayerMovement : MonoBehaviour
         MyInput();
         SpeedControl();
         StateHandler();
-
+        checkFallDamage(); // when we are in the air we want to see how high the palyer has jumped from
+        Debug.Log("Player Current State: " + state);
         // handle drag
         /*if (grounded)
             rb.drag = groundDrag;
@@ -127,34 +133,40 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void StateHandler()
+   private void StateHandler()
+{
+    // player is crouching
+    if (Input.GetKey(crouchKey))
     {
-        // player is crouching
-        if (Input.GetKey(crouchKey))
-        {
-            state = MovementState.crouching;
-            moveSpeed = crouchSpeed;
-        }
-
-        // player is running
-        else if (grounded && Input.GetKey(sprintKey))
-        {
-            state = MovementState.sprinting;
-            moveSpeed = sprintSpeed;
-        }
-        // player is walking
-        else if (grounded)
-        {
-            state = MovementState.walking;
-            moveSpeed = walkSpeed;
-        }
-
-        // not running or walking so in air
-        else
-        {
-            state = MovementState.air;
-        }
+        state = MovementState.crouching;
+        moveSpeed = crouchSpeed;
     }
+
+    // player is running
+    else if (grounded && Input.GetKey(sprintKey))
+    {
+        state = MovementState.sprinting;
+        moveSpeed = sprintSpeed;
+    }
+    // player is walking
+    else if (grounded && (Mathf.Abs(horizontalInput) > 0 || Mathf.Abs(verticalInput) > 0))
+    {
+        state = MovementState.walking;
+        moveSpeed = walkSpeed;
+    }
+
+    // player is in the air
+    else if (!grounded)
+    {
+        state = MovementState.air;
+    }
+
+    // not running or walking and on the ground, so in idle
+    else
+    {
+        state = MovementState.idle;
+    }
+}
 
     private void MovePlayer()
     {
@@ -245,4 +257,28 @@ public class PlayerMovement : MonoBehaviour
     {
         return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
     }
+
+    private void checkFallDamage()
+    {
+        if (!grabInitial && state == MovementState.air)
+        {
+            // Store the initial jump height when the player first jumps
+            jumpInitialHeight = transform.position.y;
+            grabInitial = true;
+            Debug.Log("Initial Height = " + jumpInitialHeight);
+        }
+
+        // Check if the player is no longer in the air and in walking or idle state
+        if (grabInitial && (state == MovementState.walking || state == MovementState.idle))
+        {
+            // Store the current height when the player is back on the ground
+            jumpAfterHeight = transform.position.y;
+            Debug.Log("After Height = " + jumpAfterHeight);
+            grabInitial = false; // Reset the flag
+        }
+    }
+
+    // send info to playerHealthBar to reduce damage 
+
 }
+
