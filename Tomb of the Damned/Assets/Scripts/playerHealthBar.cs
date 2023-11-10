@@ -12,6 +12,15 @@ public class playerHealthBar : MonoBehaviour
     public float currentHealth;
     public float maxHealth = 100f; 
 
+    private int recievedInitalHeight;
+    private int recievedAfterHeight;
+
+    public void fallDamage(float jumpInitialHeight,float jumpAfterHeight)
+    {
+        Debug.Log("Before Height = " + jumpInitialHeight);
+        Debug.Log("After Height = " + jumpAfterHeight);
+    }
+
     private void start()
     {
         currentHealth = maxHealth;

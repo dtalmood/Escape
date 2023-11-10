@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     bool readyToJump;
 
     // we will use this to grab height of player before after after jump
+    public playerHealthBar healthBarScript;
     bool grabInitial = false;
     float jumpInitialHeight;
     float jumpAfterHeight;
@@ -265,7 +266,7 @@ public class PlayerMovement : MonoBehaviour
             // Store the initial jump height when the player first jumps
             jumpInitialHeight = transform.position.y;
             grabInitial = true;
-            Debug.Log("Initial Height = " + jumpInitialHeight);
+            //Debug.Log("Initial Height = " + jumpInitialHeight);
         }
 
         // Check if the player is no longer in the air and in walking or idle state
@@ -273,11 +274,13 @@ public class PlayerMovement : MonoBehaviour
         {
             // Store the current height when the player is back on the ground
             jumpAfterHeight = transform.position.y;
-            Debug.Log("After Height = " + jumpAfterHeight);
+            //Debug.Log("After Height = " + jumpAfterHeight);
             grabInitial = false; // Reset the flag
         }
+        healthBarScript.fallDamage(jumpInitialHeight, jumpAfterHeight);
     }
-
+    
+    
     // send info to playerHealthBar to reduce damage 
 
 }
