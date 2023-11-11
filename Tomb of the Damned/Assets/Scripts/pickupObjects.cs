@@ -29,7 +29,7 @@ public class IdentifyObjects : MonoBehaviour
             objectName = hitObject.name;
             objectTag = hitObject.tag;
             objectDistance = hit.distance;
-            Debug.Log("Looking at: " + objectName);
+            //Debug.Log("Looking at: " + objectName);
 
             objectRigidBodyOrNot = hitObject.GetComponent<Rigidbody>() != null ? "Rigidbody" : "Not Rigidbody";
 
@@ -37,7 +37,7 @@ public class IdentifyObjects : MonoBehaviour
         }
         else
         {
-            Debug.Log("Too Far");
+            //Debug.Log("Too Far");
         }
 
         if (isCarryingObject)
@@ -67,7 +67,7 @@ public class IdentifyObjects : MonoBehaviour
                     carriedObject = GameObject.Find(objName); // Replace with hit.collider.gameObject if needed
                     carriedObject.GetComponent<Rigidbody>().isKinematic = true;
                     isCarryingObject = true;
-                    Debug.Log("Picked up: " + objName);
+                    //Debug.Log("Picked up: " + objName);
                 }
             }
         }
@@ -84,7 +84,7 @@ public class IdentifyObjects : MonoBehaviour
         carriedObject.GetComponent<Rigidbody>().velocity = playerCamera.transform.forward * throwForce;
         isCarryingObject = false;
         carriedObject = null;
-        Debug.Log("Threw the Object");
+        //Debug.Log("Threw the Object");
     }
 
     private void DropObject()
@@ -92,7 +92,7 @@ public class IdentifyObjects : MonoBehaviour
         carriedObject.GetComponent<Rigidbody>().isKinematic = false;
         carriedObject = null;
         isCarryingObject = false;
-        Debug.Log("Dropped the Object");
+        //Debug.Log("Dropped the Object");
     }
 
     void OnCollisionEnter(Collision collision)
@@ -102,7 +102,7 @@ public class IdentifyObjects : MonoBehaviour
             // If the carried object collides with another object, consider stopping its movement.
             isCarryingObject = false;
             carriedObject.GetComponent<Rigidbody>().isKinematic = false;
-            Debug.Log("Collision occurred. Dropped the Object to avoid collision.");
+            //Debug.Log("Collision occurred. Dropped the Object to avoid collision.");
         }
     }
 }
