@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     bool readyToJump;
 
     // we will use this to grab height of player before after after jump
-    public playerHealthBar healthBarScript;
+    public playerHealthBar playerHealth;
     bool grabInitial = false;
     float jumpInitialHeight;
     float jumpAfterHeight;
@@ -71,7 +71,11 @@ public class PlayerMovement : MonoBehaviour
         readyToJump = true;
 
         startYScale = transform.localScale.y;
+
+        // Assign the reference to PlayerHealthBar script
+        
     }
+
 
     private void Update()
     {
@@ -81,14 +85,7 @@ public class PlayerMovement : MonoBehaviour
         MyInput();
         SpeedControl();
         StateHandler();
-        checkFallDamage(); // when we are in the air we want to see how high the palyer has jumped from
-        Debug.Log("Player Current State: " + state);
-        // handle drag
-        /*if (grounded)
-            rb.drag = groundDrag;
-        else
-            rb.drag = 0;*/
-
+        //checkFallDamage();
         if (grounded)
             rb.drag = groundDrag;
         else if (OnSlope())
@@ -159,7 +156,7 @@ public class PlayerMovement : MonoBehaviour
     // player is in the air
     else if (!grounded)
     {
-        state = MovementState.air;
+        state = MovementState.air;   
     }
 
     // not running or walking and on the ground, so in idle
@@ -259,29 +256,24 @@ public class PlayerMovement : MonoBehaviour
         return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
     }
 
-    private void checkFallDamage()
-    {
-        if (!grabInitial && state == MovementState.air)
-        {
-            // Store the initial jump height when the player first jumps
-            jumpInitialHeight = transform.position.y;
-            grabInitial = true;
-            //Debug.Log("Initial Height = " + jumpInitialHeight);
-        }
+    // private void checkFallDamage()
+    // {
+    //     if(!grabInitial && state == MovementState.air)
+    //     {
+    //         jumpInitialHeight = transform.position.y;
+    //         grabInitial = true;
+    //         //Debug.Log("Before: " + jumpInitialHeight);
+    //     }      
 
-        // Check if the player is no longer in the air and in walking or idle state
-        if (grabInitial && (state == MovementState.walking || state == MovementState.idle))
-        {
-            // Store the current height when the player is back on the ground
-            jumpAfterHeight = transform.position.y;
-            //Debug.Log("After Height = " + jumpAfterHeight);
-            grabInitial = false; // Reset the flag
-        }
-        healthBarScript.fallDamage(jumpInitialHeight, jumpAfterHeight);
-    }
+    //     if(grabInitial && state != MovementState.air)
+    //     {
+    //         jumpAfterHeight =  transform.position.y;
+    //         grabInitial = false;
+    //         //Debug.Log("After: " + jumpAfterHeight);
+    //     }
+    //     playerHealth.fallDamage(jumpInitialHeight,jumpAfterHeight);
+        
+    // }
     
-    
-    // send info to playerHealthBar to reduce damage 
-
 }
 

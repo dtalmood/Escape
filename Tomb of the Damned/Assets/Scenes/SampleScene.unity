@@ -344,9 +344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 205727720}
   - component: {fileID: 205727722}
-  - component: {fileID: 205727721}
   - component: {fileID: 205727724}
-  - component: {fileID: 205727725}
   - component: {fileID: 205727726}
   - component: {fileID: 205727727}
   - component: {fileID: 205727728}
@@ -366,7 +364,7 @@ Transform:
   m_GameObject: {fileID: 205727718}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.73, y: 7.46, z: -3.67}
+  m_LocalPosition: {x: 35.73, y: 4.501, z: -3.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -375,18 +373,6 @@ Transform:
   - {fileID: 1825923203}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &205727721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 205727718}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ae1c3c1682455349819468f4826ba20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!143 &205727722
 CharacterController:
   m_ObjectHideFlags: 0
@@ -428,18 +414,6 @@ MonoBehaviour:
   playerCamera: {fileID: 2052759684}
   maxDistance: 10
   throwForce: 10
---- !u!114 &205727725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 205727718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cca2fd8e1389c3443894379935f175c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &205727726
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -485,6 +459,7 @@ MonoBehaviour:
   jumpForce: 8
   jumpCooldown: 0.25
   airMultiplier: 0.4
+  playerHealth: {fileID: 1574062419}
   crouchSpeed: 3.5
   crouchYScale: 0.5
   jumpKey: 32
@@ -585,7 +560,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 501, y: 483}
+  m_AnchoredPosition: {x: 500, y: 483}
   m_SizeDelta: {x: 961.6, y: 961.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &471788795
@@ -1336,6 +1311,7 @@ GameObject:
   - component: {fileID: 1574062418}
   - component: {fileID: 1574062417}
   - component: {fileID: 1574062416}
+  - component: {fileID: 1574062419}
   m_Layer: 0
   m_Name: Health Bar Canvas
   m_TagString: Untagged
@@ -1360,7 +1336,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.579, y: -0.063}
+  m_AnchoredPosition: {x: -0.277, y: -0.063}
   m_SizeDelta: {x: 1060, y: 769}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1574062416
@@ -1426,6 +1402,21 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1574062419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574062414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ac1e1d72c61f04ca282220dfa83f68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealthBarSprite: {fileID: 471788795}
+  currentHealth: 30
+  maxHealth: 100
 --- !u!1 &1809105698
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,49 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
+using UnityEngine.UI;  // Make sure to include the UnityEngine.UI namespace
 using UnityEngine;
 
-
-// This script will be be used to send infomration of when to increase, decrease, or reset the player health 
 public class playerHealthBar : MonoBehaviour
 {
-
-    [SerializeField] private Image healthBarPlayer; 
+    [SerializeField] private Image playerHealthBarSprite;
     public float currentHealth;
-    public float maxHealth = 100f; 
+    public float maxHealth = 1f;
 
-    private int recievedInitalHeight;
-    private int recievedAfterHeight;
+    private float difference;
 
-    public void fallDamage(float jumpInitialHeight,float jumpAfterHeight)
+
+    // We will reduce player health in this location
+    public void fallDamage(float before, float after)
     {
-        Debug.Log("Before Height = " + jumpInitialHeight);
-        Debug.Log("After Height = " + jumpAfterHeight);
-    }
-
-    private void start()
-    {
-        currentHealth = maxHealth;
-    }
-
-    
-    
-    private void reduceHealth() 
-    {
+        difference = before - after;
+        Debug.Log("Difference" + difference);
+        if(difference >= 10)
+        {
+            Debug.Log("Lower Health");
+            currentHealth -= 0.1f;
+            playerHealthBarSprite.fillAmount = currentHealth;
+            
+        }
         
     }
 
-    private void increaseHealth()
+    private void Start()  // Corrected typo here
     {
-
+        currentHealth = maxHealth;
+        playerHealthBarSprite.fillAmount = currentHealth;
     }
-
-    private void fullHealth()
-    {
-
-    }
-
-    
-
-
 }
