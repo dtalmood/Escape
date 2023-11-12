@@ -85,7 +85,8 @@ public class PlayerMovement : MonoBehaviour
         MyInput();
         SpeedControl();
         StateHandler();
-        //checkFallDamage();
+        fallDamangeCheck();
+            
         if (grounded)
             rb.drag = groundDrag;
         else if (OnSlope())
@@ -256,24 +257,44 @@ public class PlayerMovement : MonoBehaviour
         return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
     }
 
-    // private void checkFallDamage()
-    // {
-    //     if(!grabInitial && state == MovementState.air)
-    //     {
-    //         jumpInitialHeight = transform.position.y;
-    //         grabInitial = true;
-    //         //Debug.Log("Before: " + jumpInitialHeight);
-    //     }      
 
-    //     if(grabInitial && state != MovementState.air)
-    //     {
-    //         jumpAfterHeight =  transform.position.y;
-    //         grabInitial = false;
-    //         //Debug.Log("After: " + jumpAfterHeight);
-    //     }
-    //     playerHealth.fallDamage(jumpInitialHeight,jumpAfterHeight);
+    // from the two functions below it   
+    private void fallDamangeCheck()
+    {
+        if(state == MovementState.air)
+        {
+            grabInitalHeight();
+        }
+        else if(grabInitial && state != MovementState.air)
+        {
+            grabAfterlHeight();
+            grabInitial = false;
+            playerHealth.fallDamage(jumpInitialHeight,jumpAfterHeight);// go to playerHealthBarScript
+        }
+
+    }
+    
+    
+    // Grabs Player Height the second they are in the air 
+    private void grabInitalHeight()
+    {
+        if(!grabInitial)
+        {
+            jumpInitialHeight = transform.position.y;
+            grabInitial = true;
+            //Debug.Log("Before: " + jumpInitialHeight);
+            
+        }      
+
         
-    // }
+        
+    }
+
+    // Grabs player Height the second they reach the ground
+    private void grabAfterlHeight()
+    {
+        jumpAfterHeight =  transform.position.y;  
+    }
     
 }
 
