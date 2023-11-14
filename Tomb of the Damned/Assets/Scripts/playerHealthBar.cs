@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,29 +22,32 @@ public class playerHealthBar : MonoBehaviour
 
         if (difference >= 4 && difference <= 6)
         {
-            Debug.Log("Low Fall Damage: ");
-            currentHealth -= 10f;
-            // Ensure currentHealth is within the valid range (0 to maxHealth)
-            currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
-            playerHealthBarSprite.fillAmount = currentHealth / maxHealth; // Update fillAmount
-            Debug.Log("Updated fillAmount to: " + playerHealthBarSprite.fillAmount);
+            StartCoroutine(ApplyDamageOverTime(10, 0.05f, 1f));
         }
         else if (difference >= 7 && difference <= 10)
         {
-            Debug.Log("Medium Fall Damage: ");
-            currentHealth -= 20f;
-            // Ensure currentHealth is within the valid range (0 to maxHealth)
+            StartCoroutine(ApplyDamageOverTime(20, 0.05f, 1f));
+        }
+    }
+
+    private IEnumerator ApplyDamageOverTime(int iterations, float timePerIteration, float decreaseAmountPerIteration)
+    {
+        for (int i = 0; i < iterations; i++)
+        {
+            currentHealth -= decreaseAmountPerIteration;
             currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
-            playerHealthBarSprite.fillAmount = currentHealth / maxHealth; // Update fillAmount
-            Debug.Log("Updated fillAmount to: " + playerHealthBarSprite.fillAmount);
-        } 
-        
+            playerHealthBarSprite.fillAmount = currentHealth / maxHealth;
+
+            yield return new WaitForSeconds(timePerIteration);
+        }
+
+        Debug.Log("Updated fillAmount to: " + playerHealthBarSprite.fillAmount);
     }
 
     private void Start()
     {
         currentHealth = maxHealth;
-        playerHealthBarSprite.fillAmount = currentHealth / maxHealth; // Update fillAmount
+        playerHealthBarSprite.fillAmount = currentHealth / maxHealth;
         Debug.Log("Initial fillAmount set to: " + playerHealthBarSprite.fillAmount);
     }
 }
