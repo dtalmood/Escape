@@ -15,4 +15,22 @@ public class PlayerInv : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+
+    /*public void AddtoInventory()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hitInfo;
+            if (Physics.Raycast(ray,out hitInfo))
+            {
+                if(hitInfo.collider.gameObject.tag == "pickup")
+                {
+                    inventory.AddItem(item.item, 1);
+                    Destroy(other.gameObject);
+                }
+            }
+        }
+    }*/
+
 }
