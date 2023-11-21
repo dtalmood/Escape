@@ -18,11 +18,16 @@ public class PlayerMovement : MonoBehaviour
     public float airMultiplier;
     bool readyToJump;
 
-    // we will use this to grab height of player before after after jump
+    // THIS IS HOW WE CONNECT PLAYER HEALTH SCRIPT WITH PLAYER MOVEMENT
     public playerHealthBar playerHealth;
     bool grabInitial = false;
     float jumpInitialHeight;
     float jumpAfterHeight;
+
+    // This is how we connect Player Movement Script with Sound Script 
+    public Sound soundScript;
+
+
 
     /*[HideInInspector] public float walkSpeed;
     [HideInInspector] public float sprintSpeed;*/
@@ -86,6 +91,7 @@ public class PlayerMovement : MonoBehaviour
         SpeedControl();
         StateHandler();
         fallDamangeCheck();
+        soundCheck();
             
         if (grounded)
             rb.drag = groundDrag;
@@ -289,11 +295,15 @@ public class PlayerMovement : MonoBehaviour
         
         
     }
-
     // Grabs player Height the second they reach the ground
     private void grabAfterlHeight()
     {
         jumpAfterHeight =  transform.position.y;  
+    }
+
+    private void soundCheck()
+    {
+        
     }
     
 }
