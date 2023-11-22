@@ -24,9 +24,7 @@ public class PlayerMovement : MonoBehaviour
     float jumpInitialHeight;
     float jumpAfterHeight;
 
-    // This is how we connect Player Movement Script with Sound Script 
-    public Sound soundScript;
-
+    
 
 
     /*[HideInInspector] public float walkSpeed;
