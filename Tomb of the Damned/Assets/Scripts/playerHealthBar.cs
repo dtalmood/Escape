@@ -15,10 +15,10 @@ public class playerHealthBar : MonoBehaviour
     {
         before = (int)before;
         after = (int)after;
-        Debug.Log("Before: " + before);
-        Debug.Log("After: " + after);
+        // Debug.Log("Before: " + before);
+        // Debug.Log("After: " + after);
         difference = before - after;
-        Debug.Log("Fell Height of: " + difference);
+        // Debug.Log("Fell Height of: " + difference);
 
         if (difference >= 4 && difference <= 6)
         {
@@ -41,13 +41,13 @@ public class playerHealthBar : MonoBehaviour
             yield return new WaitForSeconds(timePerIteration);
         }
 
-        Debug.Log("Updated fillAmount to: " + playerHealthBarSprite.fillAmount);
+        //Debug.Log("Updated fillAmount to: " + playerHealthBarSprite.fillAmount);
     }
 
     private void Start()
     {
         currentHealth = maxHealth;
         playerHealthBarSprite.fillAmount = currentHealth / maxHealth;
-        Debug.Log("Initial fillAmount set to: " + playerHealthBarSprite.fillAmount);
+        //Debug.Log("Initial fillAmount set to: " + playerHealthBarSprite.fillAmount);
     }
 }
