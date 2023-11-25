@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
         SpeedControl();
         StateHandler();
         fallDamangeCheck();
-        soundCheck();
+        playSound();
             
         if (grounded)
             rb.drag = groundDrag;
@@ -137,39 +137,42 @@ public class PlayerMovement : MonoBehaviour
     }
 
    private void StateHandler()
-{
-    // player is crouching
-    if (Input.GetKey(crouchKey))
     {
-        state = MovementState.crouching;
-        moveSpeed = crouchSpeed;
-    }
+        // player is crouching
+        if (Input.GetKey(crouchKey) && (Mathf.Abs(horizontalInput) > 0 || Mathf.Abs(verticalInput) > 0))
+        {
+            state = MovementState.crouching;
+            moveSpeed = crouchSpeed;
+            //Debug.Log("In Crouch Walking State");
+        }
 
-    // player is running
-    else if (grounded && Input.GetKey(sprintKey))
-    {
-        state = MovementState.sprinting;
-        moveSpeed = sprintSpeed;
-    }
-    // player is walking
-    else if (grounded && (Mathf.Abs(horizontalInput) > 0 || Mathf.Abs(verticalInput) > 0))
-    {
-        state = MovementState.walking;
-        moveSpeed = walkSpeed;
-    }
+        // player is running
+        else if (grounded && Input.GetKey(sprintKey) && (Mathf.Abs(horizontalInput) > 0 || Mathf.Abs(verticalInput) > 0))
+        {
+            state = MovementState.sprinting;
+            moveSpeed = sprintSpeed;
+            //Debug.Log("In Running State");
+        }
+        // player is walking
+        else if (grounded && (Mathf.Abs(horizontalInput) > 0 || Mathf.Abs(verticalInput) > 0))
+        {
+            state = MovementState.walking;
+            moveSpeed = walkSpeed;
+            //Debug.Log("In Walking State");
+        }
 
-    // player is in the air
-    else if (!grounded)
-    {
-        state = MovementState.air;   
-    }
+        // player is in the air
+        else if (!grounded)
+        {
+            state = MovementState.air;   
+        }
 
-    // not running or walking and on the ground, so in idle
-    else
-    {
-        state = MovementState.idle;
+        // not running or walking and on the ground, so in idle
+        else
+        {
+            state = MovementState.idle;
+        }
     }
-}
 
     private void MovePlayer()
     {
@@ -299,9 +302,13 @@ public class PlayerMovement : MonoBehaviour
         jumpAfterHeight =  transform.position.y;  
     }
 
-    private void soundCheck()
+    // this function will play sound of foot setps when play is walking on differnt terrains
+    private void playSound()
     {
-        
+        if(state != MovementState.idle)
+        {
+
+        }
     }
     
 }
