@@ -7,6 +7,10 @@ using UnityEngine;
     method, to filter which objects or colliders the ray should interact with.
 */
 
+/*
+    How dynamic sound should work 
+    1. Whenever the player is in the walking, running, crouch walking, 
+*/ 
 
 public class TerrainDetector : MonoBehaviour
 {
@@ -16,9 +20,7 @@ public class TerrainDetector : MonoBehaviour
 
     void Update()
     {
-        //testingFunction();
-        //detectTerrain();
-        getTextureMix();
+        getLayerName();
     }
 
     private void testingFunction()
@@ -75,7 +77,7 @@ public class TerrainDetector : MonoBehaviour
         }
     }
 
-    private void getTextureMix()
+    private float[] getTextureMix()
     {
         Vector3 tpos = terrain.transform.position;
         TerrainData tData = terrain.terrainData;
@@ -88,8 +90,27 @@ public class TerrainDetector : MonoBehaviour
         {
             cellmix[i] = splatMapData[0,0,i];
         }
-        // Use the mapX variable as needed
-        Debug.Log("cellmix[1] = " + cellmix[0]);
-        Debug.Log("cellmix[2] = " + cellmix[1]);
+        //Debug.Log("cellmix[1] = " + cellmix[0]);
+        //Debug.Log("cellmix[2] = " + cellmix[1]);
+
+        return cellmix;        
+    }
+
+    private void getLayerName()
+    {
+        float [] cellMix = getTextureMix();
+        float strongest = 0;
+        int maxIndex = 0;
+        
+        for(int i = 0; i < cellMix.Length; i++)
+        {
+            if(cellMix[i] > strongest)
+            {
+                maxIndex = i;
+                strongest = cellMix[i];
+            }
+        }
+
+        Debug.Log("Terrain = "+terrain.terrainData.terrainLayers[maxIndex].name);
     }
 }
