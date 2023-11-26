@@ -45,6 +45,8 @@ public class PlayerMovement : MonoBehaviour
     bool groundedObject; // Tells us if we are on object
     bool groundedTerrain; // tells us if we are on Terrain
 
+     public TerrainDetector terrainDetector;
+
     [Header("Slope Handling")]
     public float maxSlopeAngle;
     private RaycastHit slopeHit;
@@ -68,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        terrainDetector = GetComponent<TerrainDetector>();
         rb = GetComponentInChildren<Rigidbody>();
         rb.freezeRotation = true;
 
@@ -147,7 +150,7 @@ public class PlayerMovement : MonoBehaviour
         {
             state = MovementState.crouching;
             moveSpeed = crouchSpeed;
-            Debug.Log("In Crouch Walking State");
+            //("In Crouch Walking State");
         }
 
         // player is running
@@ -155,28 +158,28 @@ public class PlayerMovement : MonoBehaviour
         {
             state = MovementState.sprinting;
             moveSpeed = sprintSpeed;
-            Debug.Log("In Running State");
+            //Debug.Log("In Running State");
         }
         // player is walking
         else if ((groundedTerrain || groundedObject) && (Mathf.Abs(horizontalInput) > 0 || Mathf.Abs(verticalInput) > 0))
         {
             state = MovementState.walking;
             moveSpeed = walkSpeed;
-            Debug.Log("In Walking State");
+            //Debug.Log("In Walking State");
         }
 
         // player is in the air
         else if (!(groundedTerrain || groundedObject))
         {
             state = MovementState.air;   
-            Debug.Log("In air State");
+            //Debug.Log("In air State");
         }
 
         // not running or walking and on the ground, so in idle
         else
         {
             state = MovementState.idle;
-            Debug.Log("In idle State");
+            //Debug.Log("In idle State");
         }
     }
 
@@ -307,14 +310,27 @@ public class PlayerMovement : MonoBehaviour
     // this function will play sound of foot setps when play is walking on differnt terrains
     private void playSound()
     {
-        if(groundedTerrain)
+        if (state != MovementState.idle)
         {
-            
+            if (groundedTerrain)
+            {
+                // Player is on terrain, get the terrain name
+                string terrainName = terrainDetector.getLayerName();
+                Debug.Log("On Terrain: " + terrainName);
+            }
+            else if (groundedObject)
+            {
+                // Player is on a 3D object, get the object name
+                RaycastHit hit;
+                if (Physics.Raycast(transform.position, Vector3.down, out hit, playerHeight * 0.5f + 0.2f, ObjectWhatisGround))
+                {
+                    string objectName = hit.collider.gameObject.name;
+                    Debug.Log("On 3D Object: " + objectName);
+                }
+            }
         }
-        else
-        {
-            
-        }
+   
     }
+
 }
 

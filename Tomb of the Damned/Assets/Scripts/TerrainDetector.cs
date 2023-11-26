@@ -17,12 +17,6 @@ public class TerrainDetector : MonoBehaviour
     // Reference to the terrain
     public Terrain terrain;
     
-
-    void Update()
-    {
-        getLayerName();
-    }
-
     private void testingFunction()
     {
         //Debug.Log(transform.position);
@@ -96,7 +90,7 @@ public class TerrainDetector : MonoBehaviour
         return cellmix;        
     }
 
-    private void getLayerName()
+    public string getLayerName()
     {
         float [] cellMix = getTextureMix();
         float strongest = 0;
@@ -112,5 +106,6 @@ public class TerrainDetector : MonoBehaviour
         }
 
         //Debug.Log("Terrain = "+terrain.terrainData.terrainLayers[maxIndex].name);
+        return terrain.terrainData.terrainLayers[maxIndex].name;
     }
 }
