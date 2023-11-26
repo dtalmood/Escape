@@ -111,6 +111,6 @@ public class TerrainDetector : MonoBehaviour
             }
         }
 
-        Debug.Log("Terrain = "+terrain.terrainData.terrainLayers[maxIndex].name);
+        //Debug.Log("Terrain = "+terrain.terrainData.terrainLayers[maxIndex].name);
     }
 }

@@ -24,8 +24,6 @@ public class PlayerMovement : MonoBehaviour
     float jumpInitialHeight;
     float jumpAfterHeight;
 
-    
-
 
     /*[HideInInspector] public float walkSpeed;
     [HideInInspector] public float sprintSpeed;*/
@@ -42,8 +40,10 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Ground Check")]
     public float playerHeight;
-    public LayerMask whatIsGround;
-    bool grounded;
+    public LayerMask ObjectWhatisGround; // layer used to detrmine if we are on a 3d object 
+    public LayerMask TerrainWhatisGround;// layer used to detrmine if we are on a Terrain 
+    bool groundedObject; // Tells us if we are on object
+    bool groundedTerrain; // tells us if we are on Terrain
 
     [Header("Slope Handling")]
     public float maxSlopeAngle;
@@ -83,7 +83,11 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         // ground check
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
+        groundedObject = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, ObjectWhatisGround);
+        //Debug.Log("Ground: "+ groundedObject);
+
+        groundedTerrain = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, TerrainWhatisGround);
+        //Debug.Log("Terrain: "+ groundedTerrain);
 
         MyInput();
         SpeedControl();
@@ -91,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
         fallDamangeCheck();
         playSound();
             
-        if (grounded)
+        if (groundedObject || groundedTerrain)
             rb.drag = groundDrag;
         else if (OnSlope())
             rb.drag = groundDrag;
@@ -110,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
         verticalInput = Input.GetAxisRaw("Vertical");
 
         // when to jump
-        if (Input.GetKey(jumpKey) && readyToJump && (grounded || OnSlope()) )
+        if (Input.GetKey(jumpKey) && readyToJump && ( groundedTerrain || groundedObject || OnSlope()))
         {
             readyToJump = false;
 
@@ -143,34 +147,36 @@ public class PlayerMovement : MonoBehaviour
         {
             state = MovementState.crouching;
             moveSpeed = crouchSpeed;
-            //Debug.Log("In Crouch Walking State");
+            Debug.Log("In Crouch Walking State");
         }
 
         // player is running
-        else if (grounded && Input.GetKey(sprintKey) && (Mathf.Abs(horizontalInput) > 0 || Mathf.Abs(verticalInput) > 0))
+        else if ((groundedTerrain || groundedObject) && Input.GetKey(sprintKey) && (Mathf.Abs(horizontalInput) > 0 || Mathf.Abs(verticalInput) > 0))
         {
             state = MovementState.sprinting;
             moveSpeed = sprintSpeed;
-            //Debug.Log("In Running State");
+            Debug.Log("In Running State");
         }
         // player is walking
-        else if (grounded && (Mathf.Abs(horizontalInput) > 0 || Mathf.Abs(verticalInput) > 0))
+        else if ((groundedTerrain || groundedObject) && (Mathf.Abs(horizontalInput) > 0 || Mathf.Abs(verticalInput) > 0))
         {
             state = MovementState.walking;
             moveSpeed = walkSpeed;
-            //Debug.Log("In Walking State");
+            Debug.Log("In Walking State");
         }
 
         // player is in the air
-        else if (!grounded)
+        else if (!(groundedTerrain || groundedObject))
         {
             state = MovementState.air;   
+            Debug.Log("In air State");
         }
 
         // not running or walking and on the ground, so in idle
         else
         {
             state = MovementState.idle;
+            Debug.Log("In idle State");
         }
     }
 
@@ -192,11 +198,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // on ground
-        else if (grounded)
+        else if ((groundedTerrain || groundedObject))
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
 
         // in air
-        else if (!grounded)
+        else if (!(groundedTerrain || groundedObject))
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
 
         // turn off gravity when on slope
@@ -281,7 +287,6 @@ public class PlayerMovement : MonoBehaviour
 
     }
     
-    
     // Grabs Player Height the second they are in the air 
     private void grabInitalHeight()
     {
@@ -291,10 +296,7 @@ public class PlayerMovement : MonoBehaviour
             grabInitial = true;
             //Debug.Log("Before: " + jumpInitialHeight);
             
-        }      
-
-        
-        
+        }         
     }
     // Grabs player Height the second they reach the ground
     private void grabAfterlHeight()
@@ -305,11 +307,14 @@ public class PlayerMovement : MonoBehaviour
     // this function will play sound of foot setps when play is walking on differnt terrains
     private void playSound()
     {
-        if(state != MovementState.idle)
+        if(groundedTerrain)
         {
-
+            
+        }
+        else
+        {
+            
         }
     }
-    
 }
 
