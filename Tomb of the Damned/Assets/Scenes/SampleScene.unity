@@ -258,10 +258,10 @@ MonoBehaviour:
   playerHeight: 2
   ObjectGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   TerrainGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   terrainDetector: {fileID: 0}
   maxSlopeAngle: 40
   orientation: {fileID: 564742003}
