@@ -40,8 +40,8 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Ground Check")]
     public float playerHeight;
-    public LayerMask ObjectWhatisGround; // layer used to detrmine if we are on a 3d object 
-    public LayerMask TerrainWhatisGround;// layer used to detrmine if we are on a Terrain 
+    public LayerMask ObjectGround; // layer used to detrmine if we are on a 3d object 
+    public LayerMask TerrainGround;// layer used to detrmine if we are on a Terrain 
     bool groundedObject; // Tells us if we are on object
     bool groundedTerrain; // tells us if we are on Terrain
 
@@ -86,10 +86,10 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         // ground check
-        groundedObject = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, ObjectWhatisGround);
+        groundedObject = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, ObjectGround);
         //Debug.Log("Ground: "+ groundedObject);
 
-        groundedTerrain = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, TerrainWhatisGround);
+        groundedTerrain = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, TerrainGround);
         //Debug.Log("Terrain: "+ groundedTerrain);
 
         MyInput();
@@ -322,7 +322,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 // Player is on a 3D object, get the object name
                 RaycastHit hit;
-                if (Physics.Raycast(transform.position, Vector3.down, out hit, playerHeight * 0.5f + 0.2f, ObjectWhatisGround))
+                if (Physics.Raycast(transform.position, Vector3.down, out hit, playerHeight * 0.5f + 0.2f, ObjectGround))
                 {
                     string objectName = hit.collider.gameObject.name;
                     Debug.Log("On 3D Object: " + objectName);
