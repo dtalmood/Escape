@@ -256,9 +256,13 @@ MonoBehaviour:
   sprintKey: 304
   crouchKey: 306
   playerHeight: 2
-  whatIsGround:
+  ObjectWhatisGround:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
+  TerrainWhatisGround:
+    serializedVersion: 2
+    m_Bits: 0
+  terrainDetector: {fileID: 0}
   maxSlopeAngle: 40
   orientation: {fileID: 564742003}
   state: 0
@@ -611,7 +615,7 @@ Transform:
   m_GameObject: {fileID: 1143761584}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -927.47003, y: 4.13, z: 0.79}
+  m_LocalPosition: {x: 755, y: 4, z: 205.936}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
