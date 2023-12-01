@@ -29,7 +29,7 @@ public class IdentifyObjects : MonoBehaviour
             objectName = hitObject.name;
             objectTag = hitObject.tag;
             objectDistance = hit.distance;
-            Debug.Log("Looking at: " + objectName);
+            // Debug.Log("Looking at: " + objectName);
 
             objectRigidBodyOrNot = hitObject.GetComponent<Rigidbody>() != null ? "Rigidbody" : "Not Rigidbody";
 
@@ -37,7 +37,7 @@ public class IdentifyObjects : MonoBehaviour
         }
         else
         {
-            Debug.Log("Too Far");
+            // Debug.Log("Too Far");
         }
 
         if (isCarryingObject)
@@ -67,7 +67,7 @@ public class IdentifyObjects : MonoBehaviour
                     carriedObject = GameObject.Find(objName); // Replace with hit.collider.gameObject if needed
                     carriedObject.GetComponent<Rigidbody>().isKinematic = true;
                     isCarryingObject = true;
-                    Debug.Log("Picked up: " + objName);
+                    // Debug.Log("Picked up: " + objName);
                 }
             }
         }

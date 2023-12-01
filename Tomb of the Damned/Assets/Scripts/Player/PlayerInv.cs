@@ -2,18 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteAlways]
+
 public class PlayerInv : MonoBehaviour
 {
     public InventoryObject inventory;
-    
-    public void OnTrigger(Collider other)
+
+    public void OnApplicationQuit()
     {
-        var item = other.GetComponent<Item>();
-        if (item)
-        {
-            inventory.AddItem(item.item, 1);
-            Destroy(other.gameObject);
-        }
+        inventory.Container.Clear();
     }
 
     /*public void AddtoInventory()

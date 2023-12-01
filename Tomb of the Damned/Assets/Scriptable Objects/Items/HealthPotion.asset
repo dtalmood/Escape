@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07936afa0b9944a4db86f86aad840377, type: 3}
   m_Name: HealthPotion
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 2694178244365427775, guid: d108b6d27f0949e4fa32f56c977143a8, type: 3}
   type: 0
   description: This might heal me!
   restoreHPValue: 10
