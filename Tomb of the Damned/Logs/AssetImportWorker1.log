@@ -1030,3 +1030,488 @@ AssetImportParameters requested are different than current active one (requested
   custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 808.961609 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Barrel_02.fbx
+  artifactKey: Guid(4f67e3351bc748e7bda31b4baf06beda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Barrel_02.fbx using Guid(4f67e3351bc748e7bda31b4baf06beda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b5f9ad99bb539e825057dd969e605a1') in 0.179138 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Book_03.fbx
+  artifactKey: Guid(394a144e9fdd4aa6a9fe7b3991d9a43c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Book_03.fbx using Guid(394a144e9fdd4aa6a9fe7b3991d9a43c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7d450debc2fc22e3613d7b63b1a6003') in 0.029555 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Bench_Wooden_01.fbx
+  artifactKey: Guid(8dee37a21a8c41ce95e83999b8e45bee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Bench_Wooden_01.fbx using Guid(8dee37a21a8c41ce95e83999b8e45bee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c97ff7b8930f5cb118cf813fa17bed5c') in 0.035279 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Books_Preset_02.fbx
+  artifactKey: Guid(3c7dcccba9d045e695d648753ed330d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Books_Preset_02.fbx using Guid(3c7dcccba9d045e695d648753ed330d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a14308ea2ed5596b3ce80f8d735a5f7') in 0.023544 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Bucket_01.fbx
+  artifactKey: Guid(48981368e2e74a6f8c4e3a52d8c40ad6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Bucket_01.fbx using Guid(48981368e2e74a6f8c4e3a52d8c40ad6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8cf9a580275b400052f84971ac5895a5') in 0.028010 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Books_Preset_04.fbx
+  artifactKey: Guid(e299abd1e6c14e579485d95559b2e756) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Books_Preset_04.fbx using Guid(e299abd1e6c14e579485d95559b2e756) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0455f23d456d3017654f4efa3b87665a') in 0.021648 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Books_Preset_06.fbx
+  artifactKey: Guid(52f18bb9affa40319dc60a840f31a449) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Books_Preset_06.fbx using Guid(52f18bb9affa40319dc60a840f31a449) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '287cce836cf76e37a3b6d0df9b6ea863') in 0.024736 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Bench_01.fbx
+  artifactKey: Guid(54f674c1af9240419414c806818c1f6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Bench_01.fbx using Guid(54f674c1af9240419414c806818c1f6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d212491b7177d5a8be0b06a6c3331fe') in 0.091356 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 33
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Barrels_Preset_02.fbx
+  artifactKey: Guid(0dd1d82885ed48668a479ef5c68e2770) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Barrels_Preset_02.fbx using Guid(0dd1d82885ed48668a479ef5c68e2770) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4bf50a5a39fcce334b6050ffbaaeb5f') in 0.032455 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Barrels_Preset_01.fbx
+  artifactKey: Guid(905e1e29b45f41958574ee26a147e611) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Barrels_Preset_01.fbx using Guid(905e1e29b45f41958574ee26a147e611) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21c0b8c5f0c5023c47c3b9daba54248d') in 0.036191 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Book_02.fbx
+  artifactKey: Guid(e13a78e627c24052b80cfc4be1f834ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Book_02.fbx using Guid(e13a78e627c24052b80cfc4be1f834ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b55550e7b24b0dd9b242125e06effcc') in 0.019525 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Candle_01.fbx
+  artifactKey: Guid(aa0d00c3df2c498ba1e54bc47aa4bda9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Candle_01.fbx using Guid(aa0d00c3df2c498ba1e54bc47aa4bda9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce43ab57e3795b7ac87e36f32ba80b5d') in 0.020710 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 16.873787 seconds.
+  path: Assets/Multistory Dungeons 2/Prefabs/Props/Barrels_Preset_01.prefab
+  artifactKey: Guid(15fd5903be7b4cd68505a9c33fb0cd77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Prefabs/Props/Barrels_Preset_01.prefab using Guid(15fd5903be7b4cd68505a9c33fb0cd77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd1423b69c866ebcd832f3584d787169') in 0.041203 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Multistory Dungeons 2/Prefabs/Props/Candlestick_Floor_02_Lit.prefab
+  artifactKey: Guid(aebf24aa57894961bfe5b60492dd5bdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Prefabs/Props/Candlestick_Floor_02_Lit.prefab using Guid(aebf24aa57894961bfe5b60492dd5bdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b4419f3fb92e0396b751aac76ed7b6d') in 0.037798 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 49
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Multistory Dungeons 2/Prefabs/Props/Candlestick_01.prefab
+  artifactKey: Guid(ba33a658c88349bb9fd179f37638e904) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Prefabs/Props/Candlestick_01.prefab using Guid(ba33a658c88349bb9fd179f37638e904) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '634075a9d89a85efd429f64bc083a095') in 0.024830 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 37
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Multistory Dungeons 2/Prefabs/Props/Jug_03.prefab
+  artifactKey: Guid(6b3445fc9bfc4619a05c2ce6d9344db2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Prefabs/Props/Jug_03.prefab using Guid(6b3445fc9bfc4619a05c2ce6d9344db2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44b0cda75d444ccc9f0519400b443932') in 0.040445 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Multistory Dungeons 2/Prefabs/Props/Barrels_Preset_03.prefab
+  artifactKey: Guid(1de99f1c9e134fa8b97f4d761833de57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Prefabs/Props/Barrels_Preset_03.prefab using Guid(1de99f1c9e134fa8b97f4d761833de57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4d3ceb6f021c10b4ec03bc1f0277218') in 0.038700 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 16
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Multistory Dungeons 2/Prefabs/Props/Candle_01.prefab
+  artifactKey: Guid(f92572ee929e4eb7a01d7dfecc063a29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Prefabs/Props/Candle_01.prefab using Guid(f92572ee929e4eb7a01d7dfecc063a29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb89524baf93f1ce5e8f7138e6c4ca9a') in 0.021903 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 33
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Multistory Dungeons 2/Prefabs/Props/Candles_02.prefab
+  artifactKey: Guid(502607ad5cbe456193f957ac30014e3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Prefabs/Props/Candles_02.prefab using Guid(502607ad5cbe456193f957ac30014e3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18b536cdc93e5c55ced8925bbe9b9295') in 0.018640 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 52
+========================================================================
+Received Import Request.
+  Time since last request: 1.378735 seconds.
+  path: Assets/Multistory Dungeons 2/Prefabs/Props/Books And Alchemy/Book_03.prefab
+  artifactKey: Guid(a693f8c2201b4b60b2569dad07d1945f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Prefabs/Props/Books And Alchemy/Book_03.prefab using Guid(a693f8c2201b4b60b2569dad07d1945f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ae90706b35051119b23d80afe7275ef') in 0.020261 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Multistory Dungeons 2/Prefabs/Props/Books And Alchemy/Books_Preset_03.prefab
+  artifactKey: Guid(cab518aa9b9d42f3813edffa01162bb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Prefabs/Props/Books And Alchemy/Books_Preset_03.prefab using Guid(cab518aa9b9d42f3813edffa01162bb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15a740b4635aa39313afef43927581cc') in 0.020294 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Multistory Dungeons 2/Prefabs/Props/Books And Alchemy/Flask_03.prefab
+  artifactKey: Guid(fd69dd2a121e4509a1e7ed3ab107ba7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Prefabs/Props/Books And Alchemy/Flask_03.prefab using Guid(fd69dd2a121e4509a1e7ed3ab107ba7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b408912887396e94bc5af0ca1c06f824') in 0.019022 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Multistory Dungeons 2/Prefabs/Props/Books And Alchemy/Inkpot_01.prefab
+  artifactKey: Guid(747dab04a1084dd1805bd446e606e5a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Prefabs/Props/Books And Alchemy/Inkpot_01.prefab using Guid(747dab04a1084dd1805bd446e606e5a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2da63bb09d39a5cad01af0c80dc38c6b') in 0.018449 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Multistory Dungeons 2/Prefabs/Props/Books And Alchemy/Books_Preset_06.prefab
+  artifactKey: Guid(25b65563c564407d8b1214934a3cce01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Prefabs/Props/Books And Alchemy/Books_Preset_06.prefab using Guid(25b65563c564407d8b1214934a3cce01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9a1033de7733779e212139ff6a0a8fb') in 0.019802 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Multistory Dungeons 2/Prefabs/Props/Books And Alchemy/Cup_01.prefab
+  artifactKey: Guid(11974f92aea44b97a97ff84cc6182945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Prefabs/Props/Books And Alchemy/Cup_01.prefab using Guid(11974f92aea44b97a97ff84cc6182945) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebff5cb44de464e9414cc3f8826f038b') in 0.020990 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.797094 seconds.
+  path: Assets/Multistory Dungeons 2/Prefabs/Props/Books And Alchemy/Paper_02.prefab
+  artifactKey: Guid(d8c1ecd27d8b494f99c904bd9a3be8bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Prefabs/Props/Books And Alchemy/Paper_02.prefab using Guid(d8c1ecd27d8b494f99c904bd9a3be8bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5546965c16f4e4fb7581052afeb727d') in 0.021483 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Multistory Dungeons 2/Prefabs/Props/Books And Alchemy/Paper_05.prefab
+  artifactKey: Guid(b29b15951e3f4f2f83b65c4b43aff9d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Prefabs/Props/Books And Alchemy/Paper_05.prefab using Guid(b29b15951e3f4f2f83b65c4b43aff9d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30921d807b7dae520ecfe851e60871b6') in 0.020203 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 2.162463 seconds.
+  path: Assets/Multistory Dungeons 2/Prefabs/Props/Books And Alchemy/Potion_04.prefab
+  artifactKey: Guid(26cc087b299f42a4a1923da599fe03cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Prefabs/Props/Books And Alchemy/Potion_04.prefab using Guid(26cc087b299f42a4a1923da599fe03cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c325ee2af179c3c4ea3e5eb9a5a43a4f') in 0.049176 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Multistory Dungeons 2/Prefabs/Props/Books And Alchemy/Sandglass_01.prefab
+  artifactKey: Guid(d0e39f206f1e4ca082d2fd38f5475d00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Prefabs/Props/Books And Alchemy/Sandglass_01.prefab using Guid(d0e39f206f1e4ca082d2fd38f5475d00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4206ec121624965ab0b70318f005b217') in 0.026423 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 3.905915 seconds.
+  path: Assets/Multistory Dungeons 2/Textures/Atlas_Furniture_01_Normal.psd
+  artifactKey: Guid(e2a78d032f964db9aa0405d80f0ed07e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Textures/Atlas_Furniture_01_Normal.psd using Guid(e2a78d032f964db9aa0405d80f0ed07e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2caf51bee05ffe72a5d5c3c3a43ff5b') in 0.047663 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Multistory Dungeons 2/Textures/FX_Candle_Fire_MD_01.psd
+  artifactKey: Guid(fa9528801bfb4b5f9474b939048aacdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Textures/FX_Candle_Fire_MD_01.psd using Guid(fa9528801bfb4b5f9474b939048aacdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce47f716289bd59d04f962f89191686e') in 0.019256 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Multistory Dungeons 2/Textures/FX_Fire_01_MD.psd
+  artifactKey: Guid(e9d99095e38043dbbcd6d8a2b2337c24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Textures/FX_Fire_01_MD.psd using Guid(e9d99095e38043dbbcd6d8a2b2337c24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a22a3e7b46d4953c41921111042720c') in 0.019321 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Multistory Dungeons 2/Textures/Atlas_Props_01_Specular.psd
+  artifactKey: Guid(4338fee117284677837ee007a11ed407) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Textures/Atlas_Props_01_Specular.psd using Guid(4338fee117284677837ee007a11ed407) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2d56cf5b89356931b6bfd1494b8d7e6') in 0.019264 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 24.360814 seconds.
+  path: Assets/Multistory Dungeons 2/Prefabs/Props/Books And Alchemy/Stand_02.prefab
+  artifactKey: Guid(56d044af64e145bb9ab7eb6ed864ba74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Prefabs/Props/Books And Alchemy/Stand_02.prefab using Guid(56d044af64e145bb9ab7eb6ed864ba74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d5a6e4afe1d8e454edee7084d20e729') in 0.030333 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 25.926148 seconds.
+  path: Assets/Materials/ObstacleMat.mat
+  artifactKey: Guid(85ec712c70f7f5e4a933b122d1e279f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/ObstacleMat.mat using Guid(85ec712c70f7f5e4a933b122d1e279f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '272b3656786fd6d2ff93dad699b43b3f') in 0.035209 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Materials/Pink.mat
+  artifactKey: Guid(74c23c481da29de4c889f3d6b229f91c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Pink.mat using Guid(74c23c481da29de4c889f3d6b229f91c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8bf447fcd4edd8d0defe1837b89c968') in 0.017169 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 13.453505 seconds.
+  path: Assets/Multistory Dungeons 2/Prefabs/Props/Lamp_01.prefab
+  artifactKey: Guid(dfbde792590a4220a339d2b776e63f3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Prefabs/Props/Lamp_01.prefab using Guid(dfbde792590a4220a339d2b776e63f3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '108b2ab4ccdda1607b91a60c75a88015') in 0.034833 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 16
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Multistory Dungeons 2/Prefabs/Props/Torch_Handheld_01.prefab
+  artifactKey: Guid(28bbda36f51a405f8e8a661d2246404a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Prefabs/Props/Torch_Handheld_01.prefab using Guid(28bbda36f51a405f8e8a661d2246404a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c532002d37c73e89922ae57714283d38') in 0.037378 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 28
+========================================================================
+Received Import Request.
+  Time since last request: 17.885402 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Candle_04.fbx
+  artifactKey: Guid(f942b92b70de4cbf868373c831d161a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Candle_04.fbx using Guid(f942b92b70de4cbf868373c831d161a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07281895c0624fd9040059e618ca0b67') in 0.056734 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Candlestick_Floor_02.fbx
+  artifactKey: Guid(88e9d05fa43f45b882d6206fd89efa34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Candlestick_Floor_02.fbx using Guid(88e9d05fa43f45b882d6206fd89efa34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a476e9e68254cc1b6d90e3926afde9e') in 0.041586 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Cup_01.fbx
+  artifactKey: Guid(1b5666de642f468eb7f461f508ed3389) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Cup_01.fbx using Guid(1b5666de642f468eb7f461f508ed3389) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd45a055c14e2cd8c949a045728a08f3') in 0.033992 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Chair_Wooden_01.fbx
+  artifactKey: Guid(968e66747bbb4c5d864b360f92243d39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Chair_Wooden_01.fbx using Guid(968e66747bbb4c5d864b360f92243d39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afcbdf59964d11e8767219551769feb7') in 0.052825 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 1.082075 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Cupboard_05.fbx
+  artifactKey: Guid(5b10a84c1b90486da055a7f5381ffde4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Cupboard_05.fbx using Guid(5b10a84c1b90486da055a7f5381ffde4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27e06abaf06d98f758af89dae966c57c') in 0.050426 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Cupboard_Big_Preset_02.fbx
+  artifactKey: Guid(5b4a8c6b57f549888a3369b0fefb9a15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Cupboard_Big_Preset_02.fbx using Guid(5b4a8c6b57f549888a3369b0fefb9a15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75c8d63b6dc267a04df06b72e6ad4b85') in 0.064973 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 1.189449 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Cupboard_Preset_05.fbx
+  artifactKey: Guid(642a645c08b9497182c5bf65b483ca5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Cupboard_Preset_05.fbx using Guid(642a645c08b9497182c5bf65b483ca5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d4d25ea43789c5e616847ffe490f23d') in 0.100155 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.281189 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Flask_01.fbx
+  artifactKey: Guid(f9c74410e5e34fe8b5706cd37bdfcfc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Flask_01.fbx using Guid(f9c74410e5e34fe8b5706cd37bdfcfc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ce2e36c009fc0cd60563d6838be40ce') in 0.032312 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Flask_03.fbx
+  artifactKey: Guid(eef146212cbc4786ba61b7dbbaee384b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Flask_03.fbx using Guid(eef146212cbc4786ba61b7dbbaee384b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '234d8e8a23293e3c22b829482e67b5b3') in 0.026914 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 3.930042 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Inkpot_01.fbx
+  artifactKey: Guid(16670cd9b8f94ddead9f0c556afdd169) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Inkpot_01.fbx using Guid(16670cd9b8f94ddead9f0c556afdd169) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fcf14ed07d7d4cf950e9253c283c8e2') in 0.056587 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Jugs_Preset_02.fbx
+  artifactKey: Guid(df6980d04b5e4e9896f6687d8a73d4b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Jugs_Preset_02.fbx using Guid(df6980d04b5e4e9896f6687d8a73d4b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9f23180d27d78af31c082a134e2637c') in 0.073577 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.078410 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Lamp_01.fbx
+  artifactKey: Guid(a599d5559b564d8bb2994dc60566d215) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Lamp_01.fbx using Guid(a599d5559b564d8bb2994dc60566d215) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7cd02bde25c067ab7c7e16ae852f1a02') in 0.045765 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Mortar_01.fbx
+  artifactKey: Guid(14da406f0ed149cfa126a40aa2c80323) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Mortar_01.fbx using Guid(14da406f0ed149cfa126a40aa2c80323) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd97e60c04d3c8f7c1b9c613c2af24bbd') in 0.028655 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.299581 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Paper_05.fbx
+  artifactKey: Guid(64acf2bb8cf143aeb1dee7245e05a350) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Paper_05.fbx using Guid(64acf2bb8cf143aeb1dee7245e05a350) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '054c73d49749736f5b8a60c852b4de7c') in 0.033437 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Potion_01.fbx
+  artifactKey: Guid(200b07446fa54985b592ae1f134bee25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Potion_01.fbx using Guid(200b07446fa54985b592ae1f134bee25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'deff570e99f886a6f9f96c3b5cb862d2') in 0.022654 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.852565 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Retort_Preset_01.fbx
+  artifactKey: Guid(36b9832a97a046e7abd8687a7b340e97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Retort_Preset_01.fbx using Guid(36b9832a97a046e7abd8687a7b340e97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9bb81010cde2f46817190f4ffc6bfa8') in 0.035727 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Scale_01.fbx
+  artifactKey: Guid(d37350a44c6140a69bb27db41dd77f4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Scale_01.fbx using Guid(d37350a44c6140a69bb27db41dd77f4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebd5b1eacea72c565cb9428c0e74749f') in 0.027521 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.126364 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Shelf_Preset_02.fbx
+  artifactKey: Guid(f7bb2cdb104848ccac8af3c30f305370) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Shelf_Preset_02.fbx using Guid(f7bb2cdb104848ccac8af3c30f305370) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7646149b1b5b23db5f5df67cdff7ce1a') in 0.067175 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 16
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Multistory Dungeons 2/Meshes/SRC_Props/Shelf_Preset_04.fbx
+  artifactKey: Guid(09c383219ee44f238768d63ec2b2b65b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Meshes/SRC_Props/Shelf_Preset_04.fbx using Guid(09c383219ee44f238768d63ec2b2b65b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ec1bb1feda7bb4b3390a9d47da96234') in 0.041815 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 16
+========================================================================
+Received Import Request.
+  Time since last request: 12.372291 seconds.
+  path: Assets/Multistory Dungeons 2/Textures/Materials/Smoke_FX_Material_02.mat
+  artifactKey: Guid(e731e99f1ed34d8c8cbe1459b9622f9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Multistory Dungeons 2/Textures/Materials/Smoke_FX_Material_02.mat using Guid(e731e99f1ed34d8c8cbe1459b9622f9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '217574a301698556709882e0e1041b27') in 0.064097 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 270.269190 seconds.
+  path: Assets/Scriptable Objects/Items/HealthPotion.asset
+  artifactKey: Guid(7a73703d81fb5dc4580a39cb8d986103) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scriptable Objects/Items/HealthPotion.asset using Guid(7a73703d81fb5dc4580a39cb8d986103) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6de549eda2f9427b4a3a8e5cd79a63c8') in 0.002358 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Scriptable Objects/Items/Shield.asset
+  artifactKey: Guid(85b8e4d943bc4d8479bb13d6c115b563) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scriptable Objects/Items/Shield.asset using Guid(85b8e4d943bc4d8479bb13d6c115b563) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2a151765d5b782dfab3da1d2a72f659') in 0.001940 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
