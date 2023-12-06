@@ -24,9 +24,6 @@ public class PlayerMovement : MonoBehaviour
     float jumpInitialHeight;
     float jumpAfterHeight;
 
-    
-
-
     /*[HideInInspector] public float walkSpeed;
     [HideInInspector] public float sprintSpeed;*/
 
@@ -42,8 +39,10 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Ground Check")]
     public float playerHeight;
-    public LayerMask whatIsGround;
-    bool grounded;
+    public LayerMask ObjectGround; // layer used to detrmine if we are on a 3d object 
+    public LayerMask TerrainGround;// layer used to detrmine if we are on a Terrain 
+    bool groundedObject; // Tells us if we are on object
+    bool groundedTerrain; // tells us if we are on Terrain
 
     [Header("Slope Handling")]
     public float maxSlopeAngle;
@@ -82,8 +81,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        // ground check
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
+       // ground check
+        groundedObject = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, ObjectGround);
+        //Debug.Log("Ground: "+ groundedObject);
+
+        groundedTerrain = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, TerrainGround);
+        //Debug.Log("Terrain: "+ groundedTerrain);
 
         MyInput();
         SpeedControl();
@@ -91,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
         fallDamangeCheck();
         playSound();
             
-        if (grounded)
+        if (groundedObject || groundedTerrain)
             rb.drag = groundDrag;
         else if (OnSlope())
             rb.drag = groundDrag;
@@ -110,7 +113,7 @@ public class PlayerMovement : MonoBehaviour
         verticalInput = Input.GetAxisRaw("Vertical");
 
         // when to jump
-        if (Input.GetKey(jumpKey) && readyToJump && (grounded || OnSlope()) )
+        if (Input.GetKey(jumpKey) && readyToJump && ( groundedTerrain || groundedObject || OnSlope()))
         {
             readyToJump = false;
 
@@ -147,14 +150,14 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // player is running
-        else if (grounded && Input.GetKey(sprintKey) && (Mathf.Abs(horizontalInput) > 0 || Mathf.Abs(verticalInput) > 0))
+        else if ((groundedTerrain || groundedObject) && Input.GetKey(sprintKey) && (Mathf.Abs(horizontalInput) > 0 || Mathf.Abs(verticalInput) > 0))
         {
             state = MovementState.sprinting;
             moveSpeed = sprintSpeed;
             //Debug.Log("In Running State");
         }
         // player is walking
-        else if (grounded && (Mathf.Abs(horizontalInput) > 0 || Mathf.Abs(verticalInput) > 0))
+        else if ((groundedTerrain || groundedObject) && (Mathf.Abs(horizontalInput) > 0 || Mathf.Abs(verticalInput) > 0))
         {
             state = MovementState.walking;
             moveSpeed = walkSpeed;
@@ -162,7 +165,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // player is in the air
-        else if (!grounded)
+        else if (!(groundedTerrain || groundedObject))
         {
             state = MovementState.air;   
         }
@@ -192,11 +195,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // on ground
-        else if (grounded)
+        else if ((groundedTerrain || groundedObject))
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
 
         // in air
-        else if (!grounded)
+        else if (!(groundedTerrain || groundedObject))
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
 
         // turn off gravity when on slope
@@ -305,9 +308,21 @@ public class PlayerMovement : MonoBehaviour
     // this function will play sound of foot setps when play is walking on differnt terrains
     private void playSound()
     {
-        if(state != MovementState.idle)
+        if(groundedObject)
         {
-
+            Debug.Log("On 3D Object");
+        }
+        else
+        {
+            Debug.Log("Not On 3D Object");
+        }
+        if(groundedTerrain)
+        {
+            Debug.Log("On Terrain");
+        }
+        else
+        {
+            Debug.Log("Not on Terrain");
         }
     }
     

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -257,9 +257,12 @@ MonoBehaviour:
   sprintKey: 304
   crouchKey: 306
   playerHeight: 2
-  whatIsGround:
+  ObjectGround:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 128
+  TerrainGround:
+    serializedVersion: 2
+    m_Bits: 256
   maxSlopeAngle: 40
   orientation: {fileID: 564742003}
   state: 0
@@ -764,7 +767,7 @@ GameObject:
   - component: {fileID: 1262735648}
   - component: {fileID: 1262735647}
   - component: {fileID: 1262735646}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -851,7 +854,7 @@ Transform:
   m_GameObject: {fileID: 1262735645}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 755.2, y: 4.135, z: 208.288}
+  m_LocalPosition: {x: 751.64, y: 6.31, z: 263.43}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1805,7 +1808,7 @@ GameObject:
   - component: {fileID: 2078313970}
   - component: {fileID: 2078313969}
   - component: {fileID: 2078313968}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
