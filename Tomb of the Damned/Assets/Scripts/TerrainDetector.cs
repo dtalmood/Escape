@@ -84,8 +84,8 @@ public class TerrainDetector : MonoBehaviour
         {
             cellmix[i] = splatMapData[0,0,i];
         }
-        //Debug.Log("cellmix[1] = " + cellmix[0]);
-        //Debug.Log("cellmix[2] = " + cellmix[1]);
+        // Debug.Log("cellmix[1] = " + cellmix[0]);
+        // Debug.Log("cellmix[2] = " + cellmix[1]);
 
         return cellmix;        
     }

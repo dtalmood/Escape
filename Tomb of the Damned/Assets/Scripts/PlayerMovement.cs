@@ -150,7 +150,7 @@ public class PlayerMovement : MonoBehaviour
         {
             state = MovementState.crouching;
             moveSpeed = crouchSpeed;
-            //("In Crouch Walking State");
+            //Debug.Log("In Crouch Walking State");
         }
 
         // player is running
@@ -308,29 +308,72 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // this function will play sound of foot setps when play is walking on differnt terrains
+    
+    bool terrain = false;
+    bool initialJump = false;
+    bool afterJump = false;
+    bool wasInAir = false; // Track if the player was in the air in the previous frame
+    string current;// this will hold the name of the current terrain/3d object player is walking on 
+    
     private void playSound()
     {
-        if (state != MovementState.idle)
+        Debug.Log("Current state in PlaySound: " + state); // Add this line for debugging
+        
+        if (state != MovementState.idle) // handle when player is moving or not 
         {
-            if (groundedTerrain)
+            if (groundedTerrain) // Player is on terrain 
             {
-                // Player is on terrain, get the terrain name
-                string terrainName = terrainDetector.getLayerName();
-                Debug.Log("On Terrain: " + terrainName);
+
+                current = terrainDetector.getLayerName(); // grab the name of the terrain I am currently walking on 
+                Debug.Log("On Terrain: " + current);
+
+                switch (state)
+                {
+                    case MovementState.walking:
+                        
+                        break;
+
+                    case MovementState.sprinting:
+                        // play sprinting sound here 
+                        break;
+                }
             }
-            else if (groundedObject)
+            
+
+            else // Player is on a 3D object or not
             {
+
                 // Player is on a 3D object, get the object name
+                
                 RaycastHit hit;
                 if (Physics.Raycast(transform.position, Vector3.down, out hit, playerHeight * 0.5f + 0.2f, ObjectGround))
                 {
                     string objectName = hit.collider.gameObject.name;
                     Debug.Log("On 3D Object: " + objectName);
+
+                    switch (state)
+                    {
+                        case MovementState.walking:
+                            // play walking sound here 
+                            break;
+
+                        case MovementState.sprinting:
+                            // play sprinting sound here 
+                            break;
+                    }
                 }
             }
+
+            // Save whether the player was in the air in the previous frame
+            wasInAir = (state == MovementState.air);
         }
-   
+
+        // Handle jumping and landing sounds when transitioning from air to ground
+        
     }
+
+
+
 
 }
 
