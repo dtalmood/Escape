@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57279504faa6744a2a466530a8834ac4, type: 3}
   m_Name: Sand
   m_EditorClassIdentifier: 
-  footStepSounds: []
-  jumpSound: {fileID: 0}
-  landSound: {fileID: 0}
+  footStepSounds:
+  - {fileID: 8300000, guid: 557e96b16076cb84285c90941906b44c, type: 3}
+  - {fileID: 8300000, guid: 93b5a4dc803c25c48a325a38b5617c33, type: 3}
+  - {fileID: 8300000, guid: 752adf85de15e284ebf55d376e1f4276, type: 3}
+  - {fileID: 8300000, guid: 6fa9a250bffc6454a840a823ac5ae71d, type: 3}
+  jumpSound: {fileID: 8300000, guid: 6866bd26706082149a4be4b47f1e1b3d, type: 3}
+  landSound: {fileID: 8300000, guid: 778bae15671a6c74c93c28c84cae9fe4, type: 3}

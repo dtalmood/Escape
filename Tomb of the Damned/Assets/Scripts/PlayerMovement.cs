@@ -315,7 +315,8 @@ public class PlayerMovement : MonoBehaviour
     bool wasInAir = false; // Track if the player was in the air in the previous frame
     string current;// this will hold the name of the current terrain/3d object player is walking on 
     
-    [SerializeField] private List<AudioClip> = m_FootstepSonds = new List<AudioClip>();
+    public footStepCollection sandFootSteps;
+    public footStepCollection gravelFootSteps; 
 
     private void playSound()
     {

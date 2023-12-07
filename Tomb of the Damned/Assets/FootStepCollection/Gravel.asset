@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57279504faa6744a2a466530a8834ac4, type: 3}
   m_Name: Gravel
   m_EditorClassIdentifier: 
-  footStepSounds: []
-  jumpSound: {fileID: 0}
-  landSound: {fileID: 0}
+  footStepSounds:
+  - {fileID: 8300000, guid: 5461cae585b64f64089805f0d313bc84, type: 3}
+  - {fileID: 8300000, guid: 2b3fc7e56f2686b48b9445e48c7db2c9, type: 3}
+  - {fileID: 8300000, guid: 87d51f07abec0584d805bbe3708a7c71, type: 3}
+  - {fileID: 8300000, guid: 9f96c8d3fef6ab440bdc9bd4ad3d08fe, type: 3}
+  jumpSound: {fileID: 8300000, guid: 314755392aa072e4eb6fc3b02b791b72, type: 3}
+  landSound: {fileID: 8300000, guid: 3e10d68c7f7aa854694549c916e8ba46, type: 3}

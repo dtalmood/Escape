@@ -266,6 +266,8 @@ MonoBehaviour:
   maxSlopeAngle: 40
   orientation: {fileID: 564742003}
   state: 0
+  sandFootSteps: {fileID: 11400000, guid: fbd754a60e72a4d26a0be1459c92de85, type: 2}
+  gravelFootSteps: {fileID: 11400000, guid: f9cec98285b744863ab9879f95eb5a96, type: 2}
 --- !u!136 &205727728
 CapsuleCollider:
   m_ObjectHideFlags: 0
