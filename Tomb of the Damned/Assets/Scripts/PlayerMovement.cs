@@ -315,36 +315,46 @@ public class PlayerMovement : MonoBehaviour
     bool wasInAir = false; // Track if the player was in the air in the previous frame
     string current;// this will hold the name of the current terrain/3d object player is walking on 
     
+    [SerializeField] private List<AudioClip> = m_FootstepSonds = new List<AudioClip>();
+
     private void playSound()
     {
         Debug.Log("Current state in PlaySound: " + state); // Add this line for debugging
-        
-        if (state != MovementState.idle) // handle when player is moving or not 
+
+        if (state != MovementState.idle) // handle when the player is moving
         {
             if (groundedTerrain) // Player is on terrain 
             {
+                string newTerrain = terrainDetector.getLayerName(); // grab the name of the terrain I am currently walking on 
+                Debug.Log("On Terrain: " + newTerrain);
 
-                current = terrainDetector.getLayerName(); // grab the name of the terrain I am currently walking on 
-                Debug.Log("On Terrain: " + current);
-
-                switch (state)
+                if (current != newTerrain) // check if player is walking on a new terrain or not 
                 {
-                    case MovementState.walking:
-                        
-                        break;
-
-                    case MovementState.sprinting:
-                        // play sprinting sound here 
-                        break;
+                    // The player is now walking on a different terrain, swap sound file here
+                    current = newTerrain;
+                    // swap sound files here 
+                    swapFootStep();
+               
                 }
-            }
-            
 
+                // we now know which sound file to play  
+                
+                switch (state) // decide whether to play the walking, sprininting, crouch walking sound 
+                {
+                     case MovementState.walking:
+                        // play walking sound for the new terrain
+                        Debug.Log("walking sound on terrain: " + current);
+
+                         
+
+                        break;
+                    }
+                
+            }
+          
             else // Player is on a 3D object or not
             {
-
                 // Player is on a 3D object, get the object name
-                
                 RaycastHit hit;
                 if (Physics.Raycast(transform.position, Vector3.down, out hit, playerHeight * 0.5f + 0.2f, ObjectGround))
                 {
@@ -355,21 +365,28 @@ public class PlayerMovement : MonoBehaviour
                     {
                         case MovementState.walking:
                             // play walking sound here 
+                            // Add code here to swap the walking sound file based on the 3D object
+                            // Example: walkingSoundManager.PlaySound(objectName);
                             break;
 
                         case MovementState.sprinting:
                             // play sprinting sound here 
+                            // Add code here to swap the sprinting sound file based on the 3D object
+                            // Example: sprintingSoundManager.PlaySound(objectName);
                             break;
                     }
                 }
             }
 
-            // Save whether the player was in the air in the previous frame
-            wasInAir = (state == MovementState.air);
+
         }
 
-        // Handle jumping and landing sounds when transitioning from air to ground
-        
+
+    }
+
+    private void swapFootStep()
+    {
+       
     }
 
 
