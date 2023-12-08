@@ -79,8 +79,23 @@ public class PlayerMovement : MonoBehaviour
         readyToJump = true;
         startYScale = transform.localScale.y;
         audio_Source = transform.Find("Audio Source").GetComponent<AudioSource>();// this will search unity for a component that has specified data inside of it  
+        
+        // play a jump sound 
         // sound = sandFootSteps.jumpSound; // It take the specific audio clip from the collection and ties it to the audioclip in the player movement script  
         // audio_Source.PlayOneShot(sound);
+
+        // play land sound 
+        // sound = sandFootSteps.landSound; // It take the specific audio clip from the collection and ties it to the audioclip in the player movement script  
+        // audio_Source.PlayOneShot(sound);
+
+        // play  step sound file 1  
+        // sound = sandFootSteps.footStepSounds[0];
+        // audio_Source.PlayOneShot(sound);
+        
+        // play step sound file 2 
+        // sound = sandFootSteps.footStepSounds[3];
+        // audio_Source.PlayOneShot(sound);
+
         // Assign the reference to PlayerHealthBar script
         
     }
