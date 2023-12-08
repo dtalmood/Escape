@@ -359,7 +359,7 @@ public class PlayerMovement : MonoBehaviour
                 
             }
           
-            else // Player is on a 3D object or not
+            else if(groundedObject)// Player is on a 3D object or not
             {
                 // Player is on a 3D object, get the object name
                 RaycastHit hit;
@@ -384,6 +384,13 @@ public class PlayerMovement : MonoBehaviour
                     }
                 }
             }
+            else // if not standing on a terrain or 3d Object player must be in the air 
+            {
+                Debug.Log("In the Air state");
+                playJumpLandSound(current);
+                
+            }
+
 
 
         }
@@ -405,47 +412,36 @@ public class PlayerMovement : MonoBehaviour
         {
             if (play)
             {
-                Debug.Log("Play = True");
                 randomNumber = Random.Range(0, 4);
                 sound = sandFootSteps.footStepSounds[randomNumber];
                 play = false;
 
                 // Play footstep sound with adjustable delay
-                StartCoroutine(PlayFootstepWithDelay(sound, footstepDelay));
+                StartCoroutine(Delay(sound, footstepDelay));
             }
         }
         else if (current == "Pebbles_B_TerrainLayer")
         {
-            Debug.Log("Play Pebbles Sound");
             if (play)
             {
-                Debug.Log("Play = True");
                 randomNumber = Random.Range(0, 4);
                 sound = gravelFootSteps.footStepSounds[randomNumber];
                 play = false;
 
                 // Play footstep sound with adjustable delay
-                StartCoroutine(PlayFootstepWithDelay(sound, footstepDelay));
+                StartCoroutine(Delay(sound, footstepDelay));
             }
         }
     }
 
-    // Coroutine to play footstep sound with adjustable delay
-    private IEnumerator PlayFootstepWithDelay(AudioClip footstepSound, float delay)
+    // delays footstep sound    
+    private IEnumerator Delay(AudioClip footstepSound, float delay)
     {
-        Debug.Log("Coroutine started");
-
         // Play the footstep sound
         audio_Source.PlayOneShot(footstepSound);
 
-        // Print for debugging
-        Debug.Log("Waiting for delay...");
-
         // Wait for the adjustable delay before allowing the next footstep sound
         yield return new WaitForSeconds(delay);
-
-        // Print for debugging
-        Debug.Log("Delay complete, setting Play = True");
 
         // Set Play back to true after the delay
         play = true;
@@ -454,6 +450,12 @@ public class PlayerMovement : MonoBehaviour
         // For example, you can add more logic here or call another function
     }
 
+    private void playJumpLandSound(AudioClip sound)
+    {
+       
+    }
+
+    
 
 
     // public AudioClip swapFootStep(string current)
