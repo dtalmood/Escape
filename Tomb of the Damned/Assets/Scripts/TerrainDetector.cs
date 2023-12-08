@@ -67,7 +67,7 @@ public class TerrainDetector : MonoBehaviour
             //Debug.Log("Alpha Map Data BS: "+alphaMapData[0, 0, 1]);
 
             
-            Debug.Log("Player is on terrain type: " + terrain.terrainData.terrainLayers[dominantTextureIndex].name);
+            //Debug.Log("Player is on terrain type: " + terrain.terrainData.terrainLayers[dominantTextureIndex].name);
         }
     }
 

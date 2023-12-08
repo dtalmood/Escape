@@ -5,8 +5,6 @@ using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // this object which will switch the the correct sound and play the proper foot step
-    public AudioClip sound; 
  
     [Header("Movement")]
     private float moveSpeed;
@@ -80,6 +78,7 @@ public class PlayerMovement : MonoBehaviour
         startYScale = transform.localScale.y;
         audio_Source = transform.Find("Audio Source").GetComponent<AudioSource>();// this will search unity for a component that has specified data inside of it  
         
+
         // play a jump sound 
         // sound = sandFootSteps.jumpSound; // It take the specific audio clip from the collection and ties it to the audioclip in the player movement script  
         // audio_Source.PlayOneShot(sound);
@@ -99,12 +98,7 @@ public class PlayerMovement : MonoBehaviour
         // Assign the reference to PlayerHealthBar script
         
     }
-    //  
-    public void playJumpSound(AudioClip playSound)
-    {
-        sound = sandFootSteps.jumpSound; // It take the specific audio clip from the collection and ties it to the audioclip in the player movement script  
-        audio_Source.PlayOneShot(playSound);
-    }
+    
 
     private void Update()
     {
@@ -332,47 +326,37 @@ public class PlayerMovement : MonoBehaviour
 
     // this function will play sound of foot setps when play is walking on differnt terrains
     
-    bool terrain = false;
-    bool initialJump = false;
-    bool afterJump = false;
-    bool wasInAir = false; // Track if the player was in the air in the previous frame
-    string current;// this will hold the name of the current terrain/3d object player is walking on 
-    
+
     int randomNumber;
-    public footStepCollection sandFootSteps;
-    public footStepCollection gravelFootSteps; 
+    public footStepCollection sandFootSteps; // this object holds the sand sounds 
+    public footStepCollection gravelFootSteps; // this object holds gravel sounds 
     public AudioSource audio_Source;
+
+    // this object which will switch the the correct sound and play the proper foot step
+    public AudioClip sound; 
+    public float footstepDelay = 0.5f; // Adjustable delay between footstep sounds
+    
+    /*
+     We have two layer types currently: 
+       - Pebbles_B_TerrainLayer
+       - Sand_TerrainLayer
+    */  
+    
     private void playSound()
     {
-        Debug.Log("Current state in PlaySound: " + state); // Add this line for debugging
+        //Debug.Log("Current state in PlaySound: " + state); // Add this line for debugging
 
         if (state != MovementState.idle) // handle when the player is moving
         {
             if (groundedTerrain) // Player is on terrain 
             {
-                string newTerrain = terrainDetector.getLayerName(); // grab the name of the terrain I am currently walking on 
-                Debug.Log("On Terrain: " + newTerrain);
-
-                if (current != newTerrain) // check if player is walking on a new terrain or not 
-                {
-                    // The player is now walking on a different terrain, swap sound file here
-                    current = newTerrain;
-                    // swap sound files here 
-                    swapFootStep();
-                    // this is where you should be able to access the sound 
-                    
-                    
-                }
-
-                // we now know which sound file to play  
+                string current = terrainDetector.getLayerName(); // grab the name of the terrain I am currently walking on 
+                //Debug.Log("On Terrain: " + current);
                 
                 switch (state) // decide whether to play the walking, sprininting, crouch walking sound 
                 {
                      case MovementState.walking:
-                        // play walking sound for the new terrain
-                        randomNumber = Random.Range(0, 4);
-                        
-
+                        playWalkSound(current);
                         break;
                     
                     }
@@ -411,12 +395,47 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void swapFootStep()
+    public void playWalkSound(string current)
     {
-       
+        if (current == "Sand_TerrainLayer")
+        {
+            Debug.Log("Play Sand Sound");
+            randomNumber = Random.Range(0, 4);
+            sound = sandFootSteps.footStepSounds[randomNumber];
+
+            // Play footstep sound with adjustable delay
+            StartCoroutine(PlayFootstepWithDelay(sound, footstepDelay));
+        }
+        else if (current == "Pebbles_B_TerrainLayer")
+        {
+            Debug.Log("Play Pebbles Sound");
+        }
+    }
+
+    // Coroutine to play footstep sound with adjustable delay
+    private IEnumerator PlayFootstepWithDelay(AudioClip footstepSound, float delay)
+    {
+        // Play the footstep sound
+        audio_Source.PlayOneShot(footstepSound);
+
+        // Wait for the adjustable delay before allowing the next footstep sound
+        yield return new WaitForSeconds(delay);
+
+        // Continue with the rest of the code or actions you want to perform after the delay
+        // For example, you can add more logic here or call another function
     }
 
 
+    // public AudioClip swapFootStep(string current)
+    // {
+    //     if(current == )
+         
+    // }
+    // public void playJumpSound(AudioClip soundFile)
+    // {
+    //     sound = sandFootSteps.jumpSound; // It take the specific audio clip from the collection and ties it to the audioclip in the player movement script  
+    //     audio_Source.PlayOneShot(soundFile);
+    // }
 
 
 }
