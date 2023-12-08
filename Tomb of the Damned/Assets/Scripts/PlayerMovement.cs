@@ -326,15 +326,11 @@ public class PlayerMovement : MonoBehaviour
 
     // this function will play sound of foot setps when play is walking on differnt terrains
     
-
-    int randomNumber;
-    public footStepCollection sandFootSteps; // this object holds the sand sounds 
-    public footStepCollection gravelFootSteps; // this object holds gravel sounds 
     public AudioSource audio_Source;
 
     // this object which will switch the the correct sound and play the proper foot step
     public AudioClip sound; 
-    public float footstepDelay = 0.5f; // Adjustable delay between footstep sounds
+     // Adjustable delay between footstep sounds
     
     /*
      We have two layer types currently: 
@@ -395,35 +391,69 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+
+    int randomNumber;
+    public footStepCollection sandFootSteps; // this object holds the sand sounds 
+    public footStepCollection gravelFootSteps; // this object holds gravel sounds 
+    private float footstepDelay = 0.5f;
+
+    bool play = true;
+
     public void playWalkSound(string current)
     {
         if (current == "Sand_TerrainLayer")
         {
-            Debug.Log("Play Sand Sound");
-            randomNumber = Random.Range(0, 4);
-            sound = sandFootSteps.footStepSounds[randomNumber];
+            if (play)
+            {
+                Debug.Log("Play = True");
+                randomNumber = Random.Range(0, 4);
+                sound = sandFootSteps.footStepSounds[randomNumber];
+                play = false;
 
-            // Play footstep sound with adjustable delay
-            StartCoroutine(PlayFootstepWithDelay(sound, footstepDelay));
+                // Play footstep sound with adjustable delay
+                StartCoroutine(PlayFootstepWithDelay(sound, footstepDelay));
+            }
         }
         else if (current == "Pebbles_B_TerrainLayer")
         {
             Debug.Log("Play Pebbles Sound");
+            if (play)
+            {
+                Debug.Log("Play = True");
+                randomNumber = Random.Range(0, 4);
+                sound = gravelFootSteps.footStepSounds[randomNumber];
+                play = false;
+
+                // Play footstep sound with adjustable delay
+                StartCoroutine(PlayFootstepWithDelay(sound, footstepDelay));
+            }
         }
     }
 
     // Coroutine to play footstep sound with adjustable delay
     private IEnumerator PlayFootstepWithDelay(AudioClip footstepSound, float delay)
     {
+        Debug.Log("Coroutine started");
+
         // Play the footstep sound
         audio_Source.PlayOneShot(footstepSound);
+
+        // Print for debugging
+        Debug.Log("Waiting for delay...");
 
         // Wait for the adjustable delay before allowing the next footstep sound
         yield return new WaitForSeconds(delay);
 
+        // Print for debugging
+        Debug.Log("Delay complete, setting Play = True");
+
+        // Set Play back to true after the delay
+        play = true;
+
         // Continue with the rest of the code or actions you want to perform after the delay
         // For example, you can add more logic here or call another function
     }
+
 
 
     // public AudioClip swapFootStep(string current)

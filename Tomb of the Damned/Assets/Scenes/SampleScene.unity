@@ -161,6 +161,7 @@ Transform:
   - {fileID: 284755801}
   - {fileID: 564742003}
   - {fileID: 1825923203}
+  - {fileID: 319928928}
   m_Father: {fileID: 2124808648}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &205727722
@@ -269,6 +270,8 @@ MonoBehaviour:
   sandFootSteps: {fileID: 11400000, guid: fbd754a60e72a4d26a0be1459c92de85, type: 2}
   gravelFootSteps: {fileID: 11400000, guid: f9cec98285b744863ab9879f95eb5a96, type: 2}
   audio_Source: {fileID: 0}
+  sound: {fileID: 0}
+  footstepDelay: 10000000
 --- !u!136 &205727728
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -362,11 +365,11 @@ Transform:
   m_GameObject: {fileID: 319928927}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 755.156, y: 6.047, z: 267.092}
+  m_LocalPosition: {x: 0.031982422, y: 0.7379999, z: 0.0030212402}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2124808648}
+  m_Father: {fileID: 205727720}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &319928929
 AudioSource:
@@ -1663,7 +1666,6 @@ Transform:
   m_Children:
   - {fileID: 205727720}
   - {fileID: 1486745974}
-  - {fileID: 319928928}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
