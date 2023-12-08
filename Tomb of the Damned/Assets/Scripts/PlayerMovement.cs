@@ -5,6 +5,9 @@ using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
+    // this object which will switch the the correct sound and play the proper foot step
+    public AudioClip sound; 
+ 
     [Header("Movement")]
     private float moveSpeed;
     public float walkSpeed;
@@ -73,15 +76,20 @@ public class PlayerMovement : MonoBehaviour
         terrainDetector = GetComponent<TerrainDetector>();
         rb = GetComponentInChildren<Rigidbody>();
         rb.freezeRotation = true;
-
         readyToJump = true;
-
         startYScale = transform.localScale.y;
-
+        audio_Source = transform.Find("Audio Source").GetComponent<AudioSource>();// this will search unity for a component that has specified data inside of it  
+        // sound = sandFootSteps.jumpSound; // It take the specific audio clip from the collection and ties it to the audioclip in the player movement script  
+        // audio_Source.PlayOneShot(sound);
         // Assign the reference to PlayerHealthBar script
         
     }
-
+    //  
+    public void playJumpSound(AudioClip playSound)
+    {
+        sound = sandFootSteps.jumpSound; // It take the specific audio clip from the collection and ties it to the audioclip in the player movement script  
+        audio_Source.PlayOneShot(playSound);
+    }
 
     private void Update()
     {
@@ -315,9 +323,10 @@ public class PlayerMovement : MonoBehaviour
     bool wasInAir = false; // Track if the player was in the air in the previous frame
     string current;// this will hold the name of the current terrain/3d object player is walking on 
     
+    int randomNumber;
     public footStepCollection sandFootSteps;
     public footStepCollection gravelFootSteps; 
-
+    public AudioSource audio_Source;
     private void playSound()
     {
         Debug.Log("Current state in PlaySound: " + state); // Add this line for debugging
@@ -335,7 +344,9 @@ public class PlayerMovement : MonoBehaviour
                     current = newTerrain;
                     // swap sound files here 
                     swapFootStep();
-               
+                    // this is where you should be able to access the sound 
+                    
+                    
                 }
 
                 // we now know which sound file to play  
@@ -344,11 +355,11 @@ public class PlayerMovement : MonoBehaviour
                 {
                      case MovementState.walking:
                         // play walking sound for the new terrain
-                        Debug.Log("walking sound on terrain: " + current);
-
-                         
+                        randomNumber = Random.Range(0, 4);
+                        
 
                         break;
+                    
                     }
                 
             }
