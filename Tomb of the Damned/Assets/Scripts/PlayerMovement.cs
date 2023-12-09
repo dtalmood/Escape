@@ -330,24 +330,28 @@ public class PlayerMovement : MonoBehaviour
 
     // this object which will switch the the correct sound and play the proper foot step
     public AudioClip sound; 
-     // Adjustable delay between footstep sounds
     
-    /*
-     We have two layer types currently: 
-       - Pebbles_B_TerrainLayer
-       - Sand_TerrainLayer
-    */  
-    
+    string current;
+
     private void playSound()
     {
         //Debug.Log("Current state in PlaySound: " + state); // Add this line for debugging
 
-        if (state != MovementState.idle) // handle when the player is moving
+        if (state != MovementState.idle || state != MovementState.air) // handle when the player is moving
         {
+            current = terrainDetector.getLayerName(); // grab the name of the terrain I am currently walking on
+
+            // check if the player had landed after a jump
+            if(!jump && (groundedTerrain || groundedObject)) 
+            {
+                Debug.Log("Enter");
+                jump = true;
+                playLandSound(current);
+            }
+            
+            
             if (groundedTerrain) // Player is on terrain 
             {
-                string current = terrainDetector.getLayerName(); // grab the name of the terrain I am currently walking on 
-                //Debug.Log("On Terrain: " + current);
                 
                 switch (state) // decide whether to play the walking, sprininting, crouch walking sound 
                 {
@@ -361,7 +365,6 @@ public class PlayerMovement : MonoBehaviour
           
             else if(groundedObject)// Player is on a 3D object or not
             {
-                // Player is on a 3D object, get the object name
                 RaycastHit hit;
                 if (Physics.Raycast(transform.position, Vector3.down, out hit, playerHeight * 0.5f + 0.2f, ObjectGround))
                 {
@@ -384,17 +387,15 @@ public class PlayerMovement : MonoBehaviour
                     }
                 }
             }
-            else // if not standing on a terrain or 3d Object player must be in the air 
-            {
-                Debug.Log("In the Air state");
-                playJumpLandSound(current);
-                
-            }
-
-
+            
+            
 
         }
-
+        else
+        {
+            current = terrainDetector.getLayerName();
+            playJumpSound(current);
+        }
 
     }
 
@@ -402,7 +403,7 @@ public class PlayerMovement : MonoBehaviour
     int randomNumber;
     public footStepCollection sandFootSteps; // this object holds the sand sounds 
     public footStepCollection gravelFootSteps; // this object holds gravel sounds 
-    private float footstepDelay = 0.5f;
+    private float soundDelay = 0.5f;
 
     bool play = true;
 
@@ -414,10 +415,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 randomNumber = Random.Range(0, 4);
                 sound = sandFootSteps.footStepSounds[randomNumber];
-                play = false;
-
-                // Play footstep sound with adjustable delay
-                StartCoroutine(Delay(sound, footstepDelay));
+                play = false;      
+                StartCoroutine(Delay(sound, soundDelay)); // Play footstep sound with adjustable delay
             }
         }
         else if (current == "Pebbles_B_TerrainLayer")
@@ -427,32 +426,64 @@ public class PlayerMovement : MonoBehaviour
                 randomNumber = Random.Range(0, 4);
                 sound = gravelFootSteps.footStepSounds[randomNumber];
                 play = false;
-
-                // Play footstep sound with adjustable delay
-                StartCoroutine(Delay(sound, footstepDelay));
+                StartCoroutine(Delay(sound, soundDelay)); // Play footstep sound with adjustable delay
             }
         }
     }
 
     // delays footstep sound    
-    private IEnumerator Delay(AudioClip footstepSound, float delay)
+    private IEnumerator Delay(AudioClip sound, float delay)
     {
         // Play the footstep sound
-        audio_Source.PlayOneShot(footstepSound);
-
+        audio_Source.PlayOneShot(sound);
         // Wait for the adjustable delay before allowing the next footstep sound
         yield return new WaitForSeconds(delay);
-
-        // Set Play back to true after the delay
         play = true;
-
-        // Continue with the rest of the code or actions you want to perform after the delay
-        // For example, you can add more logic here or call another function
     }
 
-    private void playJumpLandSound(AudioClip sound)
+   
+
+    bool jump;
+    private void playJumpSound(string current)
     {
+        if(jump)
+        {
+            if (current == "Sand_TerrainLayer")
+            {
+                //Debug.Log("Play Sand Jump");
+                sound = sandFootSteps.jumpSound;
+                audio_Source.PlayOneShot(sound);
+            }
+
+            else if (current == "Pebbles_B_TerrainLayer")
+            {
+                //Debug.Log("Play Pebble Jump");
+                sound = gravelFootSteps.jumpSound;
+                audio_Source.PlayOneShot(sound);
+                
+            }
+            jump = false;
+        }
        
+    }
+
+    private void playLandSound(string current)
+    {
+        if (current == "Sand_TerrainLayer")
+        {
+             Debug.Log("Play Sand Land");
+            sound = sandFootSteps.landSound;
+            StartCoroutine(Delay(sound, soundDelay));
+        }
+
+        else if (current == "Pebbles_B_TerrainLayer")
+         {
+             Debug.Log("Play Pebble Land");
+             sound = gravelFootSteps.landSound;
+             StartCoroutine(Delay(sound, soundDelay));
+                
+        }
+            
     }
 
     
