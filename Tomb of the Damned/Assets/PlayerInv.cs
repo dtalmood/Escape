@@ -6,12 +6,28 @@ using UnityEngine;
 
 public class PlayerInv : MonoBehaviour
 {
+    private void Update()
+    {
+        // saves inv when T is pressed
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            inventory.Save();
+        }
+
+        // loads inv when L is pressed
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            inventory.Load();
+        }
+    }
+
     public InventoryObject inventory;
 
     public void OnApplicationQuit()
     {
         inventory.Container.Clear();
     }
+
 
     /*public void AddtoInventory()
     {

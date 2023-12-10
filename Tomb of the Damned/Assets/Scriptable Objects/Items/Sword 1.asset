@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1d291c0317016c49817a4b2e92febd0, type: 3}
-  m_Name: Player Inventory
+  m_Script: {fileID: 11500000, guid: d948c25bc047ea941aa704896d435482, type: 3}
+  m_Name: Sword 1
   m_EditorClassIdentifier: 
-  savePath: /inventory.Save
-  database: {fileID: 11400000, guid: 4a1e424c94db032478744afede78c2fd, type: 2}
-  Container: []
+  prefab: {fileID: 6675658549638280669, guid: ba650771688c35a47902bca3fd05f53a, type: 3}
+  type: 1
+  description: This might hurt the enemy!
+  attBonus: 10
+  defBonus: 0
