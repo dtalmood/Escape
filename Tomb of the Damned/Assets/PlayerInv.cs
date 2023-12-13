@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class PlayerInv : MonoBehaviour
 {
+    public InventoryObject inventory;
+
     private void Update()
     {
         // saves inv when T is pressed
@@ -21,11 +23,9 @@ public class PlayerInv : MonoBehaviour
         }
     }
 
-    public InventoryObject inventory;
-
     public void OnApplicationQuit()
     {
-        inventory.Container.Clear();
+        inventory.Container.Items.Clear();
     }
 
 
