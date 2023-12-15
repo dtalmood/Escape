@@ -29,7 +29,7 @@ As the game is still in its early development stages, the graphical components c
 
 **Installation**
 
-1. **Download Unity Hub:**
+1. Download Unity Hub:
     - Test
 2. **Install the appropriate version depending on your system (PC or MAC):**
 
