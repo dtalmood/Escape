@@ -27,12 +27,12 @@ Are you ready to experience fear like never before? Prepare to explore the chill
 As the game is still in its early development stages, the graphical components can be run by most low-end computers. Additionally, to ensure no issues be sure to run the game Unity engine version 2022.3.11f1.
 
 **Controls:**
-  w: Forward 
-  a: Left
-  s: Backwards
-  d: Right
-  space: Jump
-  f: Pick up Sciptable Items 
-  e: Pick up 3D objects, hit e again to drop item you are holding 
-  q: Trhow 3D object
+  - w: Forward
+  - a: Left
+  - s: Backwards
+  - d: Right
+  - space: Jump
+  - f: Pick up Sciptable Items
+  - e: Pick up 3D objects, hit e again to drop item you are holding
+  - q: Trhow 3D object
   
