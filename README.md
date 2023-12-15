@@ -22,9 +22,17 @@ Are you ready to experience fear like never before? Prepare to explore the chill
   2. Game Over Screen 
   3. Usable Health Potions
   4. Non Playable Characters
-  
+
+
 **System Requirments:**
-As the game is still in its early development stages, the graphical components can be run by most low-end computers. Additionally, to ensure no issues be sure to run the game Unity engine version 2022.3.11f1.
+As the game is still in its early development stages, the graphical components can be run by most low-end computers.
+
+**Installation**
+  1. Download Unity Hub:
+    - Test
+     
+  3. Install the appropriate version depending on your system (PC or MAC)
+  4. Upon installation  2022.3.11f1.
 
 **Controls:**
   - w: Forward
