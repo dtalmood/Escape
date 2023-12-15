@@ -14,7 +14,7 @@ Are you ready to experience fear like never before? Prepare to explore the chill
   10. Drop Object
   11. Scriptable Object
   12. Simple Inventory System to keep track of items picked up by the player
-  13. Save button, to keep items from previous time playing
+  13. Save and Load button, to keep items from previous time playing
 
 
 **Future Updates:** 
