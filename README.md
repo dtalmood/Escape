@@ -29,13 +29,19 @@ As the game is still in its early development stages, the graphical components c
 
 **Installation**
 
-1. Download Unity Hub:
-    - Test
-2. **Install the appropriate version depending on your system (PC or MAC):**
-
-     
-  3. Install the appropriate version depending on your system (PC or MAC)
-  4. Upon installation  2022.3.11f1.
+1. Download Github Repository 
+2. Download Unity Hub:
+    - https://unity.com/download
+3. Install the appropriate version depending on your system (PC or MAC):
+4. Open Unity Hub
+5. Create a Unity Hub Account
+6. Install Unity Editor:
+    - navigate to the "Installs" tab
+    - Click on the "Add" button
+    - Choose a Unity version 2022.3.11f1
+8. In Unity Hub click Open button
+9. Choose the installation location of this GitHub repo  
+  
 
 **Controls:**
   - w: Forward
