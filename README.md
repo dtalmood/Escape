@@ -29,7 +29,7 @@ As the game is still in its early development stages, the graphical components c
 
 **Installation**
   1. Download Unity Hub:
-    - Test
+  - test 
      
   3. Install the appropriate version depending on your system (PC or MAC)
   4. Upon installation  2022.3.11f1.
