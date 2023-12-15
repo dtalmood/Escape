@@ -28,8 +28,11 @@ Are you ready to experience fear like never before? Prepare to explore the chill
 As the game is still in its early development stages, the graphical components can be run by most low-end computers.
 
 **Installation**
-  1. Download Unity Hub:
-  - test 
+
+1. **Download Unity Hub:**
+    - Test
+2. **Install the appropriate version depending on your system (PC or MAC):**
+
      
   3. Install the appropriate version depending on your system (PC or MAC)
   4. Upon installation  2022.3.11f1.
