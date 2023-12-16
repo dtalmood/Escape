@@ -50,6 +50,6 @@ As the game is still in its early development stages, the graphical components c
   - d: Right
   - space: Jump
   - f: Pick up Sciptable Items
-  - e: Pick up 3D objects, hit e again to drop item you are holding
-  - q: Trhow 3D object
+  - e: Pick up 3D objects, hit e again to drop the item you are holding
+  - q: Throw 3D object
   
