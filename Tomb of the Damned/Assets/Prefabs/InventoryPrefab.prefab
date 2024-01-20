@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4774588369042337590}
   - component: {fileID: 7848467266062672576}
   - component: {fileID: 1662382604900411040}
+  - component: {fileID: 3206001280647190509}
   m_Layer: 5
   m_Name: InventoryPrefab
   m_TagString: Untagged
@@ -77,6 +78,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3206001280647190509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3430837557527365945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91ca9e6e62e642647996aec55c1e4054, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backdrop: {fileID: 1662382604900411040}
+  itemImage: {fileID: 5148134311491019690}
+  itemCount: {fileID: 3813757694966100920}
 --- !u!1 &6045793371150181844
 GameObject:
   m_ObjectHideFlags: 0
