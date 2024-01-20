@@ -48,34 +48,23 @@ public class InventoryObject : ScriptableObject, ISavable
     [ContextMenu("Save")]
     public void Save()
     {
-        /*// serialize scritable object to a string
+        // serialize scritable object to a string
         string saveData = JsonUtility.ToJson(this, true);
         // binary formater to create a file and write the string into the file (save)
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(string.Concat(Application.persistentDataPath, savePath));
         bf.Serialize(file, saveData);
-        file.Close();*/
-
-        IFormatter formatter = new BinaryFormatter();
-        Stream stream = new FileStream(string.Concat(Application.persistentDataPath, savePath), FileMode.Create, FileAccess.Write);
-        formatter.Serialize(stream, Container);
-        stream.Close();
+        file.Close();
     }
 
-    [ContextMenu("Load")]
-    public void Load() 
-    { 
+    public void Load()
+    {
         if (File.Exists(string.Concat(Application.persistentDataPath, savePath)))
         {
-            /*BinaryFormatter bf = new BinaryFormatter();
+            BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(string.Concat(Application.persistentDataPath, savePath), FileMode.Open);
             JsonUtility.FromJsonOverwrite(bf.Deserialize(file).ToString(), this);
-            file.Close();*/
-
-            IFormatter formatter = new BinaryFormatter();
-            Stream stream = new FileStream(string.Concat(Application.persistentDataPath, savePath), FileMode.Open, FileAccess.Read);
-            Container = (Inventory)formatter.Deserialize(stream);
-            stream.Close();
+            file.Close();
         }
     }
 
