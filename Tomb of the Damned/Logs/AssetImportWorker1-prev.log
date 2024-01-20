@@ -22,7 +22,7 @@ AssetImportWorker1
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-63734
+49883
 Successfully changed project path to: /Users/dylantalmood/Documents/GitHub/CS178UnityProject/Tomb of the Damned
 /Users/dylantalmood/Documents/GitHub/CS178UnityProject/Tomb of the Damned
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -56,12 +56,12 @@ Successfully changed project path to: /Users/dylantalmood/Documents/GitHub/CS178
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [8048283648] Host "[IP] 192.168.4.38 [Port] 0 [Flags] 2 [Guid] 3516666827 [EditorId] 3516666827 [Version] 1048832 [Id] OSXEditor(0,Dylans-MacBook-Pro-3.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [8105480192] Host "[IP] 192.168.4.61 [Port] 0 [Flags] 2 [Guid] 2330381017 [EditorId] 2330381017 [Version] 1048832 [Id] OSXEditor(0,Dylans-MacBook-Pro-3.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [8048283648] Host "[IP] 192.168.4.38 [Port] 0 [Flags] 2 [Guid] 3516666827 [EditorId] 3516666827 [Version] 1048832 [Id] OSXEditor(0,Dylans-MacBook-Pro-3.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [8105480192] Host "[IP] 192.168.4.61 [Port] 0 [Flags] 2 [Guid] 2330381017 [EditorId] 2330381017 [Version] 1048832 [Id] OSXEditor(0,Dylans-MacBook-Pro-3.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 9 workers.
-Refreshing native plugins compatible for Editor in 12.23 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 2.89 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.11f1 (d00248457e15)
 [Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2022.3.11f1/Unity.app/Contents/Resources/UnitySubsystems
@@ -76,19 +76,19 @@ Initialize mono
 Mono path[0] = '/Applications/Unity/Hub/Editor/2022.3.11f1/Unity.app/Contents/Managed'
 Mono path[1] = '/Applications/Unity/Hub/Editor/2022.3.11f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit-macos'
 Mono config path = '/Applications/Unity/Hub/Editor/2022.3.11f1/Unity.app/Contents/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56547
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56511
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: /Applications/Unity/Hub/Editor/2022.3.11f1/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: /Applications/Unity/Hub/Editor/2022.3.11f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
-Registered in 0.002714 seconds.
-- Loaded All Assemblies, in  0.217 seconds
+Registered in 0.001190 seconds.
+- Loaded All Assemblies, in  0.206 seconds
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.151 seconds
+- Finished resetting the current domain, in  0.161 seconds
 Domain Reload Profiling: 368ms
-	BeginReloadAssembly (61ms)
+	BeginReloadAssembly (46ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
@@ -96,26 +96,26 @@ Domain Reload Profiling: 368ms
 		CreateAndSetChildDomain (0ms)
 	RebuildCommonClasses (23ms)
 	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (30ms)
-	LoadAllAssembliesAndSetupDomain (95ms)
-		LoadAssemblies (61ms)
+	initialDomainReloadingComplete (31ms)
+	LoadAllAssembliesAndSetupDomain (98ms)
+		LoadAssemblies (46ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (94ms)
-			TypeCache.Refresh (93ms)
-				TypeCache.ScanAssembly (84ms)
+		AnalyzeDomain (97ms)
+			TypeCache.Refresh (96ms)
+				TypeCache.ScanAssembly (86ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (151ms)
+	FinalizeReload (162ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (114ms)
+		SetupLoadedEditorAssemblies (121ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (4ms)
+			InitializePlatformSupportModulesInManaged (5ms)
 			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (1ms)
-			ProcessInitializeOnLoadAttributes (76ms)
-			ProcessInitializeOnLoadMethodAttributes (28ms)
+			ProcessInitializeOnLoadAttributes (82ms)
+			ProcessInitializeOnLoadMethodAttributes (29ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -123,8 +123,8 @@ Domain Reload Profiling: 368ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.547 seconds
-Refreshing native plugins compatible for Editor in 0.90 ms, found 2 plugins.
+- Loaded All Assemblies, in  0.461 seconds
+Refreshing native plugins compatible for Editor in 0.88 ms, found 2 plugins.
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
 Package Manager log level set to [2]
@@ -132,48 +132,48 @@ Package Manager log level set to [2]
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.577 seconds
-Domain Reload Profiling: 1124ms
-	BeginReloadAssembly (77ms)
+- Finished resetting the current domain, in  0.540 seconds
+Domain Reload Profiling: 1002ms
+	BeginReloadAssembly (76ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (3ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (18ms)
-	RebuildCommonClasses (25ms)
+		CreateAndSetChildDomain (16ms)
+	RebuildCommonClasses (24ms)
 	RebuildNativeTypeToScriptingClass (8ms)
 	initialDomainReloadingComplete (24ms)
-	LoadAllAssembliesAndSetupDomain (413ms)
-		LoadAssemblies (245ms)
+	LoadAllAssembliesAndSetupDomain (330ms)
+		LoadAssemblies (164ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (201ms)
-			TypeCache.Refresh (177ms)
-				TypeCache.ScanAssembly (160ms)
-			ScanForSourceGeneratedMonoScriptInfo (15ms)
-			ResolveRequiredComponents (8ms)
-	FinalizeReload (578ms)
+		AnalyzeDomain (196ms)
+			TypeCache.Refresh (171ms)
+				TypeCache.ScanAssembly (156ms)
+			ScanForSourceGeneratedMonoScriptInfo (16ms)
+			ResolveRequiredComponents (7ms)
+	FinalizeReload (540ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (424ms)
+		SetupLoadedEditorAssemblies (391ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (3ms)
 			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (61ms)
-			ProcessInitializeOnLoadAttributes (333ms)
+			BeforeProcessingInitializeOnLoad (55ms)
+			ProcessInitializeOnLoadAttributes (308ms)
 			ProcessInitializeOnLoadMethodAttributes (21ms)
 			AfterProcessingInitializeOnLoad (1ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (2ms)
+		AwakeInstancesAfterBackupRestoration (3ms)
 Launching external process: /Applications/Unity/Hub/Editor/2022.3.11f1/Unity.app/Contents/Tools/UnityShaderCompiler
 Launched and connected shader compiler UnityShaderCompiler after 0.05 seconds
-Refreshing native plugins compatible for Editor in 1.37 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.17 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 6858 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 238 unused Assets / (12.3 MB). Loaded Objects now: 7209.
-Memory consumption went from 367.8 MB to 355.5 MB.
-Total: 5.011042 ms (FindLiveObjects: 0.217167 ms CreateObjectMapping: 0.085125 ms MarkObjects: 2.608583 ms  DeleteObjects: 2.099250 ms)
+Memory consumption went from 368.0 MB to 355.7 MB.
+Total: 5.046375 ms (FindLiveObjects: 0.245125 ms CreateObjectMapping: 0.089833 ms MarkObjects: 2.338250 ms  DeleteObjects: 2.372083 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -190,236 +190,21 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 34100.054922 seconds.
-  path: Assets/Horror_House
-  artifactKey: Guid(e9fbeb3bda648d647807bf6faa507672) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Horror_House using Guid(e9fbeb3bda648d647807bf6faa507672) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fbead7ceec93e5b5ceef54e37d98283d') in 0.001119 seconds
+  Time since last request: 3372.289709 seconds.
+  path: Assets/Custom Fonts/CaviarDreams.ttf
+  artifactKey: Guid(7e851e076db3dca4dab83da9e263c18d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Custom Fonts/CaviarDreams.ttf using Guid(7e851e076db3dca4dab83da9e263c18d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8669dd4cd32d39d3011a89a69ad22e87') in 0.063503 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 4
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000095 seconds.
-  path: Assets/Horror_House/Prefabs/Props/Books_02.prefab
-  artifactKey: Guid(5e00de044f7549a4f98b8da5105d3d8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Horror_House/Prefabs/Props/Books_02.prefab using Guid(5e00de044f7549a4f98b8da5105d3d8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15b7e6af080a8d3139cd49274497e34d') in 0.410131 seconds
+  Time since last request: 0.000052 seconds.
+  path: Assets/Custom Fonts/Ghastly Panic SDF.asset
+  artifactKey: Guid(3aa0d156d19b56e48aed57772ab65cf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Custom Fonts/Ghastly Panic SDF.asset using Guid(3aa0d156d19b56e48aed57772ab65cf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fd0af13cd174cf3ffb82a7dcefc917e') in 0.046536 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 14
-========================================================================
-Received Import Request.
-  Time since last request: 0.286260 seconds.
-  path: Assets/Horror_House/Prefabs/Props/Bone_03.prefab
-  artifactKey: Guid(fa0a366d97cd3f9449396b4a939f3f36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Horror_House/Prefabs/Props/Bone_03.prefab using Guid(fa0a366d97cd3f9449396b4a939f3f36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'faa7e56e408ea860ea5fba1f7733a9d0') in 0.016724 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 20
-========================================================================
-Received Import Request.
-  Time since last request: 0.000086 seconds.
-  path: Assets/Horror_House/Prefabs/Props/Home_Flower_01.prefab
-  artifactKey: Guid(e0014a3d41f4824488e72a34a04cfe30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Horror_House/Prefabs/Props/Home_Flower_01.prefab using Guid(e0014a3d41f4824488e72a34a04cfe30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de7dff9816fa2c8b956a483d66fe6d93') in 0.356560 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 26
-========================================================================
-Received Import Request.
-  Time since last request: 0.000047 seconds.
-  path: Assets/Horror_House/Prefabs/Props/Bone_02.prefab
-  artifactKey: Guid(67a25330b635c2c4aa0bbe09639f26b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Horror_House/Prefabs/Props/Bone_02.prefab using Guid(67a25330b635c2c4aa0bbe09639f26b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d843cb94c99b40f34c65b8af66a59b9') in 0.011029 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 20
-========================================================================
-Received Import Request.
-  Time since last request: 0.000097 seconds.
-  path: Assets/Horror_House/Prefabs/Props/Book_03.prefab
-  artifactKey: Guid(efa4642628eeb8f40a7e31d6b9b74cd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Horror_House/Prefabs/Props/Book_03.prefab using Guid(efa4642628eeb8f40a7e31d6b9b74cd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32bbd264c66987a0a7c2cf2938898e01') in 0.011889 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 14
-========================================================================
-Received Import Request.
-  Time since last request: 0.000045 seconds.
-  path: Assets/Horror_House/Prefabs/Props/Cardboard_Box_01.prefab
-  artifactKey: Guid(7e571c428367eed4c966578aa303cd57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Horror_House/Prefabs/Props/Cardboard_Box_01.prefab using Guid(7e571c428367eed4c966578aa303cd57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6889900fa9cb87f66930e0c9968b6ff2') in 0.012850 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 12
-========================================================================
-Received Import Request.
-  Time since last request: 0.000078 seconds.
-  path: Assets/Horror_House/Prefabs/Props/Charred_Log_01.prefab
-  artifactKey: Guid(c6845e7b4f0f2c04ab400b7a92e685ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Horror_House/Prefabs/Props/Charred_Log_01.prefab using Guid(c6845e7b4f0f2c04ab400b7a92e685ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38fa160f9170c9bf9e280549e681747e') in 0.158758 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 15
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Horror_House/Prefabs/Props/Cardboard_Box_02.prefab
-  artifactKey: Guid(34a6f1e778ae8194fa997fed05b10004) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Horror_House/Prefabs/Props/Cardboard_Box_02.prefab using Guid(34a6f1e778ae8194fa997fed05b10004) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28640c2f98d953d53e6566c83fa8ef21') in 0.009770 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 13
-========================================================================
-Received Import Request.
-  Time since last request: 0.000061 seconds.
-  path: Assets/Horror_House/Prefabs/Props/Home_Flower_03.prefab
-  artifactKey: Guid(4c639e25db6f3cd4a95a0ac6f52fe054) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Horror_House/Prefabs/Props/Home_Flower_03.prefab using Guid(4c639e25db6f3cd4a95a0ac6f52fe054) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4280d2091c5fc26c7d7ba5f7f5ac5196') in 0.012024 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 26
-========================================================================
-Received Import Request.
-  Time since last request: 0.000054 seconds.
-  path: Assets/Horror_House/Prefabs/Props/Collector's_Plate.prefab
-  artifactKey: Guid(7e0c5d6aacde00549adb6a30d3e0b9a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Horror_House/Prefabs/Props/Collector's_Plate.prefab using Guid(7e0c5d6aacde00549adb6a30d3e0b9a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef7685fbcd658b072303a965012e5af9') in 0.014426 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 22
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Horror_House/Prefabs/Props/Hammer_01.prefab
-  artifactKey: Guid(7146dfdc871229e4eb98ca6106ab6689) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Horror_House/Prefabs/Props/Hammer_01.prefab using Guid(7146dfdc871229e4eb98ca6106ab6689) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcc39326a41f70ec7ea9cee17b6c0611') in 0.012727 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 26
-========================================================================
-Received Import Request.
-  Time since last request: 0.000038 seconds.
-  path: Assets/Horror_House/Prefabs/Props/Bone_04.prefab
-  artifactKey: Guid(370d2d4a4d32e5145bcceecfc50523ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Horror_House/Prefabs/Props/Bone_04.prefab using Guid(370d2d4a4d32e5145bcceecfc50523ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f276cf4b837cdf9ccbf9fd0ff6d800bd') in 0.011355 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 25
-========================================================================
-Received Import Request.
-  Time since last request: 0.000046 seconds.
-  path: Assets/Horror_House/Prefabs/Props/Book_10.prefab
-  artifactKey: Guid(d241925d95f213e4e9ea08b7d7e043c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Horror_House/Prefabs/Props/Book_10.prefab using Guid(d241925d95f213e4e9ea08b7d7e043c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e03b7df314dd13bdce62672a0706828d') in 0.010719 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 14
-========================================================================
-Received Import Request.
-  Time since last request: 0.000047 seconds.
-  path: Assets/Horror_House/Prefabs/Props/Broken_Tile.prefab
-  artifactKey: Guid(e9316ec406110d0478e0644f767c6f5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Horror_House/Prefabs/Props/Broken_Tile.prefab using Guid(e9316ec406110d0478e0644f767c6f5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd15285bbb6d87b8ad7e71d7448f73db4') in 0.009241 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 12
-========================================================================
-Received Import Request.
-  Time since last request: 0.000063 seconds.
-  path: Assets/Horror_House/Prefabs/Props/Candle_03.prefab
-  artifactKey: Guid(f06e8bed5e1fe6d49873517ecc4e7da4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Horror_House/Prefabs/Props/Candle_03.prefab using Guid(f06e8bed5e1fe6d49873517ecc4e7da4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1740ba081af320d0f1abee662f658bbb') in 0.214320 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 34
-========================================================================
-Received Import Request.
-  Time since last request: 0.000043 seconds.
-  path: Assets/Horror_House/Prefabs/Props/Ficus.prefab
-  artifactKey: Guid(d401e1d712a54fc409bf0a8ae6ec16aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Horror_House/Prefabs/Props/Ficus.prefab using Guid(d401e1d712a54fc409bf0a8ae6ec16aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32b1e85478c7045bbfa7d0e1bf28ea1f') in 0.012732 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 26
-========================================================================
-Received Import Request.
-  Time since last request: 0.000050 seconds.
-  path: Assets/Horror_House/Prefabs/Props/Clock_01.prefab
-  artifactKey: Guid(e8a9fb38737b75e4ebc015caf3367285) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Horror_House/Prefabs/Props/Clock_01.prefab using Guid(e8a9fb38737b75e4ebc015caf3367285) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c0494e01b30d7bfa2afc48875af3262') in 0.356410 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 29
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Horror_House/Prefabs/Props/Book_04.prefab
-  artifactKey: Guid(cb8a82afea52a14499d735258d2d3019) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Horror_House/Prefabs/Props/Book_04.prefab using Guid(cb8a82afea52a14499d735258d2d3019) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '694eab96459b5b6257cabc56a485efac') in 0.010683 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 14
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Horror_House/Prefabs/Props/Clock_02.prefab
-  artifactKey: Guid(576f56a6592b20648b80096277b0123e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Horror_House/Prefabs/Props/Clock_02.prefab using Guid(576f56a6592b20648b80096277b0123e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b25e3665bac7c796bf0c126c3a6110f4') in 0.011774 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 38
-========================================================================
-Received Import Request.
-  Time since last request: 0.000063 seconds.
-  path: Assets/Horror_House/Prefabs/Props/Candle_02.prefab
-  artifactKey: Guid(81951d49b45c58e44b247d3f595dfd63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Horror_House/Prefabs/Props/Candle_02.prefab using Guid(81951d49b45c58e44b247d3f595dfd63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6090a7bea892b9551c9ae2f1271f6614') in 0.011230 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 34
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-Thread 0x2beac7000 may have been prematurely finalized
-- Loaded All Assemblies, in  0.308 seconds
-Refreshing native plugins compatible for Editor in 1.19 ms, found 2 plugins.
-Native extension for OSXStandalone target not found
-Native extension for WebGL target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.075 seconds
-Domain Reload Profiling: 1383ms
-	BeginReloadAssembly (92ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (2ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (37ms)
-	RebuildCommonClasses (22ms)
-	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (14ms)
-	LoadAllAssembliesAndSetupDomain (173ms)
-		LoadAssemblies (186ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (17ms)
-			TypeCache.Refresh (7ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (8ms)
-	FinalizeReload (1075ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (353ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (3ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (65ms)
-			ProcessInitializeOnLoadAttributes (265ms)
-			ProcessInitializeOnLoadMethodAttributes (16ms)
-			AfterProcessingInitializeOnLoad (1ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (2ms)
-Refreshing native plugins compatible for Editor in 1.64 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 6605 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 194 unused Assets / (12.3 MB). Loaded Objects now: 7220.
-Memory consumption went from 312.7 MB to 300.4 MB.
-Total: 4.712958 ms (FindLiveObjects: 0.265209 ms CreateObjectMapping: 0.090584 ms MarkObjects: 2.584500 ms  DeleteObjects: 1.772167 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+Number of asset objects unloaded after import = 6
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 89, details: Operation aborted.
+AssetImportWorker is now disconnected from the server
+Process exiting
