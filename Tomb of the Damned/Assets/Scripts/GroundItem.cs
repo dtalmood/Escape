@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemComponent : MonoBehaviour
+public class GroundItem : MonoBehaviour
 {
     public ItemObject item;
     private bool playerInRange;
@@ -35,6 +35,7 @@ public class ItemComponent : MonoBehaviour
             if (item)
             {
                 Debug.Log("Found item");
+                // playerInventory.inventory.AddItem(item, 1);
                 playerInventory.inventory.AddItem(new Item(item), 1);
                 Destroy(this.gameObject);
             }
