@@ -80,19 +80,19 @@ public class PlayerMovement : MonoBehaviour
         
 
         // play a jump sound 
-        // sound = sandFootSteps.jumpSound; // It take the specific audio clip from the collection and ties it to the audioclip in the player movement script  
+        // sound = grassFootSteps.jumpSound; // It take the specific audio clip from the collection and ties it to the audioclip in the player movement script  
         // audio_Source.PlayOneShot(sound);
 
         // play land sound 
-        // sound = sandFootSteps.landSound; // It take the specific audio clip from the collection and ties it to the audioclip in the player movement script  
+        // sound = grassFootSteps.landSound; // It take the specific audio clip from the collection and ties it to the audioclip in the player movement script  
         // audio_Source.PlayOneShot(sound);
 
         // play  step sound file 1  
-        // sound = sandFootSteps.footStepSounds[0];
+        // sound = grassFootSteps.footStepSounds[0];
         // audio_Source.PlayOneShot(sound);
         
         // play step sound file 2 
-        // sound = sandFootSteps.footStepSounds[3];
+        // sound = grassFootSteps.footStepSounds[3];
         // audio_Source.PlayOneShot(sound);
 
         // Assign the reference to PlayerHealthBar script
@@ -405,18 +405,19 @@ public class PlayerMovement : MonoBehaviour
 
 
     int randomNumber;
-    public footStepCollection sandFootSteps; // this object holds the sand sounds 
-    public footStepCollection gravelFootSteps; // this object holds gravel sounds 
+    public footStepCollection grassFootSteps; // this object holds the Grass sounds 
+    public footStepCollection gravelFootSteps; // this object holds Gravel sounds 
+
     bool play = true;
 
     public void playWalkSprintCrouchSound(string current, float delayAmount)
     {
-        if (current == "Sand_TerrainLayer")
+        if (current == "Terrain_Layer4_Grass_Plants")
         {
             if (play)
             {
                 randomNumber = Random.Range(0, 4);
-                sound = sandFootSteps.footStepSounds[randomNumber];
+                sound = grassFootSteps.footStepSounds[randomNumber];
                 play = false;      
                 StartCoroutine(Delay(sound, delayAmount)); // Play footstep sound with adjustable delay
             }
@@ -449,10 +450,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if(jump)
         {
-            if (current == "Sand_TerrainLayer")
+            if (current == "Terrain_Layer4_Grass_Plants")
             {
                 Debug.Log("Play Sand Jump");
-                sound = sandFootSteps.jumpSound;
+                sound = grassFootSteps.jumpSound;
                 audio_Source.PlayOneShot(sound);
             }
 
@@ -470,10 +471,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void playLandSound(string current)
     {
-        if (current == "Sand_TerrainLayer")
+        if (current == "Terrain_Layer4_Grass_Plants")
         {
             Debug.Log("Play Sand Land");
-            sound = sandFootSteps.landSound;
+            sound = grassFootSteps.landSound;
             StartCoroutine(Delay(sound, landSoundDelay));
         }
 
