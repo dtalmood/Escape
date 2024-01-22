@@ -14,12 +14,14 @@ public class PlayerInv : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.T))
         {
             inventory.Save();
+            inventory.onAddItem?.Invoke();
         }
 
         // loads inv when L is pressed
         if (Input.GetKeyDown(KeyCode.L))
         {
             inventory.Load();
+            inventory.onAddItem?.Invoke();
         }
     }
 

@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PlayerCam : MonoBehaviour
 {
-    public float sensX;
-    public float sensY;
+    public float sensX = 15f;
+    public float sensY = 15f;
     public float maxRotationSpeed = 5f;
 
     public Transform orientation;
 
-    public float maxYRotation;
-    public float minYRotation;
+    public float maxYRotation = 80f;
+    public float minYRotation = -70f;
 
     float xRotation;
     float yRotation;
