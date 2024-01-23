@@ -103,10 +103,10 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         // ground check
-        groundedObject = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, ObjectGround);
+        groundedObject = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.1f + 0.05f, ObjectGround);
         //Debug.Log("Ground: "+ groundedObject);
 
-        groundedTerrain = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, TerrainGround);
+        groundedTerrain = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.1f + 0.05f, TerrainGround);
         //Debug.Log("Terrain: "+ groundedTerrain);
 
         MyInput();
@@ -359,15 +359,15 @@ public class PlayerMovement : MonoBehaviour
                 switch (state) // decide whether to play the walking, sprininting, crouch walking sound 
                 {
                     case MovementState.walking:
-                    playWalkSprintCrouchSound(current, walkSoundDelay);
+                    terrainPlayWalkSprintCrouchSound(current, walkSoundDelay);
                     break;
 
                     case MovementState.sprinting:
-                    playWalkSprintCrouchSound(current, sprintSoundDelay);
+                    terrainPlayWalkSprintCrouchSound(current, sprintSoundDelay);
                     break;    
 
                     case MovementState.crouching:
-                    playWalkSprintCrouchSound(current, crouchSoundDelay);
+                    terrainPlayWalkSprintCrouchSound(current, crouchSoundDelay);
                     break;
                 
                 }
@@ -376,11 +376,13 @@ public class PlayerMovement : MonoBehaviour
           
             else if(groundedObject)// Player is on a 3D object or not
             {
+                Debug.Log("On Object");
                 RaycastHit hit;
                 if (Physics.Raycast(transform.position, Vector3.down, out hit, playerHeight * 0.5f + 0.2f, ObjectGround))
                 {
-                    string objectName = hit.collider.gameObject.name;
-                    Debug.Log("On 3D Object: " + objectName);
+                    current  = hit.collider.gameObject.tag;
+
+                    Debug.Log("On 3D Object: " + current);
 
                     switch (state)
                     {
@@ -409,7 +411,7 @@ public class PlayerMovement : MonoBehaviour
     public footStepCollection gravelFootSteps; // this object holds gravel sounds 
     bool play = true;
 
-    public void playWalkSprintCrouchSound(string current, float delayAmount)
+    public void terrainPlayWalkSprintCrouchSound(string current, float delayAmount)
     {
         if (current == "Terrain_Layer4_Grass_Plants")
         {
@@ -433,6 +435,31 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     
+    public void objectPlayWalkSprintCrouchSound(string current, float delayAmount)
+    {
+        if (current == "Terrain_Layer4_Grass_Plants")
+        {
+            if (play)
+            {
+                randomNumber = Random.Range(0, 4);
+                sound = grassFootSteps.footStepSounds[randomNumber];
+                play = false;      
+                StartCoroutine(Delay(sound, delayAmount)); // Play footstep sound with adjustable delay
+            }
+        }
+        else if (current == "Pebbles_B_TerrainLayer")
+        {
+            if (play)
+            {
+                randomNumber = Random.Range(0, 4);
+                sound = gravelFootSteps.footStepSounds[randomNumber];
+                play = false;
+                StartCoroutine(Delay(sound, delayAmount)); // Play footstep sound with adjustable delay
+            }
+        }
+    }
+
+
 
     private IEnumerator Delay(AudioClip sound, float delay)
     {
@@ -451,14 +478,14 @@ public class PlayerMovement : MonoBehaviour
         {
             if (current == "Terrain_Layer4_Grass_Plants")
             {
-                Debug.Log("Play Grass Jump");
+                //("Play Grass Jump");
                 sound = grassFootSteps.jumpSound;
                 audio_Source.PlayOneShot(sound);
             }
 
             else if (current == "Pebbles_B_TerrainLayer")
             {
-                Debug.Log("Play Pebble Jump");
+                //Debug.Log("Play Pebble Jump");
                 sound = gravelFootSteps.jumpSound;
                 audio_Source.PlayOneShot(sound);
                 
@@ -472,14 +499,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (current == "Terrain_Layer4_Grass_Plants")
         {
-            Debug.Log("Play Grass Land");
+            //Debug.Log("Play Grass Land");
             sound = grassFootSteps.landSound;
             StartCoroutine(Delay(sound, landSoundDelay));
         }
 
         else if (current == "Pebbles_B_TerrainLayer")
          {
-             Debug.Log("Play Pebble Land");
+             //Debug.Log("Play Pebble Land");
              sound = gravelFootSteps.landSound;
              StartCoroutine(Delay(sound, landSoundDelay));
         }

@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 9af23ba5fa5364ff598888460e0e2759, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
+  m_IndirectSpecularColor: {r: 0.0032049608, g: 0.006370222, b: 0.01444489, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6441,6 +6441,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 459153892}
     m_Modifications:
+    - target: {fileID: 4688530547263711956, guid: 4d89ff81d215a994a92e19341f14ec55, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: c4d70864820d74074a3225718c7ce4d1, type: 2}
     - target: {fileID: 6227888137176486951, guid: 4d89ff81d215a994a92e19341f14ec55, type: 3}
       propertyPath: m_Name
       value: Sofa_01
@@ -6610,6 +6614,14 @@ PrefabInstance:
     - target: {fileID: 3196622418564791399, guid: e552d1596200b574ab33e712a4d8f878, type: 3}
       propertyPath: m_Name
       value: Floor_4x4m (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196622418564791399, guid: e552d1596200b574ab33e712a4d8f878, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196622418564791399, guid: e552d1596200b574ab33e712a4d8f878, type: 3}
+      propertyPath: m_TagString
+      value: Wood
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16406,6 +16418,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Veranda_Floor_4m
       objectReference: {fileID: 0}
+    - target: {fileID: 6660319868908019178, guid: 7a68622d5b14b76469fed64f9a356de2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660319868908019178, guid: 7a68622d5b14b76469fed64f9a356de2, type: 3}
+      propertyPath: m_TagString
+      value: Wood
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20470,6 +20490,14 @@ PrefabInstance:
     - target: {fileID: 3196622418564791399, guid: e552d1596200b574ab33e712a4d8f878, type: 3}
       propertyPath: m_Name
       value: Floor_4x4m (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196622418564791399, guid: e552d1596200b574ab33e712a4d8f878, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196622418564791399, guid: e552d1596200b574ab33e712a4d8f878, type: 3}
+      propertyPath: m_TagString
+      value: Wood
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -32295,6 +32323,100 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77c9d7f15e8632a4baa929aa6645870f, type: 3}
+--- !u!1 &703480735
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 703480737}
+  - component: {fileID: 703480736}
+  m_Layer: 0
+  m_Name: Directional light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &703480736
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703480735}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 1
+  m_Shape: 0
+  m_Color: {r: 0.16641437, g: 0.2840521, b: 0.41911763, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.802082
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 1
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 1.019
+    m_NormalBias: 0
+    m_NearPlane: 0.1
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &703480737
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703480735}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.9895662, y: 0.00051616336, z: -0.0050087217, w: 0.14399117}
+  m_LocalPosition: {x: 6.2, y: 17.8, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 163.442, y: 0.5839844, z: 0.024993896}
 --- !u!4 &703701955 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6356366221700872228, guid: cb8a82afea52a14499d735258d2d3019, type: 3}
@@ -40766,6 +40888,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Veranda_Floor_2m
       objectReference: {fileID: 0}
+    - target: {fileID: 5418809614472976342, guid: fd04a422a374582448cd8476ed7a5ac4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418809614472976342, guid: fd04a422a374582448cd8476ed7a5ac4, type: 3}
+      propertyPath: m_TagString
+      value: Wood
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -41883,6 +42013,14 @@ PrefabInstance:
     - target: {fileID: 6660319868908019178, guid: 7a68622d5b14b76469fed64f9a356de2, type: 3}
       propertyPath: m_Name
       value: Veranda_Floor_4m (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660319868908019178, guid: 7a68622d5b14b76469fed64f9a356de2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660319868908019178, guid: 7a68622d5b14b76469fed64f9a356de2, type: 3}
+      propertyPath: m_TagString
+      value: Wood
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -50844,6 +50982,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_2x2m_02 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1312448962776770434, guid: 5b799688367808746b8860e041ac558f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1312448962776770434, guid: 5b799688367808746b8860e041ac558f, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     - target: {fileID: 1836643792494787896, guid: 5b799688367808746b8860e041ac558f, type: 3}
       propertyPath: m_RootOrder
       value: 174
@@ -51232,6 +51378,14 @@ PrefabInstance:
     - target: {fileID: 6660319868908019178, guid: 7a68622d5b14b76469fed64f9a356de2, type: 3}
       propertyPath: m_Name
       value: Veranda_Floor_4m (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660319868908019178, guid: 7a68622d5b14b76469fed64f9a356de2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660319868908019178, guid: 7a68622d5b14b76469fed64f9a356de2, type: 3}
+      propertyPath: m_TagString
+      value: Wood
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -53183,6 +53337,14 @@ PrefabInstance:
     - target: {fileID: 1312448962776770434, guid: 5b799688367808746b8860e041ac558f, type: 3}
       propertyPath: m_Name
       value: Floor_2x2m_02 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1312448962776770434, guid: 5b799688367808746b8860e041ac558f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1312448962776770434, guid: 5b799688367808746b8860e041ac558f, type: 3}
+      propertyPath: m_TagString
+      value: Tile
       objectReference: {fileID: 0}
     - target: {fileID: 1836643792494787896, guid: 5b799688367808746b8860e041ac558f, type: 3}
       propertyPath: m_RootOrder
@@ -63552,6 +63714,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_4x4m (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3196622418564791399, guid: e552d1596200b574ab33e712a4d8f878, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196622418564791399, guid: e552d1596200b574ab33e712a4d8f878, type: 3}
+      propertyPath: m_TagString
+      value: Wood
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -67758,6 +67928,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_2x2m (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8397292959410595970, guid: 0abd7e789f185e143865644e1eded70e, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397292959410595970, guid: 0abd7e789f185e143865644e1eded70e, type: 3}
+      propertyPath: m_TagString
+      value: Wood
+      objectReference: {fileID: 0}
     - target: {fileID: 9206199693162246712, guid: 0abd7e789f185e143865644e1eded70e, type: 3}
       propertyPath: m_RootOrder
       value: 100
@@ -67822,100 +68000,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2807098203655366548, guid: 499630329646b044b91cefa69d79d78c, type: 3}
   m_PrefabInstance: {fileID: 207037810}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1455372671
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1455372673}
-  - component: {fileID: 1455372672}
-  m_Layer: 0
-  m_Name: Directional Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!108 &1455372672
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1455372671}
-  m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 1
-  m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!4 &1455372673
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1455372671}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &1455875159
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73288,6 +73372,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_2x2m_02 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1312448962776770434, guid: 5b799688367808746b8860e041ac558f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1312448962776770434, guid: 5b799688367808746b8860e041ac558f, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     - target: {fileID: 1836643792494787896, guid: 5b799688367808746b8860e041ac558f, type: 3}
       propertyPath: m_RootOrder
       value: 177
@@ -74226,6 +74318,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 459153892}
     m_Modifications:
+    - target: {fileID: 1897494665622773994, guid: d4e3527acc2917a4bade621931c52552, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4835763564825006140, guid: d4e3527acc2917a4bade621931c52552, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8182058404215717383, guid: d4e3527acc2917a4bade621931c52552, type: 3}
       propertyPath: m_RootOrder
       value: 26
@@ -74270,9 +74370,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8393011588594827819, guid: d4e3527acc2917a4bade621931c52552, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8847130600435786941, guid: d4e3527acc2917a4bade621931c52552, type: 3}
       propertyPath: m_Name
       value: Porch_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8847130600435786941, guid: d4e3527acc2917a4bade621931c52552, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -77915,6 +78023,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_2x2m_02 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1312448962776770434, guid: 5b799688367808746b8860e041ac558f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1312448962776770434, guid: 5b799688367808746b8860e041ac558f, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     - target: {fileID: 1836643792494787896, guid: 5b799688367808746b8860e041ac558f, type: 3}
       propertyPath: m_RootOrder
       value: 178
@@ -78019,6 +78135,14 @@ PrefabInstance:
     - target: {fileID: 3196622418564791399, guid: e552d1596200b574ab33e712a4d8f878, type: 3}
       propertyPath: m_Name
       value: Floor_4x4m
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196622418564791399, guid: e552d1596200b574ab33e712a4d8f878, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196622418564791399, guid: e552d1596200b574ab33e712a4d8f878, type: 3}
+      propertyPath: m_TagString
+      value: Wood
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -97101,6 +97225,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor_4x4m (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3196622418564791399, guid: e552d1596200b574ab33e712a4d8f878, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196622418564791399, guid: e552d1596200b574ab33e712a4d8f878, type: 3}
+      propertyPath: m_TagString
+      value: Wood
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -97488,8 +97620,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 7967851840067082418}
   - {fileID: 1557268585}
+  - {fileID: 703480737}
   - {fileID: 1449751201}
-  - {fileID: 1455372673}
   - {fileID: 2078313970}
   - {fileID: 188149258}
   - {fileID: 459153892}
