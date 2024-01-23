@@ -3655,6 +3655,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canned_Plum
       objectReference: {fileID: 0}
+    - target: {fileID: 7586724493492814829, guid: 777d8bd57278cc64e8bf6b0bcd5be35f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23170,6 +23174,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Soda
       objectReference: {fileID: 0}
+    - target: {fileID: 7013964105044308590, guid: ca7705a2d684b5d438d73c230da9aeac, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -35558,6 +35566,10 @@ PrefabInstance:
     - target: {fileID: 5556923175379882224, guid: 0561fc16f1b791348a1bfa37cb923c14, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782199468910945405, guid: 0561fc16f1b791348a1bfa37cb923c14, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -61574,6 +61586,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 71804768}
     m_Modifications:
+    - target: {fileID: 6991249425782689215, guid: 2cc0d9bb71b91c1499a9fe44c0d8a908, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7326465135901155677, guid: 2cc0d9bb71b91c1499a9fe44c0d8a908, type: 3}
       propertyPath: m_Name
       value: Canned_Meat
@@ -74381,6 +74397,10 @@ PrefabInstance:
     - target: {fileID: 8847130600435786941, guid: d4e3527acc2917a4bade621931c52552, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8847130600435786941, guid: d4e3527acc2917a4bade621931c52552, type: 3}
+      propertyPath: m_TagString
+      value: Wood
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -91203,6 +91223,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 71804768}
     m_Modifications:
+    - target: {fileID: 993108553210482373, guid: f7041a704532f94428332ddbf06d402e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2847805366849380972, guid: f7041a704532f94428332ddbf06d402e, type: 3}
       propertyPath: m_RootOrder
       value: 345
@@ -97561,6 +97585,22 @@ PrefabInstance:
       propertyPath: terrain
       value: 
       objectReference: {fileID: 2078313969}
+    - target: {fileID: 1452083581223671453, guid: b9268a94d3a79a94889eb702f989418a, type: 3}
+      propertyPath: jumpForce
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1452083581223671453, guid: b9268a94d3a79a94889eb702f989418a, type: 3}
+      propertyPath: sprintSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1452083581223671453, guid: b9268a94d3a79a94889eb702f989418a, type: 3}
+      propertyPath: tileFootSteps
+      value: 
+      objectReference: {fileID: 11400000, guid: ff96db06f459840af8222c95d40e3982, type: 2}
+    - target: {fileID: 1452083581223671453, guid: b9268a94d3a79a94889eb702f989418a, type: 3}
+      propertyPath: woodFootSteps
+      value: 
+      objectReference: {fileID: 11400000, guid: 779d99f209a574e4da6bbb7bd52ff708, type: 2}
     - target: {fileID: 1452083581223671453, guid: b9268a94d3a79a94889eb702f989418a, type: 3}
       propertyPath: grassFootSteps
       value: 

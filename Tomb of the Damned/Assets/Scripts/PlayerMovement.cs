@@ -209,7 +209,7 @@ public class PlayerMovement : MonoBehaviour
         // on plane
         if (OnSlope() && !exitingSlope)
         {
-            rb.AddForce(GetSlopeMoveDirection() * moveSpeed * 20f, ForceMode.Force);
+            rb.AddForce(GetSlopeMoveDirection() * moveSpeed * 30f, ForceMode.Force);
             // down foce when player is walking up slope
             if (rb.velocity.y > 0)
             {
@@ -384,13 +384,20 @@ public class PlayerMovement : MonoBehaviour
 
                     Debug.Log("On 3D Object: " + current);
 
-                    switch (state)
+                    switch (state) // decide whether to play the walking, sprininting, crouch walking sound 
                     {
                         case MovementState.walking:
-                            break;
+                        objectPlayWalkSprintCrouchSound(current, walkSoundDelay);
+                        break;
 
                         case MovementState.sprinting:
-                            break;
+                        objectPlayWalkSprintCrouchSound(current, sprintSoundDelay);
+                        break;    
+
+                        case MovementState.crouching:
+                        objectPlayWalkSprintCrouchSound(current, crouchSoundDelay);
+                        break;
+                    
                     }
                 }
             }
@@ -399,7 +406,7 @@ public class PlayerMovement : MonoBehaviour
         else if(state == MovementState.air)
         {
             //Debug.Log("In Air State");
-            current = terrainDetector.getLayerName();
+            //current = terrainDetector.getLayerName();
             playJumpSound(current);
         }
 
@@ -411,6 +418,7 @@ public class PlayerMovement : MonoBehaviour
     public footStepCollection gravelFootSteps; // this object holds gravel sounds 
     bool play = true;
 
+    // this handles playing sound when walking on a terrain 
     public void terrainPlayWalkSprintCrouchSound(string current, float delayAmount)
     {
         if (current == "Terrain_Layer4_Grass_Plants")
@@ -435,31 +443,32 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     
+    // this handles playing sound when walking on a 3D object 
     public void objectPlayWalkSprintCrouchSound(string current, float delayAmount)
     {
-        if (current == "Terrain_Layer4_Grass_Plants")
+        if(current == "Wood")
         {
             if (play)
             {
                 randomNumber = Random.Range(0, 4);
-                sound = grassFootSteps.footStepSounds[randomNumber];
-                play = false;      
-                StartCoroutine(Delay(sound, delayAmount)); // Play footstep sound with adjustable delay
-            }
-        }
-        else if (current == "Pebbles_B_TerrainLayer")
-        {
-            if (play)
-            {
-                randomNumber = Random.Range(0, 4);
-                sound = gravelFootSteps.footStepSounds[randomNumber];
+                sound = woodFootSteps.footStepSounds[randomNumber];
                 play = false;
                 StartCoroutine(Delay(sound, delayAmount)); // Play footstep sound with adjustable delay
             }
         }
+        else if(current == "Tile")
+        {
+            if (play)
+            {
+                randomNumber = Random.Range(0, 4);
+                sound = tileFootSteps.footStepSounds[randomNumber];
+                play = false;
+                StartCoroutine(Delay(sound, delayAmount)); // Play footstep sound with adjustable delay
+            }
+
+        }
+
     }
-
-
 
     private IEnumerator Delay(AudioClip sound, float delay)
     {
@@ -470,8 +479,6 @@ public class PlayerMovement : MonoBehaviour
         play = true;
     }
 
-
-    
     private void playJumpSound(string current)
     {
         if(jump)
@@ -512,6 +519,11 @@ public class PlayerMovement : MonoBehaviour
         }
             
     }
+
+
+    public footStepCollection woodFootSteps; // this object holds the sand sounds 
+    public footStepCollection tileFootSteps; // this object holds gravel sounds 
+    
 
 
 
