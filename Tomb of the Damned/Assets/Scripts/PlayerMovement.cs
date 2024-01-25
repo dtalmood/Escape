@@ -201,33 +201,50 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void MovePlayer()
+{
+    // calculate movement direction
+    moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+
+    // on plane
+    if (OnSlope() && !exitingSlope)
     {
-        // calculate movement direction
-        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-        // rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+        Vector3 slopeMoveDirection = GetSlopeMoveDirection();
 
-        // on plane
-        if (OnSlope() && !exitingSlope)
+        // Apply the adjusted force
+        rb.AddForce(slopeMoveDirection * moveSpeed * 55f, ForceMode.Force);
+
+        // Apply additional downward force when moving up the slope
+        if (rb.velocity.y > 0)
         {
-            rb.AddForce(GetSlopeMoveDirection() * moveSpeed * 30f, ForceMode.Force);
-            // down foce when player is walking up slope
-            if (rb.velocity.y > 0)
-            {
-                rb.AddForce(Vector3.down * 80f, ForceMode.Force);
-            }
+            rb.AddForce(Vector3.down * 125f, ForceMode.Force);
         }
-
-        // on ground
-        else if ((groundedTerrain || groundedObject))
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
-
-        // in air
-        else if (!(groundedTerrain || groundedObject))
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
-
-        // turn off gravity when on slope
-        rb.useGravity = !OnSlope();
+        // Slow down the descent when moving down the slope
+        else if (rb.velocity.y < 0)
+        {
+            rb.AddForce(Vector3.down * 10f, ForceMode.Force); // Adjust this value
+        }
     }
+    // on ground
+    else if ((groundedTerrain || groundedObject))
+    {
+        // Directly apply force in the moveDirection to move straight
+        rb.AddForce(moveDirection.normalized * moveSpeed * 8f, ForceMode.Force); // Adjust this value
+    }
+    // in air
+    else if (!(groundedTerrain || groundedObject))
+    {
+        // Directly apply force in the moveDirection to move straight
+        rb.AddForce(moveDirection.normalized * moveSpeed * 8f * airMultiplier, ForceMode.Force); // Adjust this value
+    }
+
+    // turn off gravity when on slope
+    rb.useGravity = !OnSlope();
+}
+
+
+
+
+
 
     private void SpeedControl()
     {
@@ -287,7 +304,8 @@ public class PlayerMovement : MonoBehaviour
     // move direction parallel to slope
     private Vector3 GetSlopeMoveDirection()
     {
-        return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
+        Vector3 inputDir = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        return Vector3.ProjectOnPlane(inputDir, slopeHit.normal).normalized;
     }
 
 
@@ -469,9 +487,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
-
+    
     private IEnumerator Delay(AudioClip sound, float delay)
     {
+        audio_Source.volume = 0.5f;
         // Play the footstep sound
         audio_Source.PlayOneShot(sound);
         // Wait for the adjustable delay before allowing the next footstep sound

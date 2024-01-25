@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class Door : MonoBehaviour
 {
 
+
     bool trig, open;//trig-проверка входа выхода в триггер(игрок должен быть с тегом Player) open-закрыть и открыть дверь
     public float smooth = 2.0f;//скорость вращения
     public float DoorOpenAngle = 90.0f;//угол вращения 
@@ -11,6 +12,8 @@ public class Door : MonoBehaviour
     private Vector3 openRot;
     public Text txt;//text 
     // Start is called before the first frame update
+    public AudioSource doorOpenSound; // Sound when the door opens
+    public AudioSource doorCloseSound; // Sound when the door closes
     void Start()
     {
         defaulRot = transform.eulerAngles;
@@ -31,6 +34,18 @@ public class Door : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && trig)
         {
             open = !open;
+            if(open)
+            {
+                //doorOpenSound.Play();
+                Debug.Log("Play Door Open Sound");
+            }
+                
+            else
+            {
+                //doorCloseSound.Play();
+                Debug.Log("Play Door Close Sound");
+            }
+                
         }
         if (trig)
         {
