@@ -5,13 +5,15 @@ using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
+    
  
     [Header("Movement")]
     private float moveSpeed;
     public float walkSpeed;
     public float sprintSpeed;
-
     public float groundDrag;
+    public float speedGoingDownSlope = 10f;
+    public float speedGoingUpSlope = 10f;
 
     [Header("Jumping")]
     public float jumpForce;
@@ -63,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb;
 
     // current movement state
-    public MovementState state;
+    public MovementState state; 
     public enum MovementState
     {
         walking, sprinting, air, crouching, idle
@@ -201,7 +203,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void MovePlayer()
-{
+    {
     // calculate movement direction
     moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
@@ -209,6 +211,7 @@ public class PlayerMovement : MonoBehaviour
     if (OnSlope() && !exitingSlope)
     {
         Vector3 slopeMoveDirection = GetSlopeMoveDirection();
+        Debug.Log("On SLope");
 
         // Apply the adjusted force
         rb.AddForce(slopeMoveDirection * moveSpeed * 55f, ForceMode.Force);
@@ -216,12 +219,14 @@ public class PlayerMovement : MonoBehaviour
         // Apply additional downward force when moving up the slope
         if (rb.velocity.y > 0)
         {
-            rb.AddForce(Vector3.down * 125f, ForceMode.Force);
+            Debug.Log("Going up a SLope");
+            rb.AddForce(Vector3.down * speedGoingUpSlope, ForceMode.Force);
         }
         // Slow down the descent when moving down the slope
         else if (rb.velocity.y < 0)
         {
-            rb.AddForce(Vector3.down * 10f, ForceMode.Force); // Adjust this value
+            Debug.Log("Going down a SLope");
+            rb.AddForce(Vector3.down * speedGoingDownSlope, ForceMode.Force); // Adjust this value
         }
     }
     // on ground
@@ -236,9 +241,10 @@ public class PlayerMovement : MonoBehaviour
         // Directly apply force in the moveDirection to move straight
         rb.AddForce(moveDirection.normalized * moveSpeed * 8f * airMultiplier, ForceMode.Force); // Adjust this value
     }
+    rb.useGravity = !OnSlope();
 
     // turn off gravity when on slope
-    rb.useGravity = !OnSlope();
+    
 }
 
 
@@ -394,13 +400,13 @@ public class PlayerMovement : MonoBehaviour
           
             else if(groundedObject)// Player is on a 3D object or not
             {
-                Debug.Log("On Object");
+                //Debug.Log("On Object");
                 RaycastHit hit;
                 if (Physics.Raycast(transform.position, Vector3.down, out hit, playerHeight * 0.5f + 0.2f, ObjectGround))
                 {
                     current  = hit.collider.gameObject.tag;
 
-                    Debug.Log("On 3D Object: " + current);
+                    //Debug.Log("On 3D Object: " + current);
 
                     switch (state) // decide whether to play the walking, sprininting, crouch walking sound 
                     {
