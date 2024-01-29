@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class playerHealthBar : MonoBehaviour
 {
@@ -9,6 +10,14 @@ public class playerHealthBar : MonoBehaviour
     public float maxHealth = 1.0f;
 
     private float difference;
+
+    private void Start()
+    {
+        currentHealth = maxHealth; // set Player Health 
+        playerHealthBarSprite.fillAmount = currentHealth / maxHealth; // set sprite Health 
+        //Debug.Log("Initial fillAmount set to: " + playerHealthBarSprite.fillAmount);
+    }
+
 
     // We will reduce player health in this location
     public void fallDamage(float before, float after)
@@ -20,13 +29,17 @@ public class playerHealthBar : MonoBehaviour
         difference = before - after;
         // Debug.Log("Fell Height of: " + difference);
 
-        if (difference >= 4 && difference <= 6)
+        if (difference >= 4 && difference <= 6) // Small Amount of Damage
         {
             StartCoroutine(ApplyDamageOverTime(10, 0.05f, 1f));
         }
-        else if (difference >= 7 && difference <= 10)
+        else if (difference >= 7 && difference <= 10) // Medium Amount of Damage
         {
             StartCoroutine(ApplyDamageOverTime(20, 0.05f, 1f));
+        }
+        else if(difference >= 11 && difference <= 15) // Large Amount of Damage
+        {
+            StartCoroutine(ApplyDamageOverTime(30, 0.05f, 1f));
         }
     }
 
@@ -37,17 +50,19 @@ public class playerHealthBar : MonoBehaviour
             currentHealth -= decreaseAmountPerIteration;
             currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
             playerHealthBarSprite.fillAmount = currentHealth / maxHealth;
-
+            gameOverCheck();
             yield return new WaitForSeconds(timePerIteration);
         }
-
         //Debug.Log("Updated fillAmount to: " + playerHealthBarSprite.fillAmount);
     }
 
-    private void Start()
+    private void gameOverCheck()
     {
-        currentHealth = maxHealth;
-        playerHealthBarSprite.fillAmount = currentHealth / maxHealth;
-        //Debug.Log("Initial fillAmount set to: " + playerHealthBarSprite.fillAmount);
+        if(currentHealth == 0)
+        {
+                // load the game over screen
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
+
 }

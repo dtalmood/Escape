@@ -211,7 +211,6 @@ public class PlayerMovement : MonoBehaviour
     if (OnSlope() && !exitingSlope)
     {
         Vector3 slopeMoveDirection = GetSlopeMoveDirection();
-        Debug.Log("On SLope");
 
         // Apply the adjusted force
         rb.AddForce(slopeMoveDirection * moveSpeed * 55f, ForceMode.Force);
@@ -219,13 +218,13 @@ public class PlayerMovement : MonoBehaviour
         // Apply additional downward force when moving up the slope
         if (rb.velocity.y > 0)
         {
-            Debug.Log("Going up a SLope");
+            //Debug.Log("Going up a SLope");
             rb.AddForce(Vector3.down * speedGoingUpSlope, ForceMode.Force);
         }
         // Slow down the descent when moving down the slope
         else if (rb.velocity.y < 0)
         {
-            Debug.Log("Going down a SLope");
+            //Debug.Log("Going down a SLope");
             rb.AddForce(Vector3.down * speedGoingDownSlope, ForceMode.Force); // Adjust this value
         }
     }
@@ -326,7 +325,7 @@ public class PlayerMovement : MonoBehaviour
         {
             grabAfterlHeight();
             grabInitial = false;
-            playerHealth.fallDamage(jumpInitialHeight,jumpAfterHeight);// go to playerHealthBarScript
+            playerHealth.fallDamage(jumpInitialHeight,jumpAfterHeight);// we have inital Height and After Height and we call playerHEalthBarScript
         }
 
     }
@@ -359,6 +358,7 @@ public class PlayerMovement : MonoBehaviour
     private float sprintSoundDelay = 0.6f; // how much to delay sound between footsteps when sprinting
     private float crouchSoundDelay = 0.9f; // when crouch walking
     private float landSoundDelay = 0.5f;
+    RaycastHit hit;
 
     private void playSound()
     {
@@ -366,13 +366,19 @@ public class PlayerMovement : MonoBehaviour
 
         if (state != MovementState.air) // handle when the player is moving
         {
-            current = terrainDetector.getLayerName(); // grab the name of the terrain I am currently walking on
-
+            current = terrainDetector.getLayerName(); // grab the name of the terrain I am currently walking on   
+            
             // This if statemnet handles when the player lands 
             if(!jump && (groundedTerrain || groundedObject)) // 
             {
                 Debug.Log("Enter");
                 jump = true;
+                if(groundedObject)
+                {
+                    Physics.Raycast(transform.position, Vector3.down, out hit, playerHeight * 0.5f + 0.2f, ObjectGround);
+                    current  = hit.collider.gameObject.tag;
+                }
+                     
                 playLandSound(current);
             }
             
@@ -401,7 +407,6 @@ public class PlayerMovement : MonoBehaviour
             else if(groundedObject)// Player is on a 3D object or not
             {
                 //Debug.Log("On Object");
-                RaycastHit hit;
                 if (Physics.Raycast(transform.position, Vector3.down, out hit, playerHeight * 0.5f + 0.2f, ObjectGround))
                 {
                     current  = hit.collider.gameObject.tag;
@@ -429,7 +434,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if(state == MovementState.air)
         {
-            //Debug.Log("In Air State");
+            Debug.Log("Current terrain/object: " + current);
             //current = terrainDetector.getLayerName();
             playJumpSound(current);
         }
@@ -522,6 +527,18 @@ public class PlayerMovement : MonoBehaviour
                 audio_Source.PlayOneShot(sound);
                 
             }
+            else if(current == "Wood")
+            {
+                Debug.Log("Play Wood Jump");
+                sound = woodFootSteps.jumpSound;
+                audio_Source.PlayOneShot(sound);
+            }
+            else if(current == "Tile")
+            {
+                Debug.Log("Play Tile Jump");
+                sound = tileFootSteps.jumpSound;
+                audio_Source.PlayOneShot(sound);
+            }
             jump = false;
         }
        
@@ -541,6 +558,18 @@ public class PlayerMovement : MonoBehaviour
              //Debug.Log("Play Pebble Land");
              sound = gravelFootSteps.landSound;
              StartCoroutine(Delay(sound, landSoundDelay));
+        }
+       else if(current == "Wood")
+        {
+            Debug.Log("Play Wood Land");
+            sound = woodFootSteps.landSound;
+            audio_Source.PlayOneShot(sound);
+        }
+        else if(current == "Tile")
+        {
+            Debug.Log("Play Tile Land");
+            sound = tileFootSteps.landSound;
+            audio_Source.PlayOneShot(sound);
         }
             
     }
