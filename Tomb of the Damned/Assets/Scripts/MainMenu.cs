@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
 {
     
 
-    // this is how we will change to our main game 
+    // this is how we will change to our main game from the main menu 
     public void playGame()
     {
         // this will load the next level in the queue 
@@ -32,6 +32,12 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("Quit");
         //Application.Quit();
+    }
+
+    // this is where we load our main game from the gameOver Screen
+    public void playGameAgain()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
 }
