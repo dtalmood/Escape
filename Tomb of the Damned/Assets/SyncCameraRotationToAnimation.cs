@@ -8,6 +8,7 @@ public class SyncCameraRotationToAnimation : MonoBehaviour
     public Transform playerCamera; // Drag and drop your player camera here
     private Animator animator; // Drag and drop your animation controller here
     
+    public PlayerHealthBar playerHealth;
 
     // Store the initial rotation of the camera
     private Quaternion initialCameraRotation;
@@ -20,6 +21,15 @@ public class SyncCameraRotationToAnimation : MonoBehaviour
             return;
         }
 
+        // By defualt unity Events are Null
+        // we want the event of Playe Death to happen what? When the Health reaches 0 
+        if(playerHealth.onTakeDamage == null)
+        {
+            // multiple scripts are doing this potentially, so anyone that runs this should make sure its not assgined 
+            playerHealth.onTakeDamage = new FloatEvent();
+        }
+        // 
+        playerHealth.onTakeDamage.AddListener(TakeDamageCallback);
     
         // Capture the initial rotation of the camera
         animator = GetComponent<Animator>();
@@ -37,21 +47,27 @@ public class SyncCameraRotationToAnimation : MonoBehaviour
         initialCameraRotation = playerCamera.rotation;
     }
 
-    void Update()
+    public void TakeDamageCallback(float health)
     {
-        
-
-        // Check if the "=" key is pressed
-        if (Input.GetKeyDown(KeyCode.Equals))
+        // player is not dead 
+        if(health > 0)
         {
-            animator.SetBool("Dead", true);
-            if (playerCamera != null)
-            {
+            return;
+        }
+        // Player has Died 
+        // In Animation Called Death We have a boolean Called Dead 
+        // We set Boolean Dead = True 
+        // This will call even Death inside of the Anmation Controller 
+        animator.SetBool("Dead", true);
+        if (playerCamera != null)
+        {
             // Get the rotation of the camera in a way that handles the 0-360 range
+        
             float cameraRotationX = Mathf.DeltaAngle(0f, playerCamera.rotation.eulerAngles.x);
             float cameraRotationY = Mathf.DeltaAngle(0f, playerCamera.rotation.eulerAngles.y);
 
             // Print the corrected rotation values to the console
+            
             Debug.Log("Camera Rotation X: " + cameraRotationX);
             //Debug.Log("Camera Rotation Y: " + cameraRotationY);
 
@@ -66,10 +82,5 @@ public class SyncCameraRotationToAnimation : MonoBehaviour
                 Debug.LogError("Animation controller reference is not set in the inspector!");
             }
         }
-        else
-        {
-            Debug.LogError("Player camera reference is not set in the inspector!");
-        }
     }
-}
 }

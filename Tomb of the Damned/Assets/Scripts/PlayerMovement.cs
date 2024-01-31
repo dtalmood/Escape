@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     bool readyToJump;
 
     // THIS IS HOW WE CONNECT PLAYER HEALTH SCRIPT WITH PLAYER MOVEMENT
-    public playerHealthBar playerHealth;
+    public PlayerHealthBar playerHealth;
     bool grabInitial = false;
     float jumpInitialHeight;
     float jumpAfterHeight;
