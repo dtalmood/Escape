@@ -2,12 +2,17 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
+
+public class FloatEvent : UnityEvent<float>{}
 
 public class playerHealthBar : MonoBehaviour
 {
     [SerializeField] private Image playerHealthBarSprite;
     public float currentHealth;
     public float maxHealth = 1.0f;
+    
+    public FloatEvent onTakeDamage;
 
     private float difference;
 
@@ -48,6 +53,7 @@ public class playerHealthBar : MonoBehaviour
         for (int i = 0; i < iterations; i++)
         {
             currentHealth -= decreaseAmountPerIteration;
+            onTakeDamage?.Invoke(currentHealth); // 
             currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
             playerHealthBarSprite.fillAmount = currentHealth / maxHealth;
             gameOverCheck();
