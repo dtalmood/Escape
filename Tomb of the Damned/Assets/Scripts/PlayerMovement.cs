@@ -387,7 +387,6 @@ public class PlayerMovement : MonoBehaviour
             // This if statemnet handles when the player lands 
             if(!jump && (groundedTerrain || groundedObject)) // 
             {
-                Debug.Log("Enter");
                 jump = true;
                 if(groundedObject)
                 {
@@ -450,7 +449,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if(state == MovementState.air)
         {
-            Debug.Log("Current terrain/object: " + current);
+            //Debug.Log("Current terrain/object: " + current);
             //current = terrainDetector.getLayerName();
             playJumpSound(current);
         }
@@ -547,13 +546,13 @@ public class PlayerMovement : MonoBehaviour
             }
             else if(current == "Wood")
             {
-                Debug.Log("Play Wood Jump");
+                //Debug.Log("Play Wood Jump");
                 sound = woodFootSteps.jumpSound;
                 audio_Source.PlayOneShot(sound);
             }
             else if(current == "Tile")
             {
-                Debug.Log("Play Tile Jump");
+                //Debug.Log("Play Tile Jump");
                 sound = tileFootSteps.jumpSound;
                 audio_Source.PlayOneShot(sound);
             }
@@ -579,13 +578,13 @@ public class PlayerMovement : MonoBehaviour
         }
        else if(current == "Wood")
         {
-            Debug.Log("Play Wood Land");
+            //Debug.Log("Play Wood Land");
             sound = woodFootSteps.landSound;
             audio_Source.PlayOneShot(sound);
         }
         else if(current == "Tile")
         {
-            Debug.Log("Play Tile Land");
+            //Debug.Log("Play Tile Land");
             sound = tileFootSteps.landSound;
             audio_Source.PlayOneShot(sound);
         }
