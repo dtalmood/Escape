@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
 public class PlayerMovement : MonoBehaviour
 {
     
@@ -64,6 +65,8 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody rb;
 
+    public bool dead = false;
+
     // current movement state
     public MovementState state; 
     public enum MovementState
@@ -81,24 +84,25 @@ public class PlayerMovement : MonoBehaviour
         audio_Source = transform.Find("Audio Source").GetComponent<AudioSource>();// this will search unity for a component that has specified data inside of it  
         
 
-        // play a jump sound 
-        // sound = sandFootSteps.jumpSound; // It take the specific audio clip from the collection and ties it to the audioclip in the player movement script  
-        // audio_Source.PlayOneShot(sound);
-
-        // play land sound 
-        // sound = sandFootSteps.landSound; // It take the specific audio clip from the collection and ties it to the audioclip in the player movement script  
-        // audio_Source.PlayOneShot(sound);
-
-        // play  step sound file 1  
-        // sound = sandFootSteps.footStepSounds[0];
-        // audio_Source.PlayOneShot(sound);
+        if(playerHealth.onTakeDamage == null)
+        {
+            playerHealth.onTakeDamage = new FloatEvent();
+        }
+        // when onTakeDamge is caleld it fidns this Listener! 
+        // then the listener tells unity HEY RUN the function inside of the paramter 
+        playerHealth.onTakeDamage.AddListener(AmIDead);
         
-        // play step sound file 2 
-        // sound = sandFootSteps.footStepSounds[3];
-        // audio_Source.PlayOneShot(sound);
-
-        // Assign the reference to PlayerHealthBar script
         
+    }
+
+    public void AmIDead(float health)
+    {
+        if(health <= 0)
+        {
+            dead = true;
+            moveSpeed = 0;
+            rb.velocity = Vector3.zero;
+        }
     }
     
 
@@ -112,7 +116,8 @@ public class PlayerMovement : MonoBehaviour
         //Debug.Log("Terrain: "+ groundedTerrain);
 
         MyInput();
-        SpeedControl();
+        if(!dead)
+            SpeedControl();
         StateHandler();
         fallDamangeCheck();
         playSound();
@@ -132,6 +137,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void MyInput()
     {
+
+        if(dead)
+            return;
+
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
@@ -445,6 +454,8 @@ public class PlayerMovement : MonoBehaviour
     int randomNumber;
     public footStepCollection grassFootSteps; // this object holds the sand sounds 
     public footStepCollection gravelFootSteps; // this object holds gravel sounds 
+    public footStepCollection woodFootSteps; // this object holds the sand sounds 
+    public footStepCollection tileFootSteps; // this object holds gravel sounds 
     bool play = true;
 
     // this handles playing sound when walking on a terrain 
@@ -574,9 +585,6 @@ public class PlayerMovement : MonoBehaviour
             
     }
 
-
-    public footStepCollection woodFootSteps; // this object holds the sand sounds 
-    public footStepCollection tileFootSteps; // this object holds gravel sounds 
     
 
 

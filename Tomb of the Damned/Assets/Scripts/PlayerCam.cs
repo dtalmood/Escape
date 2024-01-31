@@ -28,10 +28,10 @@ public class PlayerCam : MonoBehaviour
             playerHealth.onTakeDamage = new FloatEvent();
         }
         // whenever the evnnt invoke is called on the event, take damage call back gets called 
-        playerHealth.onTakeDamage.AddListener(TakeDamageCallback);
+        playerHealth.onTakeDamage.AddListener(amIDead);
     }
 
-    public void TakeDamageCallback(float health)
+    public void amIDead(float health)
     {
         if(health <= 0)
         {

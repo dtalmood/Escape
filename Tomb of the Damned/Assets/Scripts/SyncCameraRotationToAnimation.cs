@@ -59,28 +59,6 @@ public class SyncCameraRotationToAnimation : MonoBehaviour
         // We set Boolean Dead = True 
         // This will call even Death inside of the Anmation Controller 
         animator.SetBool("Dead", true);
-        if (playerCamera != null)
-        {
-            // Get the rotation of the camera in a way that handles the 0-360 range
         
-            float cameraRotationX = Mathf.DeltaAngle(0f, playerCamera.rotation.eulerAngles.x);
-            float cameraRotationY = Mathf.DeltaAngle(0f, playerCamera.rotation.eulerAngles.y);
-
-            // Print the corrected rotation values to the console
-            
-            Debug.Log("Camera Rotation X: " + cameraRotationX);
-            //Debug.Log("Camera Rotation Y: " + cameraRotationY);
-
-            // Pass the rotation values to the animation controller
-            if (animator != null)
-            {
-                animator.SetFloat("RotationX", cameraRotationX);
-                animator.SetFloat("RotationY", cameraRotationY);
-            }
-            else
-            {
-                Debug.LogError("Animation controller reference is not set in the inspector!");
-            }
-        }
     }
 }

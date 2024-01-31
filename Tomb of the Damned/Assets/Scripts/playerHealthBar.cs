@@ -56,7 +56,7 @@ public class PlayerHealthBar : MonoBehaviour
         {
             currentHealth -= decreaseAmountPerIteration;
             // With Unity events you call Invoke and invoke calls all fucntions that have been added using addListener 
-            // onTakeDamage
+            // onTakeDamage Gets Called Then It looks at Listeners in Others Scripts 
             onTakeDamage?.Invoke(currentHealth); 
             currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
             playerHealthBarSprite.fillAmount = currentHealth / maxHealth;
