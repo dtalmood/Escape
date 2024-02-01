@@ -28223,6 +28223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 650026346}
+  playerHealth: {fileID: 678364025}
 --- !u!4 &650941609 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3994136315770855579, guid: 77c9d7f15e8632a4baa929aa6645870f, type: 3}
@@ -29464,6 +29465,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e2074bae496c1040879ac3eb4ed5a8f, type: 3}
+--- !u!114 &678364025 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2126042265741706675, guid: b9268a94d3a79a94889eb702f989418a, type: 3}
+  m_PrefabInstance: {fileID: 7967851840067082418}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ac1e1d72c61f04ca282220dfa83f68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &678991237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94697,6 +94709,10 @@ PrefabInstance:
       propertyPath: speedGoingDownSlope
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1504987337015729239, guid: b9268a94d3a79a94889eb702f989418a, type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 678364025}
     - target: {fileID: 4590026122158432956, guid: b9268a94d3a79a94889eb702f989418a, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.80553

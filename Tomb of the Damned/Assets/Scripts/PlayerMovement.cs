@@ -88,9 +88,14 @@ public class PlayerMovement : MonoBehaviour
         {
             playerHealth.onTakeDamage = new FloatEvent();
         }
-        // when onTakeDamge is caleld it fidns this Listener! 
-        // then the listener tells unity HEY RUN the function inside of the paramter 
-        playerHealth.onTakeDamage.AddListener(AmIDead);
+        /*
+         We have the invoke inside of PlayerHeathBar Script 
+         On Line 61:  onTakeDamage?.Invoke(currentHealth);" 
+         When Line 61 is called it looks for on Take Damage Listeneer 
+         The Compiler then finds this Listener and Says HEY LOOK A LISTNER 
+         The Listener Then Tell Unity "Hey Run the Function AmiDead"
+        */
+        playerHealth.onTakeDamage.AddListener(AmIDead); 
         
         
     }
@@ -108,6 +113,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        // if this is true this return statment ensures the palyer will stop
+        if(dead)
+            return;
         // ground check
         groundedObject = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.1f + 0.05f, ObjectGround);
         //Debug.Log("Ground: "+ groundedObject);
@@ -116,8 +124,7 @@ public class PlayerMovement : MonoBehaviour
         //Debug.Log("Terrain: "+ groundedTerrain);
 
         MyInput();
-        if(!dead)
-            SpeedControl();
+        SpeedControl();
         StateHandler();
         fallDamangeCheck();
         playSound();
@@ -380,7 +387,6 @@ public class PlayerMovement : MonoBehaviour
             // This if statemnet handles when the player lands 
             if(!jump && (groundedTerrain || groundedObject)) // 
             {
-                Debug.Log("Enter");
                 jump = true;
                 if(groundedObject)
                 {
@@ -443,7 +449,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if(state == MovementState.air)
         {
-            Debug.Log("Current terrain/object: " + current);
+            //Debug.Log("Current terrain/object: " + current);
             //current = terrainDetector.getLayerName();
             playJumpSound(current);
         }
@@ -540,13 +546,13 @@ public class PlayerMovement : MonoBehaviour
             }
             else if(current == "Wood")
             {
-                Debug.Log("Play Wood Jump");
+                //Debug.Log("Play Wood Jump");
                 sound = woodFootSteps.jumpSound;
                 audio_Source.PlayOneShot(sound);
             }
             else if(current == "Tile")
             {
-                Debug.Log("Play Tile Jump");
+                //Debug.Log("Play Tile Jump");
                 sound = tileFootSteps.jumpSound;
                 audio_Source.PlayOneShot(sound);
             }
@@ -572,13 +578,13 @@ public class PlayerMovement : MonoBehaviour
         }
        else if(current == "Wood")
         {
-            Debug.Log("Play Wood Land");
+            //Debug.Log("Play Wood Land");
             sound = woodFootSteps.landSound;
             audio_Source.PlayOneShot(sound);
         }
         else if(current == "Tile")
         {
-            Debug.Log("Play Tile Land");
+            //Debug.Log("Play Tile Land");
             sound = tileFootSteps.landSound;
             audio_Source.PlayOneShot(sound);
         }

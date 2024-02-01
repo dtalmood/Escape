@@ -55,6 +55,7 @@ public class PlayerHealthBar : MonoBehaviour
         for (int i = 0; i < iterations; i++)
         {
             currentHealth -= decreaseAmountPerIteration;
+            // IMPORTANT NOTE: 
             // With Unity events you call Invoke and invoke calls all fucntions that have been added using addListener 
             // onTakeDamage Gets Called Then It looks at Listeners in Others Scripts 
             onTakeDamage?.Invoke(currentHealth); 
@@ -63,7 +64,7 @@ public class PlayerHealthBar : MonoBehaviour
             bool dead = gameOverCheck();
             if(dead)
             {
-                yield return new WaitForSeconds(3f);
+                yield return new WaitForSeconds(4f);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
             yield return new WaitForSeconds(timePerIteration);
@@ -79,5 +80,4 @@ public class PlayerHealthBar : MonoBehaviour
         }
         return false;
     }
-
 }
