@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Events; // This allows us to Call Diferent Events 
 
 // we created a flaot event, it gets called whenever the palyers health changes 
-public class FloatEvent : UnityEvent<float>{} 
+
+[System.Serializable] public class FloatEvent : UnityEvent<float>{} 
 
 public class PlayerHealthBar : MonoBehaviour
 {
