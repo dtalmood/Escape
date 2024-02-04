@@ -18,6 +18,7 @@ public class PlayerCam : MonoBehaviour
 
     public PlayerHealthBar playerHealth;
     public bool dead = false;
+    public bool fade = false;
 
     private void Start()
     {
@@ -36,6 +37,7 @@ public class PlayerCam : MonoBehaviour
         if(health <= 0)
         {
             dead = true;
+            fade = true;
         }
     }
 
