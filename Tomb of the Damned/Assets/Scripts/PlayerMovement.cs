@@ -566,7 +566,7 @@ public class PlayerMovement : MonoBehaviour
         if (current == "Terrain_Layer4_Grass_Plants")
         {
             //Debug.Log("Play Grass Land");
-            sound = grassFootSteps.landSound;
+            sound = grassFootSteps.landSound; // assign what sound to play here 
             StartCoroutine(Delay(sound, landSoundDelay));
         }
 
@@ -588,11 +588,7 @@ public class PlayerMovement : MonoBehaviour
             sound = tileFootSteps.landSound;
             audio_Source.PlayOneShot(sound);
         }
-            
     }
 
     
-
-
-
 }

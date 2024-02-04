@@ -17,7 +17,7 @@ public class SyncCameraRotationToAnimation : MonoBehaviour
     {
         if (playerCamera == null)
         {
-            Debug.LogError("Player camera reference is not set in the inspector!");
+            //Debug.LogError("Player camera reference is not set in the inspector!");
             return;
         }
 
@@ -37,7 +37,7 @@ public class SyncCameraRotationToAnimation : MonoBehaviour
         // Debug logs to check if animator is assigned correctly
         if (animator != null)
         {
-            Debug.Log("Animator component found!");
+            //Debug.Log("Animator component found!");
         }
         else
         {
