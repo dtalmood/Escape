@@ -59,6 +59,6 @@ public class SyncCameraRotationToAnimation : MonoBehaviour
         // We set Boolean Dead = True 
         // This will call even Death inside of the Anmation Controller 
         animator.SetBool("Dead", true);
-        
+        animator.SetBool("Fade", true);
     }
 }
