@@ -18,46 +18,45 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-
     void Start()
     {
-
-
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         Debug.Log("Entered Scene " + currentSceneIndex);
-        if(currentSceneIndex == 1)
+
+        // Check if the current scene is the Main Game scene
+        if (currentSceneIndex == 1)
         {
             Debug.Log("Cursor Not Visible");
             Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked; // Lock the cursor in the center of the screen
         }
         else
         {
             Debug.Log("Cursor Visible");
             Cursor.visible = true;
-        }   
-             
-    }    
+            Cursor.lockState = CursorLockMode.None; // Allow the cursor to move freely
+        }
+    }
 
-    // this is how we will change to our main game from the main menu 
     public void playGame()
     {
-        // this will load the next level in the queue 
-        // when game starts the cursor should be invisible
-        Cursor.visible = false;
+        // Load the next scene in the build settings
+        Cursor.visible = false; // Make cursor invisible when transitioning to the next scene
+        Cursor.lockState = CursorLockMode.Locked; // Lock the cursor in the center of the screen
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void quitGame()
     {
         Debug.Log("Quit");
-        //Application.Quit();
+        Application.Quit();
     }
 
-    // this is where we load our main game from the gameOver Screen
     public void playGameAgain()
     {
-
+        // Load the previous scene in the build settings
+        Cursor.visible = true; // Make cursor visible when transitioning back to the previous scene
+        Cursor.lockState = CursorLockMode.None; // Allow the cursor to move freely
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
-
 }
