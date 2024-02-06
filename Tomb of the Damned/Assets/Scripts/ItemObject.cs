@@ -6,7 +6,9 @@ public enum ItemType
 {
     potions,
     equipment,
-    Default
+    Default,
+    carPart,
+    testing
 }
 
 public abstract class ItemObject : ScriptableObject
