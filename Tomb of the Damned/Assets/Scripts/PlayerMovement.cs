@@ -6,8 +6,13 @@ using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
-    
- 
+    public Animator playerAnimation;
+
+    public void Awake()
+    {
+        playerAnimation = GetComponent<Animator>();
+    }
+
     [Header("Movement")]
     private float moveSpeed;
     public float walkSpeed;
@@ -178,7 +183,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-   private void StateHandler()
+   public void StateHandler()
     {
         // player is crouching
         if (Input.GetKey(crouchKey) && (Mathf.Abs(horizontalInput) > 0 || Mathf.Abs(verticalInput) > 0))
@@ -198,8 +203,12 @@ public class PlayerMovement : MonoBehaviour
         // player is walking
         else if ((groundedTerrain || groundedObject) && (Mathf.Abs(horizontalInput) > 0 || Mathf.Abs(verticalInput) > 0))
         {
+            //playerAnimation.SetBool("walking", true);
             state = MovementState.walking;
             moveSpeed = walkSpeed;
+            //playerAnimation.SetBool("idle", false);
+            
+
             //Debug.Log("In Walking State");
         }
 
@@ -214,6 +223,9 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             state = MovementState.idle;
+            // playerAnimation.SetBool("walking", false);
+            // playerAnimation.SetBool("idle", true);
+            playerAnimation.SetBool("walking", true);
             //Debug.Log("In idle State");
         }
     }

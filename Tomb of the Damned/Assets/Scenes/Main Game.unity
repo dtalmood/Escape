@@ -44970,22 +44970,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3067269380427389626, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
-      propertyPath: m_Radius
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3067269380427389626, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3067269380427389626, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4753388160255227821, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
-      propertyPath: item
-      value: 
-      objectReference: {fileID: 11400000, guid: 7a73703d81fb5dc4580a39cb8d986103, type: 2}
     - target: {fileID: 1664989765304232, guid: 75399c915872efb43ac59982ec88d12a, type: 3}
       propertyPath: m_Name
       value: carPart3
@@ -45046,6 +45030,22 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3067269380427389626, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
+      propertyPath: m_Radius
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067269380427389626, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067269380427389626, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4753388160255227821, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a73703d81fb5dc4580a39cb8d986103, type: 2}
     m_RemovedComponents:
     - {fileID: 65681847775413108, guid: 75399c915872efb43ac59982ec88d12a, type: 3}
     m_RemovedGameObjects: []
@@ -65393,26 +65393,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3067269380427389626, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
-      propertyPath: m_Radius
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3067269380427389626, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3067269380427389626, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4663426549630996539, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4753388160255227821, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
-      propertyPath: item
-      value: 
-      objectReference: {fileID: 11400000, guid: 7a73703d81fb5dc4580a39cb8d986103, type: 2}
     - target: {fileID: 1509186335040420, guid: e6d09f7bafade7b4c8b283d037f37cf6, type: 3}
       propertyPath: m_Name
       value: carPart4
@@ -65469,6 +65449,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3067269380427389626, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
+      propertyPath: m_Radius
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067269380427389626, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067269380427389626, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663426549630996539, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4753388160255227821, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a73703d81fb5dc4580a39cb8d986103, type: 2}
     m_RemovedComponents:
     - {fileID: 65234443062347388, guid: e6d09f7bafade7b4c8b283d037f37cf6, type: 3}
     m_RemovedGameObjects: []
@@ -84024,26 +84024,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3067269380427389626, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
-      propertyPath: m_Radius
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3067269380427389626, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3067269380427389626, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4663426549630996539, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4753388160255227821, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
-      propertyPath: item
-      value: 
-      objectReference: {fileID: 11400000, guid: 7a73703d81fb5dc4580a39cb8d986103, type: 2}
     - target: {fileID: 1414328216076536, guid: 0efd7d60d3f9393439fd3ad9d081d35c, type: 3}
       propertyPath: m_Name
       value: carPart1
@@ -84100,6 +84080,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3067269380427389626, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
+      propertyPath: m_Radius
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067269380427389626, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067269380427389626, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663426549630996539, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4753388160255227821, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a73703d81fb5dc4580a39cb8d986103, type: 2}
     m_RemovedComponents:
     - {fileID: 65843226121550950, guid: 0efd7d60d3f9393439fd3ad9d081d35c, type: 3}
     m_RemovedGameObjects: []
@@ -96997,6 +96997,7 @@ GameObject:
   - component: {fileID: 9201114797464568149}
   - component: {fileID: 7468949793758166511}
   - component: {fileID: 8297575440822919532}
+  - component: {fileID: 9201114797464568150}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -99702,9 +99703,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3641607488354259881}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 9000000, guid: b8a7488d12adc39498433d60811eab1a, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b9bb8a4a2e149d04095cf0f706df87d8, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -100289,6 +100290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a433b2d3da82868469dcc24cb2e5e94e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerAnimation: {fileID: 0}
   walkSpeed: 2.5
   sprintSpeed: 3
   groundDrag: 5
@@ -100488,6 +100490,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terrain: {fileID: 2078313969}
+--- !u!95 &9201114797464568150
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065166438562987073}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b9bb8a4a2e149d04095cf0f706df87d8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
