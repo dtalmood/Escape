@@ -5,12 +5,12 @@ using TMPro;
 using UnityEngine.UIElements;
 using JetBrains.Annotations;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class DisplayInventory : MonoBehaviour
 {
     public List<InventoryUISlot> inventorySlots;
     public InventoryObject playerInventory;
-
 
 
     public void Start()
@@ -43,5 +43,17 @@ public class DisplayInventory : MonoBehaviour
             inventorySlots[i].ClearItem();
         }
     }
+
+    // function used for creating new events
+    /*public void AddEvent(GameObject obj, EventTriggerType type, UnityAction<BaseEventData> action)
+    {
+        // get event trigger from game object
+        EventTrigger trigger = obj.GetComponent<EventTrigger>();
+        var eventTrigger = new EventTrigger.Entry();
+        // set event type
+        eventTrigger.eventID = type;
+        eventTrigger.callback.AddListener(action);
+        trigger.triggers.Add(eventTrigger);
+    }*/
 
 }

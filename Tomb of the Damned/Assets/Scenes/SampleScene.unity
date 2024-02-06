@@ -1033,10 +1033,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 121902609814227931, guid: b9268a94d3a79a94889eb702f989418a, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: b8a7488d12adc39498433d60811eab1a, type: 3}
     - target: {fileID: 1234991392562043367, guid: b9268a94d3a79a94889eb702f989418a, type: 3}
       propertyPath: terrain
       value: 
       objectReference: {fileID: 2078313969}
+    - target: {fileID: 1292764523958904269, guid: b9268a94d3a79a94889eb702f989418a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4590026122158432956, guid: b9268a94d3a79a94889eb702f989418a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 749.5
