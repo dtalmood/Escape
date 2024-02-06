@@ -66,7 +66,7 @@ public class PlayerHealthBar : MonoBehaviour
             if(dead)
             {
                 // adjust this value inside of waitfor seconds for howl ong to wait until the gameover screne loads 
-                yield return new WaitForSeconds(6f);
+                yield return new WaitForSeconds(5f);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
             yield return new WaitForSeconds(timePerIteration);
