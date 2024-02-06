@@ -18,13 +18,32 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    
+
+    void Start()
+    {
+
+
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        Debug.Log("Entered Scene " + currentSceneIndex);
+        if(currentSceneIndex == 1)
+        {
+            Debug.Log("Cursor Not Visible");
+            Cursor.visible = false;
+        }
+        else
+        {
+            Debug.Log("Cursor Visible");
+            Cursor.visible = true;
+        }   
+             
+    }    
 
     // this is how we will change to our main game from the main menu 
     public void playGame()
     {
         // this will load the next level in the queue 
-        
+        // when game starts the cursor should be invisible
+        Cursor.visible = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -37,6 +56,7 @@ public class MainMenu : MonoBehaviour
     // this is where we load our main game from the gameOver Screen
     public void playGameAgain()
     {
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
