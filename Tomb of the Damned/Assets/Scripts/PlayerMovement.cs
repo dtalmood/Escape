@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
+    private bool jumpKeyEnabled = true;
     bool readyToJump;
 
     // THIS IS HOW WE CONNECT PLAYER HEALTH SCRIPT WITH PLAYER MOVEMENT
@@ -122,11 +123,11 @@ public class PlayerMovement : MonoBehaviour
             return;
         // ground check
         groundedObject = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.2f + 0.1f, ObjectGround);
-        Debug.Log("Ground: "+ groundedObject);
+        //Debug.Log("Ground: "+ groundedObject);
 
         groundedTerrain = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.1f + 0.1f, TerrainGround);
         groundedTerrain = !groundedObject && groundedTerrain; 
-        Debug.Log("Terrain: "+ groundedTerrain);
+        //Debug.Log("Terrain: "+ groundedTerrain);
 
         MyInput();
         SpeedControl();
@@ -160,9 +161,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(jumpKey) && readyToJump && ( groundedTerrain || groundedObject || OnSlope()))
         {
             readyToJump = false;
-
             Jump();
-
             Invoke(nameof(ResetJump), jumpCooldown);
         }
 
@@ -572,7 +571,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else if(current == "Concrete")
             {
-                //Debug.Log("Play Tile Jump");
+                Debug.Log("Play Concrete Jump");
                 sound = concreteFootSteps.jumpSound;
                 audio_Source.PlayOneShot(sound);
             }
