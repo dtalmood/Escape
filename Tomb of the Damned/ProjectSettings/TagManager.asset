@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wood
   - Tile
+  - Road
   layers:
   - Default
   - TransparentFX

@@ -1,3 +1,7 @@
+
+
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -117,11 +121,12 @@ public class PlayerMovement : MonoBehaviour
         if(dead)
             return;
         // ground check
-        groundedObject = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.1f + 0.05f, ObjectGround);
-        //Debug.Log("Ground: "+ groundedObject);
+        groundedObject = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.2f + 0.1f, ObjectGround);
+        Debug.Log("Ground: "+ groundedObject);
 
-        groundedTerrain = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.1f + 0.05f, TerrainGround);
-        //Debug.Log("Terrain: "+ groundedTerrain);
+        groundedTerrain = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.1f + 0.1f, TerrainGround);
+        groundedTerrain = !groundedObject && groundedTerrain; 
+        Debug.Log("Terrain: "+ groundedTerrain);
 
         MyInput();
         SpeedControl();
@@ -393,27 +398,25 @@ public class PlayerMovement : MonoBehaviour
                     Physics.Raycast(transform.position, Vector3.down, out hit, playerHeight * 0.5f + 0.2f, ObjectGround);
                     current  = hit.collider.gameObject.tag;
                 }
-                     
                 playLandSound(current);
+                return;
             }
-            
             
             if (groundedTerrain) // Player is on terrain 
             {
-                
                 switch (state) // decide whether to play the walking, sprininting, crouch walking sound 
                 {
                     case MovementState.walking:
                     terrainPlayWalkSprintCrouchSound(current, walkSoundDelay);
-                    break;
+                    return;
 
                     case MovementState.sprinting:
                     terrainPlayWalkSprintCrouchSound(current, sprintSoundDelay);
-                    break;    
+                    return;    
 
                     case MovementState.crouching:
                     terrainPlayWalkSprintCrouchSound(current, crouchSoundDelay);
-                    break;
+                    return;
                 
                 }
                 
@@ -432,15 +435,15 @@ public class PlayerMovement : MonoBehaviour
                     {
                         case MovementState.walking:
                         objectPlayWalkSprintCrouchSound(current, walkSoundDelay);
-                        break;
+                        return;
 
                         case MovementState.sprinting:
                         objectPlayWalkSprintCrouchSound(current, sprintSoundDelay);
-                        break;    
+                        return;    
 
                         case MovementState.crouching:
                         objectPlayWalkSprintCrouchSound(current, crouchSoundDelay);
-                        break;
+                        return;
                     
                     }
                 }
@@ -461,7 +464,8 @@ public class PlayerMovement : MonoBehaviour
     public footStepCollection grassFootSteps; // this object holds the sand sounds 
     public footStepCollection gravelFootSteps; // this object holds gravel sounds 
     public footStepCollection woodFootSteps; // this object holds the sand sounds 
-    public footStepCollection tileFootSteps; // this object holds gravel sounds 
+    public footStepCollection tileFootSteps; // this object holds gravel sounds
+    public footStepCollection concreteFootSteps; // this object holds gravel sounds 
     bool play = true;
 
     // this handles playing sound when walking on a terrain 
@@ -487,6 +491,7 @@ public class PlayerMovement : MonoBehaviour
                 StartCoroutine(Delay(sound, delayAmount)); // Play footstep sound with adjustable delay
             }
         }
+        
     }
     
     // this handles playing sound when walking on a 3D object 
@@ -513,7 +518,16 @@ public class PlayerMovement : MonoBehaviour
             }
 
         }
-
+        else if(current == "Concrete")
+        {
+            if (play)
+            {
+                randomNumber = Random.Range(0, 4);
+                sound = concreteFootSteps.footStepSounds[randomNumber];
+                play = false;
+                StartCoroutine(Delay(sound, delayAmount)); // Play footstep sound with adjustable delay
+            }
+        }
     }
     
     private IEnumerator Delay(AudioClip sound, float delay)
@@ -556,6 +570,12 @@ public class PlayerMovement : MonoBehaviour
                 sound = tileFootSteps.jumpSound;
                 audio_Source.PlayOneShot(sound);
             }
+            else if(current == "Concrete")
+            {
+                //Debug.Log("Play Tile Jump");
+                sound = concreteFootSteps.jumpSound;
+                audio_Source.PlayOneShot(sound);
+            }
             jump = false;
         }
        
@@ -567,14 +587,14 @@ public class PlayerMovement : MonoBehaviour
         {
             //Debug.Log("Play Grass Land");
             sound = grassFootSteps.landSound; // assign what sound to play here 
-            StartCoroutine(Delay(sound, landSoundDelay));
+            audio_Source.PlayOneShot(sound);
         }
 
         else if (current == "Pebbles_B_TerrainLayer")
          {
              //Debug.Log("Play Pebble Land");
              sound = gravelFootSteps.landSound;
-             StartCoroutine(Delay(sound, landSoundDelay));
+             audio_Source.PlayOneShot(sound);
         }
        else if(current == "Wood")
         {
@@ -586,6 +606,12 @@ public class PlayerMovement : MonoBehaviour
         {
             //Debug.Log("Play Tile Land");
             sound = tileFootSteps.landSound;
+            audio_Source.PlayOneShot(sound);
+        }
+        else if(current == "Concrete")
+        {
+            //Debug.Log("Play Tile Land");
+            sound = concreteFootSteps.landSound;
             audio_Source.PlayOneShot(sound);
         }
     }
