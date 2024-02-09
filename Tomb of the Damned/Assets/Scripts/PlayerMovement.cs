@@ -10,7 +10,7 @@ using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
-    
+    public PlayerMovementAnimations movementAnimations;
  
     [Header("Movement")]
     private float moveSpeed;
@@ -182,6 +182,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    // STATE MACHINE 
    private void StateHandler()
     {
         // player is crouching
@@ -202,6 +203,7 @@ public class PlayerMovement : MonoBehaviour
         // player is walking
         else if ((groundedTerrain || groundedObject) && (Mathf.Abs(horizontalInput) > 0 || Mathf.Abs(verticalInput) > 0))
         {
+            movementAnimations.walkingAnimation();
             state = MovementState.walking;
             moveSpeed = walkSpeed;
             //Debug.Log("In Walking State");
@@ -217,6 +219,7 @@ public class PlayerMovement : MonoBehaviour
         // not running or walking and on the ground, so in idle
         else
         {
+            movementAnimations.idleAnimation();
             state = MovementState.idle;
             //Debug.Log("In idle State");
         }
