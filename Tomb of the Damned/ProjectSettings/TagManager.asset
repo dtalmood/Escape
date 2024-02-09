@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wood
   - Tile
+  - Concrete
   layers:
   - Default
   - TransparentFX
