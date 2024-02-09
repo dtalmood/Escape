@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.003204829, g: 0.0063439845, b: 0.014498586, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97712,6 +97712,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4161966091321624851}
   - component: {fileID: 8008080526538675049}
+  - component: {fileID: 8008080526538675050}
   m_Layer: 0
   m_Name: Man_03
   m_TagString: Untagged
@@ -99208,7 +99209,7 @@ Transform:
   m_GameObject: {fileID: 1568008708193036892}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.72, z: 0.2}
+  m_LocalPosition: {x: 0, y: 1.72, z: 0.20003329}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -99703,12 +99704,12 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3641607488354259881}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: b8a7488d12adc39498433d60811eab1a, type: 3}
   m_Controller: {fileID: 9100000, guid: b9bb8a4a2e149d04095cf0f706df87d8, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -99716,6 +99717,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8008080526538675050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641607488354259881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2112d8d59d82bcf4a8b0054e475ae9d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAnimation: {fileID: 8008080526538675049}
 --- !u!223 &8081783624229925373
 Canvas:
   m_ObjectHideFlags: 0
@@ -100274,6 +100288,7 @@ MonoBehaviour:
   sensY: 15
   maxRotationSpeed: 5
   orientation: {fileID: 31036441360197707}
+  playerTransform: {fileID: 1971113533793249133}
   maxYRotation: 80
   minYRotation: -70
   playerHealth: {fileID: 8291768089744530689}
@@ -100290,7 +100305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a433b2d3da82868469dcc24cb2e5e94e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAnimation: {fileID: 0}
+  movementAnimations: {fileID: 8008080526538675050}
   walkSpeed: 2.5
   sprintSpeed: 3
   groundDrag: 5
@@ -100498,7 +100513,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2065166438562987073}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: b9bb8a4a2e149d04095cf0f706df87d8, type: 2}
   m_CullingMode: 0

@@ -9,6 +9,7 @@ public class PlayerCam : MonoBehaviour
     public float maxRotationSpeed = 5f;
 
     public Transform orientation;
+    public Transform playerTransform;
 
     public float maxYRotation = 80f;
     public float minYRotation = -70f;

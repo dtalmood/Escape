@@ -6,12 +6,13 @@ using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Animator playerAnimation;
+    /*public Animator playerAnimation;
 
     public void Awake()
     {
         playerAnimation = GetComponent<Animator>();
-    }
+    }*/
+    public PlayerMovementAnimations movementAnimations;
 
     [Header("Movement")]
     private float moveSpeed;
@@ -203,10 +204,10 @@ public class PlayerMovement : MonoBehaviour
         // player is walking
         else if ((groundedTerrain || groundedObject) && (Mathf.Abs(horizontalInput) > 0 || Mathf.Abs(verticalInput) > 0))
         {
-            //playerAnimation.SetBool("walking", true);
+            movementAnimations.walkingAnimation();
+            // playerAnimation.SetBool("walking", true);
             state = MovementState.walking;
             moveSpeed = walkSpeed;
-            //playerAnimation.SetBool("idle", false);
             
 
             //Debug.Log("In Walking State");
@@ -223,9 +224,10 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             state = MovementState.idle;
+            movementAnimations.idleAnimation();
+            // Function Call to SCript PlayerMovmentAnimation
             // playerAnimation.SetBool("walking", false);
             // playerAnimation.SetBool("idle", true);
-            playerAnimation.SetBool("walking", true);
             //Debug.Log("In idle State");
         }
     }
