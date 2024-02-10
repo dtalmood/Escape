@@ -11,7 +11,7 @@ using TMPro;
 public class PlayerMovement : MonoBehaviour
 {
     public PlayerMovementAnimations movementAnimations;
- 
+    
     [Header("Movement")]
     private float moveSpeed;
     public float walkSpeed;
@@ -24,7 +24,6 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
-    private bool jumpKeyEnabled = true;
     bool readyToJump;
 
     // THIS IS HOW WE CONNECT PLAYER HEALTH SCRIPT WITH PLAYER MOVEMENT
