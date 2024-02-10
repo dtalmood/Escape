@@ -7,9 +7,12 @@ public class CarDoor : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip doorOpen;
     public AudioClip doorClose;
-    private bool playerInRange = false;
+    private bool playerInCarRange = false;
+    private bool playerInHoodRange = false;
     private bool doorStatus = false; // False = Close, True = Open
+    private bool hoodStatus = false;
     public Animator carAnimation;
+    public Animator hoodAnimation;
 
     void Awake()
     {
@@ -25,27 +28,42 @@ public class CarDoor : MonoBehaviour
             Debug.LogWarning("AudioSource component not found on: " + gameObject.name);
         }
     }
-
+  
     void Update()
     {
         // Check if the 'E' key is pressed and the player is in range
-        if (Input.GetKeyDown(KeyCode.E) && playerInRange)
+        if (Input.GetKeyDown(KeyCode.E) && playerInCarRange)
         {
-            if (!doorStatus) // Door Is Closed to so open it 
+            
+            if (!doorStatus) // DOOR IS CLOSED
             {
                 carAnimation.SetBool("Door", true);
                 audioSource.PlayOneShot(doorOpen);
             }
-            else
+            else // DOOR IS OPEN
             {
                 carAnimation.SetBool("Door", false);
                 StartCoroutine(PlaySoundWithDelay(doorClose));
             }
 
-            // Log the interaction to the console
             Debug.Log("Door interaction triggered.");
             doorStatus = !doorStatus;
         }
+        else if(Input.GetKeyDown(KeyCode.E) && playerInHoodRange)
+        {
+            if (!hoodStatus) // Trunk IS CLOSED
+            {
+                hoodAnimation.SetBool("Hood", true);
+                //audioSource.PlayOneShot(doorOpen);
+            }
+            else // DOOR IS OPEN
+            {
+                hoodAnimation.SetBool("Hood", false);
+                //StartCoroutine(PlaySoundWithDelay(doorClose));
+            }
+            hoodStatus = !hoodStatus;
+        }
+        
     }
 
     IEnumerator PlaySoundWithDelay(AudioClip sound)
@@ -61,17 +79,36 @@ public class CarDoor : MonoBehaviour
     {
         if (coll.CompareTag("Player"))
         {
-            playerInRange = true;
-            Debug.Log("Press 'E' to interact with the door.");
+            if (gameObject.CompareTag("CarDoor"))
+            {
+                Debug.Log("Press 'E' to interact with the door.");
+                playerInCarRange = true;
+            }
+            else
+            {
+                Debug.Log("Press 'E' to interact with the Hood.");
+                playerInHoodRange = true;
+            }
+  
         }
     }
 
     void OnTriggerExit(Collider coll)
     {
+
         if (coll.CompareTag("Player"))
         {
-            playerInRange = false;
-            Debug.Log("Player is no longer in range.");
+            if (gameObject.CompareTag("CarDoor"))
+            {
+                Debug.Log("Out of Door Range");
+                playerInCarRange = false;
+            }
+            else 
+            {
+                Debug.Log("Out of Hood Range");
+                playerInHoodRange = false;
+            }
         }
+        
     }
 }

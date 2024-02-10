@@ -7,6 +7,8 @@ TagManager:
   - Wood
   - Tile
   - Concrete
+  - CarDoor
+  - CarHood
   layers:
   - Default
   - TransparentFX
