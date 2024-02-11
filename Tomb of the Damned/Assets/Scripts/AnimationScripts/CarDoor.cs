@@ -1,18 +1,22 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CarDoor : MonoBehaviour
 {
     private AudioSource audioSource;
     public AudioClip doorOpen;
+    public AudioClip doorOpenChime;
     public AudioClip doorClose;
+    public AudioClip hoodOpen;
+    public AudioClip hoodClose;
     private bool playerInCarRange = false;
     private bool playerInHoodRange = false;
     private bool doorStatus = false; // False = Close, True = Open
     private bool hoodStatus = false;
     public Animator carAnimation;
     public Animator hoodAnimation;
+
+    private Coroutine chimeCoroutine; // Coroutine reference for the chime loop
 
     void Awake()
     {
@@ -28,51 +32,64 @@ public class CarDoor : MonoBehaviour
             Debug.LogWarning("AudioSource component not found on: " + gameObject.name);
         }
     }
-  
+
     void Update()
     {
-        // Check if the 'E' key is pressed and the player is in range
-        if (Input.GetKeyDown(KeyCode.E) && playerInCarRange)
+
+        if (Input.GetKeyDown(KeyCode.E) && playerInCarRange) // Player is standing near Car Door
         {
-            
-            if (!doorStatus) // DOOR IS CLOSED
+
+            if (!doorStatus) // DOOR IS CLOSED SO OPEN IT
             {
                 carAnimation.SetBool("Door", true);
                 audioSource.PlayOneShot(doorOpen);
+                doorStatus = true;
+                // Start the chime loop when the door is opened
+                chimeCoroutine = StartCoroutine(ChimeLoop());
             }
-            else // DOOR IS OPEN
+            else // DOOR IS OPEN SO CLOSE IT 
             {
                 carAnimation.SetBool("Door", false);
-                StartCoroutine(PlaySoundWithDelay(doorClose));
+                StartCoroutine(PlaySoundWithDelay(doorClose, 0.4f));
+                doorStatus = false;
+                // Stop the chime loop when the door is closed
+                StopCoroutine(chimeCoroutine);
             }
-
-            Debug.Log("Door interaction triggered.");
-            doorStatus = !doorStatus;
         }
-        else if(Input.GetKeyDown(KeyCode.E) && playerInHoodRange)
+        else if (Input.GetKeyDown(KeyCode.E) && playerInHoodRange) // Player is standing in front of the hood of the car
         {
-            if (!hoodStatus) // Trunk IS CLOSED
+            if (!hoodStatus) // Hood IS CLOSED
             {
                 hoodAnimation.SetBool("Hood", true);
-                //audioSource.PlayOneShot(doorOpen);
+                audioSource.PlayOneShot(hoodOpen);
+                hoodStatus = true;
             }
-            else // DOOR IS OPEN
+            else // HOOD IS OPEN
             {
                 hoodAnimation.SetBool("Hood", false);
-                //StartCoroutine(PlaySoundWithDelay(doorClose));
+                StartCoroutine(PlaySoundWithDelay(hoodClose, 0.2f));
+                hoodStatus = false;
             }
-            hoodStatus = !hoodStatus;
         }
-        
     }
 
-    IEnumerator PlaySoundWithDelay(AudioClip sound)
+    IEnumerator PlaySoundWithDelay(AudioClip sound, float delayAmount)
     {
         // Wait for a delay before playing the sound
-        yield return new WaitForSeconds(0.5f); // Adjust the delay time as needed
+        yield return new WaitForSeconds(delayAmount); // Adjust the delay time as needed
         audioSource.PlayOneShot(sound);
         // Play the specified sound
-        
+
+    }
+
+    IEnumerator ChimeLoop()
+    {
+        while (doorStatus) // Loop as long as the door is open
+        {
+            audioSource.PlayOneShot(doorOpenChime);
+            yield return new WaitForSeconds(doorOpenChime.length); // Wait for the chime sound to finish before playing it again
+        }
+        audioSource.Stop();
     }
 
     void OnTriggerEnter(Collider coll)
@@ -89,7 +106,7 @@ public class CarDoor : MonoBehaviour
                 Debug.Log("Press 'E' to interact with the Hood.");
                 playerInHoodRange = true;
             }
-  
+
         }
     }
 
@@ -103,12 +120,12 @@ public class CarDoor : MonoBehaviour
                 Debug.Log("Out of Door Range");
                 playerInCarRange = false;
             }
-            else 
+            else
             {
                 Debug.Log("Out of Hood Range");
                 playerInHoodRange = false;
             }
         }
-        
+
     }
 }
