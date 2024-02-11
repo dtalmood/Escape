@@ -15,6 +15,11 @@ public class CarDoor : MonoBehaviour
     private bool hoodStatus = false;
     public Animator carAnimation;
     public Animator hoodAnimation;
+    public GameObject player; // Reference to the player GameObject
+    public float maxChimeDistance = 10f; // Maximum distance for full chime volume
+    public float minChimeDistance = 3f; // Minimum distance for minimum chime volume
+    public float maxVolume = 1f; // Maximum volume of the chime
+    public float minVolume = 0.2f; // Minimum volume of the chime
 
     private Coroutine chimeCoroutine; // Coroutine reference for the chime loop
 
@@ -31,14 +36,25 @@ public class CarDoor : MonoBehaviour
         {
             Debug.LogWarning("AudioSource component not found on: " + gameObject.name);
         }
+
+        // Find the player GameObject if not assigned
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
     }
 
     void Update()
     {
+        // Calculate the distance between the player and the car
+        float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+
+        // Adjust the volume based on the distance
+        float volume = Mathf.Lerp(minVolume, maxVolume, Mathf.InverseLerp(minChimeDistance, maxChimeDistance, distanceToPlayer));
+        audioSource.volume = volume;
 
         if (Input.GetKeyDown(KeyCode.E) && playerInCarRange) // Player is standing near Car Door
         {
-
             if (!doorStatus) // DOOR IS CLOSED SO OPEN IT
             {
                 carAnimation.SetBool("Door", true);
@@ -79,7 +95,6 @@ public class CarDoor : MonoBehaviour
         yield return new WaitForSeconds(delayAmount); // Adjust the delay time as needed
         audioSource.PlayOneShot(sound);
         // Play the specified sound
-
     }
 
     IEnumerator ChimeLoop()
@@ -89,7 +104,6 @@ public class CarDoor : MonoBehaviour
             audioSource.PlayOneShot(doorOpenChime);
             yield return new WaitForSeconds(doorOpenChime.length); // Wait for the chime sound to finish before playing it again
         }
-        audioSource.Stop();
     }
 
     void OnTriggerEnter(Collider coll)
@@ -106,13 +120,11 @@ public class CarDoor : MonoBehaviour
                 Debug.Log("Press 'E' to interact with the Hood.");
                 playerInHoodRange = true;
             }
-
         }
     }
 
     void OnTriggerExit(Collider coll)
     {
-
         if (coll.CompareTag("Player"))
         {
             if (gameObject.CompareTag("CarDoor"))
@@ -126,6 +138,5 @@ public class CarDoor : MonoBehaviour
                 playerInHoodRange = false;
             }
         }
-
     }
 }
