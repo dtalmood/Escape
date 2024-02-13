@@ -11,9 +11,9 @@ Material:
   m_Shader: {fileID: 4800000, guid: b9e2206000f063e4482138f005c8e6e1, type: 3}
   m_ShaderKeywords: _ALPHATEST_ON _MIXSMOOTHNESFROMBASE_ON
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 1
+  m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -148,8 +148,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _AlphaCutoff: 0.5
     - _AmbientOcclusion: -0.09306223
-    - _Ambient_Occlusion: 0.65
+    - _Ambient_Occlusion: 1.1
     - _Ambient_Occlusion1: 0
     - _Amplitude: 0.0874
     - _BlendOp: 0
@@ -159,7 +160,7 @@ Material:
     - _CameraNearFadeDistance: 1
     - _ChromaticAberration: 0.1
     - _Cull: 0
-    - _Cutoff: 0.8
+    - _Cutoff: 0.62
     - _DetailNormalMapScale: 1
     - _DistortionBlend: 0.5
     - _DistortionEnabled: 0
@@ -182,7 +183,6 @@ Material:
     - _MixSmoothnesFromBase: 1
     - _Mode: 1
     - _NormalScale: 0.75
-    - _Normal_Power: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _Power_Normal: 0.89
@@ -203,22 +203,25 @@ Material:
     - _Tilling_Color1: 1.49
     - _TransAmbient: 0.865
     - _TransDirect: 0.488
+    - _TransNormal: 0.5
     - _TransNormalDistortion: 0.493
     - _TransScattering: 22.4
     - _TransShadow: 1
+    - _TransStrength: 1
     - _Translucency: 0
     - _TranslucencyViewDependency: 0.7
+    - _TransmissionShadow: 0.5
     - _UVSec: 0
     - _UltraDetailScale: 1041
     - _Wind: 1.6
     - _WindNoiseTiling: 0.5
     - _WindPower: 0.135
     - _WindPower1: 0.2506492
-    - _WindScale: 0.3
+    - _WindScale: 0.506
     - _WindScale1: 0.3622508
     - _WindSpeed: 0.229
     - _WindSpeed1: 0.2327153
-    - _Wind_Size: 0.287
+    - _Wind_Size: 0.392
     - _Wind_Size1: 0.5
     - _Wind_Speed: 2.82
     - _ZWrite: 1
@@ -226,11 +229,11 @@ Material:
     m_Colors:
     - _AlbedoColor: {r: 1, g: 1, b: 1, a: 0}
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
-    - _Color: {r: 0.8773585, g: 0.868916, b: 0.8070043, a: 0}
+    - _Color: {r: 0.8396226, g: 0.8313416, b: 0.74853146, a: 0}
     - _Color0: {r: 0.2709894, g: 0.31132066, b: 0.25992337, a: 0}
     - _Color1: {r: 0.509434, g: 0.509434, b: 0.509434, a: 0}
     - _Color_Darkening: {r: 0, g: 0, b: 0, a: 0}
-    - _Color_Tilling: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 0}
+    - _Color_Tilling: {r: 0.8493852, g: 0.9245283, b: 0.8329477, a: 0}
     - _Color_Tilling1: {r: 0.9716981, g: 0.9716981, b: 0.9716981, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Emission_Color: {r: 0, g: 0, b: 0, a: 0}
