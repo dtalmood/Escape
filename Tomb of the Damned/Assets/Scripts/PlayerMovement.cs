@@ -11,7 +11,8 @@ using TMPro;
 public class PlayerMovement : MonoBehaviour
 {
     public PlayerMovementAnimations movementAnimations;
-    
+    // public PlayerMovementAnimations getState;
+
     [Header("Movement")]
     private float moveSpeed;
     public float walkSpeed;
@@ -75,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
     public MovementState state; 
     public enum MovementState
     {
-        walking, sprinting, air, crouching, idle
+        walking, sprinting, air, crouching, idle, backwards
     }
 
     private void Start()
@@ -99,9 +100,7 @@ public class PlayerMovement : MonoBehaviour
          The Compiler then finds this Listener and Says HEY LOOK A LISTNER 
          The Listener Then Tell Unity "Hey Run the Function AmiDead"
         */
-        playerHealth.onTakeDamage.AddListener(AmIDead); 
-        
-        
+        playerHealth.onTakeDamage.AddListener(AmIDead);
     }
 
     public void AmIDead(float health)
@@ -187,10 +186,28 @@ public class PlayerMovement : MonoBehaviour
         // player is crouching
         if (Input.GetKey(crouchKey) && (Mathf.Abs(horizontalInput) > 0 || Mathf.Abs(verticalInput) > 0))
         {
+            movementAnimations.crouchWalkForwardAnimation();
             state = MovementState.crouching;
             moveSpeed = crouchSpeed;
             //Debug.Log("In Crouch Walking State");
         }
+
+        // player is crouch walking forward
+        /*else if (Input.GetKey(crouchKey) && verticalInput > 0)
+        {
+            movementAnimations.crouchWalkingForwardAnimation();
+            state = MovementState.crouchWalkingForward;
+            moveSpeed = crouchWalkSpeed;
+        }
+
+        // player is crouch walking backward
+        else if (Input.GetKey(crouchKey) && verticalInput < 0)
+        {
+            movementAnimations.crouchWalkingBackwardAnimation();
+            state = MovementState.crouchWalkingBackward;
+            moveSpeed = crouchWalkSpeed;
+            // Debug.Log("In Crouch Walking Backward State");
+        }*/
 
         // player is running
         else if ((groundedTerrain || groundedObject) && Input.GetKey(sprintKey) && (Mathf.Abs(horizontalInput) > 0 || Mathf.Abs(verticalInput) > 0))
@@ -202,10 +219,20 @@ public class PlayerMovement : MonoBehaviour
         // player is walking
         else if ((groundedTerrain || groundedObject) && (Mathf.Abs(horizontalInput) > 0 || Mathf.Abs(verticalInput) > 0))
         {
-            movementAnimations.walkingAnimation();
-            state = MovementState.walking;
-            moveSpeed = walkSpeed;
-            //Debug.Log("In Walking State");
+            // walking forward
+            if (verticalInput > 0)
+            {
+                movementAnimations.walkingAnimation();
+                state = MovementState.walking;
+                moveSpeed = walkSpeed;
+            }
+            // walking backwards
+            else if (verticalInput < 0)
+            {
+                movementAnimations.walkingBackwardsAnimation();
+                state = MovementState.backwards;
+                moveSpeed = walkSpeed;
+            }
         }
 
         // player is in the air
