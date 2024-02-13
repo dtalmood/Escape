@@ -8,6 +8,7 @@ public class PlayerCam : MonoBehaviour
     public float sensY = 15f;
     public float maxRotationSpeed = 5f;
 
+    [Tooltip("This should be the player object, so we can rotate the player as the camera moves left and right")]
     public Transform orientation;
 
     public float maxYRotation = 80f;
