@@ -11,7 +11,6 @@ using TMPro;
 public class PlayerMovement : MonoBehaviour
 {
     public PlayerMovementAnimations movementAnimations;
-    // public PlayerMovementAnimations getState;
 
     [Header("Movement")]
     private float moveSpeed;
