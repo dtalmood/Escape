@@ -48,7 +48,7 @@ public class PlayerHealthBar : MonoBehaviour
             StartCoroutine(ApplyDamageOverTime(20, 0.05f, 100f)); 
             Debug.Log("Medium");
         }
-        else if(difference >= 11 && difference <= 30) // Large Amount of Damage
+        else if(difference >= 11) // Large Amount of Damage
         {
             StartCoroutine(ApplyDamageOverTime(30, 0.05f, 100f));
             Debug.Log("Large");

@@ -451,6 +451,10 @@ public class PlayerMovement : MonoBehaviour
                     case MovementState.walking:
                     terrainPlayWalkSprintCrouchSound(current, walkSoundDelay);
                     return;
+                    
+                    case MovementState.backwards:
+                    terrainPlayWalkSprintCrouchSound(current, walkSoundDelay);
+                    return;
 
                     case MovementState.sprinting:
                     terrainPlayWalkSprintCrouchSound(current, sprintSoundDelay);
@@ -476,6 +480,10 @@ public class PlayerMovement : MonoBehaviour
                     switch (state) // decide whether to play the walking, sprininting, crouch walking sound 
                     {
                         case MovementState.walking:
+                        objectPlayWalkSprintCrouchSound(current, walkSoundDelay);
+                        return;
+
+                        case MovementState.backwards:
                         objectPlayWalkSprintCrouchSound(current, walkSoundDelay);
                         return;
 
