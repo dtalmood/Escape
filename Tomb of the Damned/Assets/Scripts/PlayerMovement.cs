@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
     // THIS IS HOW WE CONNECT PLAYER HEALTH SCRIPT WITH PLAYER MOVEMENT
     public PlayerHealthBar playerHealth;
+    public PlayerCam playerCam;
     bool grabInitial = false;
     float jumpInitialHeight;
     float jumpAfterHeight;
@@ -146,6 +147,16 @@ public class PlayerMovement : MonoBehaviour
         MovePlayer();
     }
 
+    public void PlayerCamMovementOffset(Vector3 input)
+    {
+        float maxZRotation = 2f;
+        float zRotation = input.x == 0 ? 0 : -input.x * maxZRotation;
+        Vector3 rotation = new Vector3(0, 0, zRotation);
+
+        playerCam.AddOrSetRotationOffset("HorizontalMovementRotation", rotation);
+    }
+
+
     private void MyInput()
     {
 
@@ -154,6 +165,9 @@ public class PlayerMovement : MonoBehaviour
 
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+
+        PlayerCamMovementOffset(new Vector3(horizontalInput, verticalInput, 0));
+        
 
         // when to jump
         if (Input.GetKey(jumpKey) && readyToJump && ( groundedTerrain || groundedObject || OnSlope()))
