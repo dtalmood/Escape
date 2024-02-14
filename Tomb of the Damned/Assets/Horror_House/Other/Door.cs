@@ -3,35 +3,58 @@ using UnityEngine.UI;
 
 public class Door : MonoBehaviour
 {
-
-    bool trig, open;//trig-проверка входа выхода в триггер(игрок должен быть с тегом Player) open-закрыть и открыть дверь
-    public float smooth = 2.0f;//скорость вращения
-    public float DoorOpenAngle = 90.0f;//угол вращения 
+    bool trig, open;
+    public float smooth = 2.0f;
+    public float DoorOpenAngle = 90.0f;
     private Vector3 defaulRot;
     private Vector3 openRot;
-    public Text txt;//text 
-    // Start is called before the first frame update
+    public Text txt;
+    public AudioClip[] doorOpenSounds; // Array of door open sounds
+    public AudioClip[] doorCloseSounds; // Array of door close sounds
+    public float doorCooldown = 1.0f;
+    private float lastActionTime;
+
     void Start()
     {
         defaulRot = transform.eulerAngles;
         openRot = new Vector3(defaulRot.x, defaulRot.y + DoorOpenAngle, defaulRot.z);
+        lastActionTime = -doorCooldown;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (open)//открыть
+        if (open)
         {
             transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, openRot, Time.deltaTime * smooth);
         }
-        else//закрыть
+        else
         {
             transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, defaulRot, Time.deltaTime * smooth);
         }
-        if (Input.GetKeyDown(KeyCode.E) && trig)
+
+        if (Input.GetKeyDown(KeyCode.E) && trig && Time.time - lastActionTime > doorCooldown)
         {
+            lastActionTime = Time.time;
             open = !open;
+
+            if (open)
+            {
+                // Randomly select a door open sound
+                int randomIndex = Random.Range(0, doorOpenSounds.Length);
+                AudioClip selectedOpenSound = doorOpenSounds[randomIndex];
+                AudioSource.PlayClipAtPoint(selectedOpenSound, transform.position);
+                Debug.Log("Play Door Open Sound");
+            }
+            else
+            {
+                // Randomly select a door close sound
+                int randomIndex = Random.Range(0, doorCloseSounds.Length);
+                AudioClip selectedCloseSound = doorCloseSounds[randomIndex];
+                AudioSource.PlayClipAtPoint(selectedCloseSound, transform.position);
+                Debug.Log("Play Door Close Sound");
+            }
         }
+
         if (trig)
         {
             if (open)
@@ -44,7 +67,8 @@ public class Door : MonoBehaviour
             }
         }
     }
-    private void OnTriggerEnter(Collider coll)//вход и выход в\из  триггера 
+
+    private void OnTriggerEnter(Collider coll)
     {
         if (coll.tag == "Player")
         {
@@ -59,7 +83,8 @@ public class Door : MonoBehaviour
             trig = true;
         }
     }
-    private void OnTriggerExit(Collider coll)//вход и выход в\из  триггера 
+
+    private void OnTriggerExit(Collider coll)
     {
         if (coll.tag == "Player")
         {
