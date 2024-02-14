@@ -10,7 +10,7 @@ Material:
   m_Name: Oak_Leaves
   m_Shader: {fileID: 4800000, guid: b9e2206000f063e4482138f005c8e6e1, type: 3}
   m_ShaderKeywords: _ALPHATEST_ON _MIXSMOOTHNESFROMBASE_ON
-  m_LightmapFlags: 7
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -120,8 +120,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _AlphaCutoff: 0.5
     - _AmbientOcclusion: 1.82
-    - _Ambient_Occlusion: 1.39
+    - _Ambient_Occlusion: 0.27
     - _Amplitude: 0.0874
     - _BlendOp: 0
     - _BumpScale: 1
@@ -169,11 +170,14 @@ Material:
     - _Tilling_Color: 1.81
     - _TransAmbient: 0.865
     - _TransDirect: 0.404
+    - _TransNormal: 0.5
     - _TransNormalDistortion: 0.493
     - _TransScattering: 24.3
     - _TransShadow: 1
+    - _TransStrength: 1
     - _Translucency: 0
     - _TranslucencyViewDependency: 0.7
+    - _TransmissionShadow: 0.75
     - _UVSec: 0
     - _UltraDetailScale: 1041
     - _Wind: 1.6
@@ -188,9 +192,10 @@ Material:
     m_Colors:
     - _AlbedoColor: {r: 1, g: 1, b: 1, a: 0}
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
-    - _Color: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 0}
-    - _Color_Tilling: {r: 0.7830189, g: 0.7420828, b: 0.71284264, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Color_Tilling: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Emissive: {r: 0, g: 0, b: 0, a: 0}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
     - _SubSurfColor: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 1}
@@ -200,3 +205,4 @@ Material:
     - _TranslucencyColor: {r: 0.73, g: 0.85, b: 0.41, a: 1}
     - _TreeInstanceColor: {r: 1, g: 1, b: 1, a: 1}
     - _TreeInstanceScale: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
