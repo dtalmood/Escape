@@ -43,7 +43,7 @@ public class Door : MonoBehaviour
                 int randomIndex = Random.Range(0, doorOpenSounds.Length);
                 AudioClip selectedOpenSound = doorOpenSounds[randomIndex];
                 AudioSource.PlayClipAtPoint(selectedOpenSound, transform.position);
-                Debug.Log("Play Door Open Sound");
+                //Debug.Log("Play Door Open Sound");
             }
             else
             {
@@ -51,7 +51,7 @@ public class Door : MonoBehaviour
                 int randomIndex = Random.Range(0, doorCloseSounds.Length);
                 AudioClip selectedCloseSound = doorCloseSounds[randomIndex];
                 AudioSource.PlayClipAtPoint(selectedCloseSound, transform.position);
-                Debug.Log("Play Door Close Sound");
+                //Debug.Log("Play Door Close Sound");
             }
         }
 

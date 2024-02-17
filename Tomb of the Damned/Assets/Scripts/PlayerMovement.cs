@@ -120,12 +120,12 @@ public class PlayerMovement : MonoBehaviour
         if(dead)
             return;
         // ground check
-        groundedObject = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.2f + 0.1f, ObjectGround);
-        //Debug.Log("Ground: "+ groundedObject);
+        groundedObject = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.18f + 0.1f, ObjectGround);
+        Debug.Log("Ground: "+ groundedObject);
 
         groundedTerrain = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.1f + 0.1f, TerrainGround);
         groundedTerrain = !groundedObject && groundedTerrain; 
-        //Debug.Log("Terrain: "+ groundedTerrain);
+        Debug.Log("Terrain: "+ groundedTerrain);
 
         MyInput();
         SpeedControl();
@@ -501,7 +501,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if(state == MovementState.air)
         {
-            //Debug.Log("Current terrain/object: " + current);
+            Debug.Log("Current terrain/object: " + current);
             //current = terrainDetector.getLayerName();
             playJumpSound(current);
         }
@@ -609,7 +609,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else if(current == "Wood")
             {
-                //Debug.Log("Play Wood Jump");
+                Debug.Log("Play Wood Jump");
                 sound = woodFootSteps.jumpSound;
                 audio_Source.PlayOneShot(sound);
             }
@@ -647,7 +647,7 @@ public class PlayerMovement : MonoBehaviour
         }
        else if(current == "Wood")
         {
-            //Debug.Log("Play Wood Land");
+            Debug.Log("Play Wood Land");
             sound = woodFootSteps.landSound;
             audio_Source.PlayOneShot(sound);
         }
