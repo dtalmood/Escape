@@ -58,6 +58,7 @@ public class SyncCameraRotationToAnimation : MonoBehaviour
         // In Animation Called Death We have a boolean Called Dead 
         // We set Boolean Dead = True 
         // This will call even Death inside of the Anmation Controller 
+        Debug.Log("We are now Dead");
         animator.SetBool("Dead", true);
         animator.SetBool("Fade", true);
     }
