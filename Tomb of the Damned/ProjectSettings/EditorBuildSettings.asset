@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Beta.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/InventoryUIScene.unity
     guid: e2ffcc3472975fe4b9af21607f0498d2
   m_configObjects: {}
