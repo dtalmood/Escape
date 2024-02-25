@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.sterberino.open-behavior-trees": "https://github.com/Sterberino/open-behavior-trees.git",
     "com.unity.ai.navigation": "1.1.5",
     "com.unity.cinemachine": "2.9.7",
     "com.unity.collab-proxy": "2.1.0",
