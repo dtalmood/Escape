@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1851760006707232523}
   - component: {fileID: 5328885233081144326}
+  - component: {fileID: 7001044155922229820}
   m_Layer: 0
   m_Name: ENEMY
   m_TagString: Untagged
@@ -50,6 +51,29 @@ MonoBehaviour:
   chaseDetector: {fileID: 6052654657232215795}
   inChaseRange: 0
   inAttackRange: 0
+--- !u!114 &7001044155922229820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3555350616239601356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1549619e4962d25439164ba44cc81bf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: 11400000, guid: c6c947f4e0c88824ab0e1f90dbba76b9, type: 2}
+  startOnEnable: 0
+  paused: 0
+  blackboard:
+    saveItems: []
+    sceneObjectSaveItems: []
+  runningBehavior: 0
+  activeSubTree: {fileID: 0}
+  onTick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &6615400099187839129
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58,6 +82,62 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1851760006707232523}
     m_Modifications:
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerExit.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerEnter.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerExit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerExit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5328885233081144326}
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5328885233081144326}
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerExit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerExit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayerExitedAttackRange
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayerEnteredAttackRange
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerExit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NPCRangeDetectors, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NPCRangeDetectors, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6381196845268332846, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.42548
@@ -143,6 +223,70 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1851760006707232523}
     m_Modifications:
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerExit.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerStay.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerEnter.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerExit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerExit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5328885233081144326}
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5328885233081144326}
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerExit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerStay.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerExit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayerExitedChaseRange
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayerEnteredChaseRange
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerExit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NPCRangeDetectors, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NPCRangeDetectors, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982757247913073114, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
+      propertyPath: onPlayerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6381196845268332846, guid: 83ea1212377db4cca9c2d5b8d4c68410, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
