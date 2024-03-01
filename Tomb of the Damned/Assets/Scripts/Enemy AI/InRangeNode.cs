@@ -33,7 +33,7 @@ public class InRangeNode : ConditionNode
 
         this.inChaseRange = detectors.inChaseRange;
         this.inAttackRange = detectors.inAttackRange;
-
+    
         if (this.rangeType == RangeType.attackRange)
         {
             return detectors.inAttackRange == true ? BehaviorTreeNodeResult.success : BehaviorTreeNodeResult.failure;

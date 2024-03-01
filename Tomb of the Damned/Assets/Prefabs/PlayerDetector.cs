@@ -32,7 +32,7 @@ public class PlayerDetector : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            Debug.Log($"Player Staying In {gameObject.name} Collider");
+            //Debug.Log($"Player Staying In {gameObject.name} Collider");
             onPlayerStay?.Invoke();
         }
         else{
@@ -43,7 +43,7 @@ public class PlayerDetector : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            Debug.Log($"Player Entered {gameObject.name} Collider");
+            //Debug.Log($"Player Entered {gameObject.name} Collider");
             onPlayerEnter?.Invoke();
         }
         else{
