@@ -9,6 +9,8 @@ TagManager:
   - Concrete
   - CarDoor
   - CarHood
+  - Enemy
+  - Wall
   layers:
   - Default
   - TransparentFX

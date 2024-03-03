@@ -20,6 +20,7 @@ public class WallCheck : ConditionNode
         {
             Debug.Log("Enemy not Found");
         }
+
     }
     protected override BehaviorTreeNodeResult Evaluate(BehaviorTree behaviorTree)
     {
@@ -28,17 +29,23 @@ public class WallCheck : ConditionNode
 
         if (Physics.Raycast(ray, out hit))
         {
-            Debug.Log("Inside the Ray Function");
-            
-            if(hit.collider.CompareTag("Wall"))
+            Debug.DrawLine(ray.origin, hit.point, Color.red);
+            // Check if the hit object has the "Wall" tag
+            if (hit.collider.CompareTag("Wall"))
             {
-                Debug.Log("Wall infront of the player");
+                Debug.Log("Wall in front of the player");
                 return BehaviorTreeNodeResult.success;
             }
             
-            Debug.Log("No Wall");
-            return BehaviorTreeNodeResult.failure;
-    
+            else
+            {
+                // Output the tag of the object hit (for debugging purposes)
+                Debug.Log("Tag Hit: " + hit.collider.tag);
+
+                // Return failure for any other tags
+                Debug.Log("No Wall");
+                return BehaviorTreeNodeResult.failure;
+            }
         }
         else
         {
