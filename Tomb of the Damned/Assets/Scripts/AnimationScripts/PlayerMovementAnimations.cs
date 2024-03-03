@@ -15,7 +15,7 @@ public class PlayerMovementAnimations : MonoBehaviour
     // walking forwards
     public void walkingAnimation()
     {
-        Debug.Log("Waking Animation");
+        //Debug.Log("Waking Animation");
         playerAnimation.SetBool("walking", true);
         playerAnimation.SetBool("idle", false);
         playerAnimation.SetBool("walkingBackwards", false);
