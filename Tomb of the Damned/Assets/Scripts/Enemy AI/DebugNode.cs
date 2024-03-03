@@ -15,16 +15,16 @@ public class DebugNode : TaskNode
         switch (debugType)
         {
             case DebugType.Info:
-                Debug.Log(debugMessage);
+                //Debug.Log(debugMessage);
                 break;
             case DebugType.Warning:
-                Debug.LogWarning(debugMessage);
+                //Debug.LogWarning(debugMessage);
                 break;
             case DebugType.Error:
-                Debug.LogError(debugMessage);
+                //Debug.LogError(debugMessage);
                 break;
              default:
-                Debug.Log(debugMessage);
+                //Debug.Log(debugMessage);
                 break;
         }
         return BehaviorTreeNodeResult.success;

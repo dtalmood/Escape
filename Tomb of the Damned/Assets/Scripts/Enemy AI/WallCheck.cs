@@ -33,7 +33,7 @@ public class WallCheck : ConditionNode
             // Check if the hit object has the "Wall" tag
             if (hit.collider.CompareTag("Wall"))
             {
-                Debug.Log("Wall in front of the player");
+                //Debug.Log("Wall in front of the player");
                 return BehaviorTreeNodeResult.success;
             }
             
@@ -43,7 +43,7 @@ public class WallCheck : ConditionNode
                 Debug.Log("Tag Hit: " + hit.collider.tag);
 
                 // Return failure for any other tags
-                Debug.Log("No Wall");
+                //Debug.Log("No Wall");
                 return BehaviorTreeNodeResult.failure;
             }
         }
