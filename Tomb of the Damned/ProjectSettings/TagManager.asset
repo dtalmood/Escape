@@ -11,6 +11,7 @@ TagManager:
   - CarHood
   - Enemy
   - Wall
+  - EnemyPosition
   layers:
   - Default
   - TransparentFX
