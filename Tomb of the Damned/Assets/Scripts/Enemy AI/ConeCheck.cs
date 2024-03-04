@@ -10,7 +10,8 @@ public class ConeCheck : ConditionNode
     public Transform playerPosition;
     protected override void OnInit(BehaviorTree behaviorTree)
     {
-
+        playerPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        enemyPosition = GameObject.FindGameObjectWithTag("EnemyPosition").GetComponent<Transform>();
     }
 
     protected override BehaviorTreeNodeResult Evaluate(BehaviorTree behaviorTree)
