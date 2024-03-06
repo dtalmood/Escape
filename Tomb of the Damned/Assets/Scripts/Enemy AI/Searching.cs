@@ -26,6 +26,7 @@ public class Searching : ConditionNode
     bool WalkPointSet;// this tells if the nemy already has a destination its walking towards or not 
     [SerializeField] float range;// how far the enemy will be allowed to walk 
 
+    private Animator animator;
     protected override void OnInit(BehaviorTree behaviorTree)
     {
         // since our behavior tree is on our enemy game object we can just call what we have below 
@@ -40,7 +41,7 @@ public class Searching : ConditionNode
         //with the string key equal to our initialPosition string
         //and the value is the initial position of the game object (The NPC)
         behaviorTree.blackboard.Add(initalPositionDictionaryKey, behaviorTree.transform.position);
-
+        animator = behaviorTree.GetComponentInChildren<Animator>();
     }
     
     protected override BehaviorTreeNodeResult Evaluate(BehaviorTree behaviorTree)
@@ -51,6 +52,8 @@ public class Searching : ConditionNode
     
     private void patrol(BehaviorTree behaviorTree)
     {
+        animator?.SetBool("Idle", agent.velocity.magnitude > 0.05f);
+
         if(!WalkPointSet) // Enemy does not have a point it wants to be walking to 
         { 
             searchForDestination(behaviorTree);
