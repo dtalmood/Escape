@@ -12,7 +12,7 @@ public class Searching : ConditionNode
 {
     GameObject enemy;
     NavMeshAgent agent; // this variable is used to controll navigation of our enemyGameobjet
-    [SerializeField] LayerMask playerLayer; // We put player on its own layer becuase when we look for where the palyer is 
+    //[SerializeField] LayerMask playerLayer; // We put player on its own layer becuase when we look for where the palyer is 
     [SerializeField] LayerMask objectLayer;
     [SerializeField] LayerMask groundLayer;
     
@@ -27,7 +27,7 @@ public class Searching : ConditionNode
         enemy = behaviorTree.gameObject;
         // Implementation below is not necessary 
         //enemy =  GameObject.FindGameObjectWithTag("Enemy");
-        
+
         // can not use getComponent becase node is a scriptable object 
         agent = behaviorTree.GetComponent<NavMeshAgent>(); 
     }
