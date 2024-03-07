@@ -21,7 +21,6 @@ public class MonsterSpeed : TaskNode
 
     protected override BehaviorTreeNodeResult Evaluate(BehaviorTree behaviorTree)
     {
-        Debug.Log("Velocity = "+ agent.velocity.magnitude);
          if( agent.velocity.magnitude > 0.01f)
             animator?.SetBool("Idle",false);
         else
