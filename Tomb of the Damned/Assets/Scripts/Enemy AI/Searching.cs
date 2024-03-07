@@ -52,10 +52,10 @@ public class Searching : ConditionNode
     
     private void patrol(BehaviorTree behaviorTree)
     {
-        animator?.SetBool("Idle", agent.velocity.magnitude > 0.05f);
+        
 
         if(!WalkPointSet) // Enemy does not have a point it wants to be walking to 
-        { 
+        {                           
             searchForDestination(behaviorTree);
         }
         if(WalkPointSet) // the enemy has a location it wants to be navigating to 
