@@ -25,6 +25,7 @@ public class MonsterSpeed : TaskNode
             animator?.SetBool("Idle",false);
         else
             animator?.SetBool("Idle",true);
+            
         return BehaviorTreeNodeResult.success;
     }
 
