@@ -6,6 +6,7 @@ using System.Reflection;
 
 public class ConeCheck : ConditionNode
 {
+    public string keyNode = "Player";
     public Transform enemyPosition;
     public Transform playerPosition;
     protected override void OnInit(BehaviorTree behaviorTree)
@@ -25,6 +26,7 @@ public class ConeCheck : ConditionNode
             if (Vector3.Dot(forward, toOther) < 0)
             {
                 Debug.Log("The other transform is behind me!");
+                //behaviorTree.blackboard.
                 return BehaviorTreeNodeResult.failure;
             }
             else

@@ -62,12 +62,12 @@ public class MonsterFootSteps : MonoBehaviour
     {
         // Checks If Monster is on 3D object 
         groundedObject = Physics.Raycast(monster.transform.position, Vector3.down, monsterHeight * 0.18f + 0.1f, ObjectGround);
-        Debug.Log("Ground: "+ groundedObject);
+        //Debug.Log("Ground: "+ groundedObject);
 
         // Checks if monster is on terrain
         groundedTerrain = Physics.Raycast(monster.transform.position, Vector3.down, monsterHeight * 0.1f + 0.1f, TerrainGround);
         groundedTerrain = !groundedObject && groundedTerrain; 
-        Debug.Log("Terrain: "+ groundedTerrain);
+        //Debug.Log("Terrain: "+ groundedTerrain);
         
 
         
@@ -82,7 +82,7 @@ public class MonsterFootSteps : MonoBehaviour
             if (groundedTerrain) // Monster is walking on Terrain
             {
                 current = terrainDetector.getLayerName();
-                Debug.Log("Current = " + current);  
+                //Debug.Log("Current = " + current);  
                 terrainPlaySound(current, walkSoundDelay);
 
             }
@@ -92,7 +92,7 @@ public class MonsterFootSteps : MonoBehaviour
                 if (Physics.Raycast(monster.transform.position, Vector3.down, out hit, monsterHeight * 0.5f + 0.2f, ObjectGround))
                 {
                     current  = hit.collider.gameObject.tag;
-                    Debug.Log("Current = " + current);  
+                    //Debug.Log("Current = " + current);  
                     objectPlaySound(current, walkSoundDelay);
 
                 }
