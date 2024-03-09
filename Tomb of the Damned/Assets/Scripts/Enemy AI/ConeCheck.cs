@@ -25,6 +25,7 @@ public class ConeCheck : ConditionNode
 
             if (Vector3.Dot(forward, toOther) < 0)
             {
+                behaviorTree.blackboard.Remove("Player");
                 Debug.Log("The other transform is behind me!");
                 //behaviorTree.blackboard.
                 return BehaviorTreeNodeResult.failure;
@@ -37,6 +38,7 @@ public class ConeCheck : ConditionNode
         }
         else
         {
+            behaviorTree.blackboard.Remove("Player");
             Debug.Log("Public Objects not set to this instance");
             return BehaviorTreeNodeResult.failure;
         }

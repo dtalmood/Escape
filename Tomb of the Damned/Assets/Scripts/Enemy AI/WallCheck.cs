@@ -41,9 +41,9 @@ public class WallCheck : ConditionNode
             
             else
             {
+                behaviorTree.blackboard.Remove("Player");
                 // Output the tag of the object hit (for debugging purposes)
                 Debug.Log("Tag Hit: " + hit.collider.tag);
-
                 // Return failure for any other tags
                 Debug.Log("No Wall");
                 return BehaviorTreeNodeResult.failure;
