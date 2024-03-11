@@ -7,8 +7,11 @@ using System.Reflection;
 
 public class InRangeNode : ConditionNode
 {
+    GameObject player;
     public enum RangeType {chaseRange, attackRange}
+    private AudioSource audioSource; 
 
+    public AudioClip playerBreathing;  
     public RangeType rangeType;
     public NPCRangeDetectors detectors;
 
@@ -21,6 +24,27 @@ public class InRangeNode : ConditionNode
         //The behaviorTree is on the NPC/ enemy gameobject. We look on that gameobject
         //for the detectors
         detectors = behaviorTree.gameObject.GetComponent<NPCRangeDetectors>();
+
+        // Find the player GameObject by tag
+        player = GameObject.FindGameObjectWithTag("Player");
+
+    if (player != null)
+    {
+        // Get the AudioSource component from the player GameObject
+        audioSource = player.transform.Find("Audio Source Near Monster").GetComponent<AudioSource>();
+        if (audioSource != null)
+        {
+            audioSource.clip = playerBreathing;
+        }
+        else
+        {
+            Debug.LogError("Audio Source Near Monster not found on Player GameObject!");
+        }
+    }
+    else
+    {
+        Debug.LogError("Player GameObject not found!");
+    }
     }
 
     //2. The Evaluate function is where behavior is ran. It is ran every tick.
@@ -38,6 +62,8 @@ public class InRangeNode : ConditionNode
         {
             if(detectors.inAttackRange == true)
             {
+                 Debug.Log("Play Sound Attach");
+                 audioSource.Play();
                  return BehaviorTreeNodeResult.success;           
             }
             else
@@ -53,11 +79,14 @@ public class InRangeNode : ConditionNode
         {
             if(detectors.inChaseRange == true)
             {
+                Debug.Log("Play Sound Chase");
+                 audioSource.clip = playerBreathing;
+                 audioSource.Play();
                  return BehaviorTreeNodeResult.success;           
             }
             else
             {
-                 Debug.Log("Player Removed");
+                 //Debug.Log("Player Removed");
                  behaviorTree.blackboard.Remove("Player");
                  return BehaviorTreeNodeResult.failure;
             }

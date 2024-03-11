@@ -14,7 +14,7 @@ public class CheckKeyNode : ConditionNode
         {
             if (ob != null && ob is GameObject)
             {
-                Debug.Log("Everything Passes");
+                //Debug.Log("Everything Passes");
                 return BehaviorTreeNodeResult.success;
             }
         }
