@@ -36,11 +36,31 @@ public class InRangeNode : ConditionNode
 
         if (this.rangeType == RangeType.attackRange)
         {
-            return detectors.inAttackRange == true ? BehaviorTreeNodeResult.success : BehaviorTreeNodeResult.failure;
+            if(detectors.inAttackRange == true)
+            {
+                 return BehaviorTreeNodeResult.success;           
+            }
+            else
+            {
+                 Debug.Log("Player Removed");
+                 behaviorTree.blackboard.Remove("Player");
+                 return BehaviorTreeNodeResult.failure;
+            }
+    
         }
+        
         else
         {
-            return detectors.inChaseRange == true ? BehaviorTreeNodeResult.success : BehaviorTreeNodeResult.failure;
+            if(detectors.inChaseRange == true)
+            {
+                 return BehaviorTreeNodeResult.success;           
+            }
+            else
+            {
+                 Debug.Log("Player Removed");
+                 behaviorTree.blackboard.Remove("Player");
+                 return BehaviorTreeNodeResult.failure;
+            }
         }
         
     }

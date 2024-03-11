@@ -1,177 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8465149150871586973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57efeb12f53cb4d0483f395e42443827, type: 3}
-  m_Name: Cone Check
-  m_EditorClassIdentifier: 
-  lastStatus: 1
-  enemyPosition: {fileID: 0}
-  playerPosition: {fileID: 0}
---- !u!114 &-8420266309891643567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 362c75caf6c1d428b9f8d74771ec0f82, type: 3}
-  m_Name: Wall Check
-  m_EditorClassIdentifier: 
-  lastStatus: 1
-  playerTransform: {fileID: 0}
-  enemnyTransform: {fileID: 0}
---- !u!114 &-8243613726543238589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d031d01802183d49963b4f4ac08934c, type: 3}
-  m_Name: Sequencer Node
-  m_EditorClassIdentifier: 
-  lastStatus: 1
-  <children>k__BackingField:
-  - {fileID: -7223554709370210463}
-  - {fileID: 3781412571041514689}
-  - {fileID: 5668916195607930613}
-  index: 0
---- !u!114 &-7223554709370210463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77eb46b81488740479fbad26f048212b, type: 3}
-  m_Name: Monster Speed
-  m_EditorClassIdentifier: 
-  lastStatus: 1
---- !u!114 &-7147174727020899826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e773a37097dee344a270e80a73c76af, type: 3}
-  m_Name: Selector Node
-  m_EditorClassIdentifier: 
-  lastStatus: 1
-  <children>k__BackingField:
-  - {fileID: 6682465482262000026}
-  - {fileID: -2415139581942921413}
-  - {fileID: -8243613726543238589}
---- !u!114 &-6627799534621673543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a73b35ef356ce4f8f8e2d69324dd8e, type: 3}
-  m_Name: Get Enemy Node
-  m_EditorClassIdentifier: 
-  lastStatus: 1
---- !u!114 &-6549892956058627882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b34213cd8390b92469ef757aa7906682, type: 3}
-  m_Name: In Range Node
-  m_EditorClassIdentifier: 
-  lastStatus: 1
-  rangeType: 0
-  detectors: {fileID: 0}
-  inAttackRange: 0
-  inChaseRange: 0
---- !u!114 &-5109662077717986166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2330552b66d49af4d952f15d7e997781, type: 3}
-  m_Name: Inverter Node
-  m_EditorClassIdentifier: 
-  lastStatus: 1
-  <child>k__BackingField: {fileID: -8420266309891643567}
---- !u!114 &-2415139581942921413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d031d01802183d49963b4f4ac08934c, type: 3}
-  m_Name: Player Detection Sequence
-  m_EditorClassIdentifier: 
-  lastStatus: 1
-  <children>k__BackingField:
-  - {fileID: -6549892956058627882}
-  - {fileID: -5109662077717986166}
-  - {fileID: -8465149150871586973}
-  - {fileID: -6627799534621673543}
-  index: 0
---- !u!114 &-1298208910138379866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd8ac4653bf232b4d9c852e3443d9c4d, type: 3}
-  m_Name: Wait Node
-  m_EditorClassIdentifier: 
-  lastStatus: 1
-  timeType: 1
-  waitTime: 1
-  counter: 0
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 255d4103c7db56741959a319389d742e, type: 3}
-  m_Name: New Behavior Tree
-  m_EditorClassIdentifier: 
-  lastStatus: 1
-  <child>k__BackingField: {fileID: -7147174727020899826}
---- !u!114 &2522476959958453510
+--- !u!114 &-7258528820508790770
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,7 +15,7 @@ MonoBehaviour:
   lastStatus: 1
   debugMessage: Player is being chased
   debugType: 0
---- !u!114 &3781412571041514689
+--- !u!114 &-6101193823957845388
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -195,14 +24,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd8ac4653bf232b4d9c852e3443d9c4d, type: 3}
-  m_Name: Wait Node
+  m_Script: {fileID: 11500000, guid: 5d031d01802183d49963b4f4ac08934c, type: 3}
+  m_Name: Player Detection Sequence
   m_EditorClassIdentifier: 
   lastStatus: 1
-  timeType: 1
-  waitTime: 9
-  counter: 0
---- !u!114 &5668916195607930613
+  <children>k__BackingField:
+  - {fileID: 5364677613725474593}
+  - {fileID: -1077120352790501388}
+  - {fileID: 4591332569063581448}
+  - {fileID: -1032148722198460929}
+  index: 0
+--- !u!114 &-3307125130393652781
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -223,7 +55,7 @@ MonoBehaviour:
     m_Bits: 256
   initalPositionDictionaryKey: InitalRoamPosition
   range: 20
---- !u!114 &6682465482262000026
+--- !u!114 &-1937764775037481396
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -232,16 +64,154 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d031d01802183d49963b4f4ac08934c, type: 3}
-  m_Name: Chase Sequence
+  m_Script: {fileID: 11500000, guid: 5e773a37097dee344a270e80a73c76af, type: 3}
+  m_Name: Selector Node
   m_EditorClassIdentifier: 
   lastStatus: 1
   <children>k__BackingField:
-  - {fileID: 9086985347933940050}
-  - {fileID: -1298208910138379866}
-  - {fileID: 2522476959958453510}
-  index: 0
---- !u!114 &9086985347933940050
+  - {fileID: 7231988463225548388}
+  - {fileID: -6101193823957845388}
+  - {fileID: 8439672082938370038}
+--- !u!114 &-1077120352790501388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b34213cd8390b92469ef757aa7906682, type: 3}
+  m_Name: In Range Node
+  m_EditorClassIdentifier: 
+  lastStatus: 1
+  rangeType: 0
+  detectors: {fileID: 0}
+  inAttackRange: 0
+  inChaseRange: 0
+--- !u!114 &-1032148722198460929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57efeb12f53cb4d0483f395e42443827, type: 3}
+  m_Name: Cone Check
+  m_EditorClassIdentifier: 
+  lastStatus: 1
+  keyNode: Player
+  enemyPosition: {fileID: 0}
+  playerPosition: {fileID: 0}
+--- !u!114 &-967161647430897870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77eb46b81488740479fbad26f048212b, type: 3}
+  m_Name: Monster Speed
+  m_EditorClassIdentifier: 
+  lastStatus: 1
+--- !u!114 &-930322832066633970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd8ac4653bf232b4d9c852e3443d9c4d, type: 3}
+  m_Name: Wait Node
+  m_EditorClassIdentifier: 
+  lastStatus: 1
+  timeType: 1
+  waitTime: 9
+  counter: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255d4103c7db56741959a319389d742e, type: 3}
+  m_Name: New Behavior Tree
+  m_EditorClassIdentifier: 
+  lastStatus: 1
+  <child>k__BackingField: {fileID: -1937764775037481396}
+--- !u!114 &269210491697901013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf40fd348644b4d7183fbefe733de35b, type: 3}
+  m_Name: Chase Player
+  m_EditorClassIdentifier: 
+  lastStatus: 1
+  objectLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  initalPositionDictionaryKey: InitalRoamPosition
+  range: 0
+--- !u!114 &1801355989364083025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 362c75caf6c1d428b9f8d74771ec0f82, type: 3}
+  m_Name: Wall Check
+  m_EditorClassIdentifier: 
+  lastStatus: 1
+  playerTransform: {fileID: 0}
+  enemnyTransform: {fileID: 0}
+--- !u!114 &4591332569063581448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2330552b66d49af4d952f15d7e997781, type: 3}
+  m_Name: Inverter Node
+  m_EditorClassIdentifier: 
+  lastStatus: 1
+  <child>k__BackingField: {fileID: 1801355989364083025}
+--- !u!114 &5364677613725474593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a73b35ef356ce4f8f8e2d69324dd8e, type: 3}
+  m_Name: Get Enemy Node
+  m_EditorClassIdentifier: 
+  lastStatus: 1
+--- !u!114 &7174394469416715190
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -255,3 +225,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastStatus: 1
   keyName: Player
+--- !u!114 &7231988463225548388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d031d01802183d49963b4f4ac08934c, type: 3}
+  m_Name: Chase Sequence
+  m_EditorClassIdentifier: 
+  lastStatus: 1
+  <children>k__BackingField:
+  - {fileID: 7174394469416715190}
+  - {fileID: 269210491697901013}
+  - {fileID: 9201241563090396540}
+  - {fileID: -7258528820508790770}
+  index: 0
+--- !u!114 &8439672082938370038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d031d01802183d49963b4f4ac08934c, type: 3}
+  m_Name: Sequencer Node
+  m_EditorClassIdentifier: 
+  lastStatus: 1
+  <children>k__BackingField:
+  - {fileID: -967161647430897870}
+  - {fileID: -930322832066633970}
+  - {fileID: -3307125130393652781}
+  index: 0
+--- !u!114 &9201241563090396540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd8ac4653bf232b4d9c852e3443d9c4d, type: 3}
+  m_Name: Wait Node
+  m_EditorClassIdentifier: 
+  lastStatus: 1
+  timeType: 1
+  waitTime: 1
+  counter: 0

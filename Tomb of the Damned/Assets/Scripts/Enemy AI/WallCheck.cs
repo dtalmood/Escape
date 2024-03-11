@@ -33,19 +33,21 @@ public class WallCheck : ConditionNode
         {
             Debug.DrawLine(ray.origin, hit.point, Color.red);
             // Check if the hit object has the "Wall" tag
-            if (hit.collider.CompareTag("Wall"))
+            if (hit.collider.CompareTag("Wall")) 
             {
+                Debug.Log("Player Removed");
+                behaviorTree.blackboard.Remove("Player");
                 Debug.Log("Wall in front of the player");
                 return BehaviorTreeNodeResult.success;
             }
             
             else
             {
-                behaviorTree.blackboard.Remove("Player");
+
                 // Output the tag of the object hit (for debugging purposes)
-                Debug.Log("Tag Hit: " + hit.collider.tag);
+                //Debug.Log("Tag Hit: " + hit.collider.tag);
                 // Return failure for any other tags
-                Debug.Log("No Wall");
+                //Debug.Log("No Wall");
                 return BehaviorTreeNodeResult.failure;
             }
         }
