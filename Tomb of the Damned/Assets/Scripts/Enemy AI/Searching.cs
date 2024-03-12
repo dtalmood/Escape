@@ -60,6 +60,7 @@ public class Searching : ConditionNode
     
     private void patrol(BehaviorTree behaviorTree)
     {
+       
         if(!WalkPointSet) // Enemy does not have a point it wants to be walking to 
         {                           
             searchForDestination(behaviorTree);

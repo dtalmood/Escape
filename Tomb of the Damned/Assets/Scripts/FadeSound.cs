@@ -14,7 +14,7 @@ public class FadeSound : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        audioSource = transform.Find("Audio Source Near Monster").GetComponent<AudioSource>();
+        audioSource = transform.Find("Audio Source").GetComponent<AudioSource>();
         detector = player.GetComponent<TerrainDetector>();
     }
 
@@ -27,20 +27,11 @@ public class FadeSound : MonoBehaviour
     // Method to fade in Music when player is outside 
     public void fadeInOutsideMusic(AudioClip clip)
     {
-        groundedObject = Physics.Raycast(transform.position, Vector3.down, 2 * 0.18f + 0.1f, ObjectGround);
-        
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, 2 * 0.5f + 0.2f, ObjectGround))
-        {
-            current  = hit.collider.gameObject.tag;
-            Debug.Log("Current = " +current);
-            if(current != "OutsideWood")
-            {
-                Debug.Log("Play Sound");
-                StartCoroutine(FadeAudio(clip));
-            }
-        }
-        
+        Debug.Log("Play Sound");
+        audioSource.clip = clip;
+        audioSource.Play();
     }
+
     
     // Method to fade in music when player is indoors
     public void fadeInIndoorMusic(AudioClip clip)
