@@ -25,15 +25,15 @@ public class ConeCheck : ConditionNode
 
             if (Vector3.Dot(forward, toOther) < 0)
             {
-                Debug.Log("Player Removed");
+                //Debug.Log("Player Removed");
                 behaviorTree.blackboard.Remove("Player");
-                Debug.Log("The other transform is behind me!");
+                //Debug.Log("The other transform is behind me!");
                 //behaviorTree.blackboard.
                 return BehaviorTreeNodeResult.failure;
             }
             else
             {
-                Debug.Log("The other transform is in front me!");
+                //Debug.Log("The other transform is in front me!");
                 return BehaviorTreeNodeResult.success;
             }
         }

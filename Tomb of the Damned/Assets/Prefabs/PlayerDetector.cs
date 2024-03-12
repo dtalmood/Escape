@@ -19,7 +19,7 @@ public class PlayerDetector : MonoBehaviour
             sphereCollider = GetComponent<SphereCollider>();
         }
 
-        Debug.Log($"Start method for {gameObject.name} called");
+        //Debug.Log($"Start method for {gameObject.name} called");
     }
 
     public void Update()

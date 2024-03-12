@@ -7,8 +7,11 @@ using System.Reflection;
 
 public class InRangeNode : ConditionNode
 {
+    public FadeSound fadeSoundFunction;
+    GameObject player;
     public enum RangeType {chaseRange, attackRange}
 
+    public AudioClip playerBreathing;  
     public RangeType rangeType;
     public NPCRangeDetectors detectors;
 
@@ -21,6 +24,11 @@ public class InRangeNode : ConditionNode
         //The behaviorTree is on the NPC/ enemy gameobject. We look on that gameobject
         //for the detectors
         detectors = behaviorTree.gameObject.GetComponent<NPCRangeDetectors>();
+
+        // Find the player GameObject by tag
+        player = GameObject.FindGameObjectWithTag("Player");
+        fadeSoundFunction = player.GetComponent<FadeSound>();
+
     }
 
     //2. The Evaluate function is where behavior is ran. It is ran every tick.
@@ -37,12 +45,14 @@ public class InRangeNode : ConditionNode
         if (this.rangeType == RangeType.attackRange)
         {
             if(detectors.inAttackRange == true)
-            {
+            {    
+                              
                  return BehaviorTreeNodeResult.success;           
             }
             else
             {
-                 Debug.Log("Player Removed");
+                 fadeSoundFunction.fadeInAudio(playerBreathing);
+                 //Debug.Log("Player Removed");
                  behaviorTree.blackboard.Remove("Player");
                  return BehaviorTreeNodeResult.failure;
             }
@@ -57,7 +67,8 @@ public class InRangeNode : ConditionNode
             }
             else
             {
-                 Debug.Log("Player Removed");
+                 fadeSoundFunction.fadeInAudio(playerBreathing);
+                 //Debug.Log("Player Removed");
                  behaviorTree.blackboard.Remove("Player");
                  return BehaviorTreeNodeResult.failure;
             }

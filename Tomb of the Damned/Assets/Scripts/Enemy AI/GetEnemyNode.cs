@@ -25,7 +25,7 @@ public class GetEnemyNode : TaskNode
 
         //Add player to blackboard
         behaviorTree.blackboard.SetOrAdd("Player", player);
-        Debug.Log("Added Player to BlackBoared");
+        //Debug.Log("Added Player to BlackBoared");
         return BehaviorTreeNodeResult.success;
     }
 
