@@ -7,6 +7,7 @@ using System.Reflection;
 
 public class InRangeNode : ConditionNode
 {
+    public FadeSound fadeSoundFunction;
     GameObject player;
     public enum RangeType {chaseRange, attackRange}
     private AudioSource audioSource; 
@@ -61,14 +62,13 @@ public class InRangeNode : ConditionNode
         if (this.rangeType == RangeType.attackRange)
         {
             if(detectors.inAttackRange == true)
-            {
-                 Debug.Log("Play Sound Attach");
-                 audioSource.Play();
+            {                 
                  return BehaviorTreeNodeResult.success;           
             }
             else
             {
-                 Debug.Log("Player Removed");
+                 audioSource.Play();
+                 //Debug.Log("Player Removed");
                  behaviorTree.blackboard.Remove("Player");
                  return BehaviorTreeNodeResult.failure;
             }
@@ -79,13 +79,11 @@ public class InRangeNode : ConditionNode
         {
             if(detectors.inChaseRange == true)
             {
-                Debug.Log("Play Sound Chase");
-                 audioSource.clip = playerBreathing;
-                 audioSource.Play();
                  return BehaviorTreeNodeResult.success;           
             }
             else
             {
+                 audioSource.Play();
                  //Debug.Log("Player Removed");
                  behaviorTree.blackboard.Remove("Player");
                  return BehaviorTreeNodeResult.failure;
