@@ -27,9 +27,9 @@ public class FadeSound : MonoBehaviour
     // Method to fade in Music when player is outside 
     public void fadeInOutsideMusic(AudioClip clip)
     {
-        Debug.Log("Play Sound");
-        audioSource.clip = clip;
-        audioSource.Play();
+        // Debug.Log("Play Sound");
+        // audioSource.clip = clip;
+        // audioSource.Play();
     }
 
     
