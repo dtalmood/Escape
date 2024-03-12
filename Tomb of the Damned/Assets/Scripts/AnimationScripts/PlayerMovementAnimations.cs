@@ -15,7 +15,7 @@ public class PlayerMovementAnimations : MonoBehaviour
     // walking forwards
     public void walkingAnimation()
     {
-        Debug.Log("Waking Animation");
+        //Debug.Log("Waking Animation");
         playerAnimation.SetBool("walking", true);
         playerAnimation.SetBool("idle", false);
         playerAnimation.SetBool("walkingBackwards", false);
@@ -27,7 +27,7 @@ public class PlayerMovementAnimations : MonoBehaviour
     // walking backwards
     public void walkingBackwardsAnimation()
     {
-        Debug.Log("Backwards Animation");
+        //Debug.Log("Backwards Animation");
         playerAnimation.SetBool("walkingBackwards", true);
         playerAnimation.SetBool("walking", false);
         playerAnimation.SetBool("idle", false);

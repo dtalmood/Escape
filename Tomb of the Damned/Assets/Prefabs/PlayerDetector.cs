@@ -19,12 +19,12 @@ public class PlayerDetector : MonoBehaviour
             sphereCollider = GetComponent<SphereCollider>();
         }
 
-        Debug.Log($"Start method for {gameObject.name} called");
+        //Debug.Log($"Start method for {gameObject.name} called");
     }
 
     public void Update()
     {
-        Debug.Log($"Update method for {gameObject.name} called");
+        //Debug.Log($"Update method for {gameObject.name} called");
     }
 
 
@@ -32,7 +32,7 @@ public class PlayerDetector : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            Debug.Log($"Player Staying In {gameObject.name} Collider");
+//            Debug.Log($"Player Staying In {gameObject.name} Collider");
             onPlayerStay?.Invoke();
         }
         else{
@@ -43,7 +43,7 @@ public class PlayerDetector : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            Debug.Log($"Player Entered {gameObject.name} Collider");
+            //Debug.Log($"Player Entered {gameObject.name} Collider");
             onPlayerEnter?.Invoke();
         }
         else{
@@ -55,7 +55,7 @@ public class PlayerDetector : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            Debug.Log($"Player Exited {gameObject.name} Collider");
+            //Debug.Log($"Player Exited {gameObject.name} Collider");
             onPlayerExit?.Invoke();
         }
         else{

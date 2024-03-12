@@ -7,6 +7,11 @@ using System.Reflection;
 
 public class InRangeNode : ConditionNode
 {
+    GameObject player;
+    public TerrainDetector detector;
+    public FadeSound fadeSoundFunction;
+    public AudioClip playerBreathing;  // this is sound that plays when player gets near the monster
+    
     public enum RangeType {chaseRange, attackRange}
 
     public RangeType rangeType;
@@ -21,6 +26,12 @@ public class InRangeNode : ConditionNode
         //The behaviorTree is on the NPC/ enemy gameobject. We look on that gameobject
         //for the detectors
         detectors = behaviorTree.gameObject.GetComponent<NPCRangeDetectors>();
+
+        // Find the player GameObject by tag
+        player = GameObject.FindGameObjectWithTag("Player");
+        fadeSoundFunction = player.GetComponent<FadeSound>();
+        detector = player.GetComponent<TerrainDetector>();
+
     }
 
     //2. The Evaluate function is where behavior is ran. It is ran every tick.
@@ -36,11 +47,34 @@ public class InRangeNode : ConditionNode
 
         if (this.rangeType == RangeType.attackRange)
         {
-            return detectors.inAttackRange == true ? BehaviorTreeNodeResult.success : BehaviorTreeNodeResult.failure;
+            if(detectors.inAttackRange == true)
+            {    
+                              
+                 return BehaviorTreeNodeResult.success;           
+            }
+            else
+            {
+                 fadeSoundFunction.fadeInSoundEffects(playerBreathing);
+                 //Debug.Log("Player Removed");
+                 behaviorTree.blackboard.Remove("Player");
+                 return BehaviorTreeNodeResult.failure;
+            }
+    
         }
+        
         else
         {
-            return detectors.inChaseRange == true ? BehaviorTreeNodeResult.success : BehaviorTreeNodeResult.failure;
+            if(detectors.inChaseRange == true)
+            {
+                 return BehaviorTreeNodeResult.success;           
+            }
+            else
+            {
+                 fadeSoundFunction.fadeInSoundEffects(playerBreathing);
+                 //Debug.Log("Player Removed");
+                 behaviorTree.blackboard.Remove("Player");
+                 return BehaviorTreeNodeResult.failure;
+            }
         }
         
     }
