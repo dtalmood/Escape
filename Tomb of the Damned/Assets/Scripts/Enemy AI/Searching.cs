@@ -11,6 +11,9 @@ using Unity.VisualScripting;
 public class Searching : ConditionNode
 {
     GameObject enemy;
+    GameObject player;
+    public FadeSound fadeSoundFunction;
+    public AudioClip outsideMusic; // this is the background music that will play when player is walking around outside  
     NavMeshAgent agent; // this variable is used to controll navigation of our enemyGameobjet
     //[SerializeField] LayerMask playerLayer; // We put player on its own layer becuase when we look for where the palyer is 
     [SerializeField] LayerMask objectLayer;
@@ -42,10 +45,14 @@ public class Searching : ConditionNode
         //and the value is the initial position of the game object (The NPC)
         behaviorTree.blackboard.Add(initalPositionDictionaryKey, behaviorTree.transform.position);
         animator = behaviorTree.GetComponentInChildren<Animator>();
+
+        player = GameObject.FindGameObjectWithTag("Player");
+        fadeSoundFunction = player.GetComponent<FadeSound>();
     }
     
     protected override BehaviorTreeNodeResult Evaluate(BehaviorTree behaviorTree)
     {
+        fadeSoundFunction.fadeInOutsideMusic(outsideMusic);
         animator?.SetBool("Chase",false);
         patrol(behaviorTree);
         return BehaviorTreeNodeResult.success;
@@ -53,6 +60,7 @@ public class Searching : ConditionNode
     
     private void patrol(BehaviorTree behaviorTree)
     {
+       
         if(!WalkPointSet) // Enemy does not have a point it wants to be walking to 
         {                           
             searchForDestination(behaviorTree);

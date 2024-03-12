@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - Wall
   - EnemyPosition
+  - OutsideWood
   layers:
   - Default
   - TransparentFX

@@ -15,6 +15,8 @@ public class ChasePlayer : ConditionNode
     //[SerializeField] LayerMask playerLayer; // We put player on its own layer becuase when we look for where the palyer is 
     [SerializeField] LayerMask objectLayer;
     [SerializeField] LayerMask groundLayer;
+    public AudioClip chaseMusic; 
+    public FadeSound fadeSoundFunction;
     
     [SerializeField] 
     [ReadOnly]   
@@ -44,10 +46,12 @@ public class ChasePlayer : ConditionNode
         //with the string key equal to our initialPosition string
         //and the value is the initial position of the game object (The NPC)
         animator = behaviorTree.GetComponentInChildren<Animator>();
+        fadeSoundFunction = player.GetComponent<FadeSound>();
     }
     
     protected override BehaviorTreeNodeResult Evaluate(BehaviorTree behaviorTree)
     {
+        //fadeSoundFunction.fadeInChaseMusic(chaseMusic);
         Debug.Log("Chase is Running");
         animator?.SetBool("Chase",true);
         agent.SetDestination(player.transform.position);

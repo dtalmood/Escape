@@ -7,11 +7,13 @@ using System.Reflection;
 
 public class InRangeNode : ConditionNode
 {
-    public FadeSound fadeSoundFunction;
     GameObject player;
+    public TerrainDetector detector;
+    public FadeSound fadeSoundFunction;
+    public AudioClip playerBreathing;  // this is sound that plays when player gets near the monster
+    
     public enum RangeType {chaseRange, attackRange}
 
-    public AudioClip playerBreathing;  
     public RangeType rangeType;
     public NPCRangeDetectors detectors;
 
@@ -28,6 +30,7 @@ public class InRangeNode : ConditionNode
         // Find the player GameObject by tag
         player = GameObject.FindGameObjectWithTag("Player");
         fadeSoundFunction = player.GetComponent<FadeSound>();
+        detector = player.GetComponent<TerrainDetector>();
 
     }
 
@@ -51,7 +54,7 @@ public class InRangeNode : ConditionNode
             }
             else
             {
-                 fadeSoundFunction.fadeInAudio(playerBreathing);
+                 fadeSoundFunction.fadeInSoundEffects(playerBreathing);
                  //Debug.Log("Player Removed");
                  behaviorTree.blackboard.Remove("Player");
                  return BehaviorTreeNodeResult.failure;
@@ -67,7 +70,7 @@ public class InRangeNode : ConditionNode
             }
             else
             {
-                 fadeSoundFunction.fadeInAudio(playerBreathing);
+                 fadeSoundFunction.fadeInSoundEffects(playerBreathing);
                  //Debug.Log("Player Removed");
                  behaviorTree.blackboard.Remove("Player");
                  return BehaviorTreeNodeResult.failure;
