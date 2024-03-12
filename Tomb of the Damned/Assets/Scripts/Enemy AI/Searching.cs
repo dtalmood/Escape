@@ -47,7 +47,7 @@ public class Searching : ConditionNode
     protected override BehaviorTreeNodeResult Evaluate(BehaviorTree behaviorTree)
     {
         animator?.SetBool("Chase",false);
-        //patrol(behaviorTree);
+        patrol(behaviorTree);
         return BehaviorTreeNodeResult.success;
     }
     

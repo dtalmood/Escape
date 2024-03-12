@@ -10,7 +10,6 @@ public class InRangeNode : ConditionNode
     public FadeSound fadeSoundFunction;
     GameObject player;
     public enum RangeType {chaseRange, attackRange}
-    private AudioSource audioSource; 
 
     public AudioClip playerBreathing;  
     public RangeType rangeType;
@@ -28,24 +27,8 @@ public class InRangeNode : ConditionNode
 
         // Find the player GameObject by tag
         player = GameObject.FindGameObjectWithTag("Player");
+        fadeSoundFunction = player.GetComponent<FadeSound>();
 
-    if (player != null)
-    {
-        // Get the AudioSource component from the player GameObject
-        audioSource = player.transform.Find("Audio Source Near Monster").GetComponent<AudioSource>();
-        if (audioSource != null)
-        {
-            audioSource.clip = playerBreathing;
-        }
-        else
-        {
-            Debug.LogError("Audio Source Near Monster not found on Player GameObject!");
-        }
-    }
-    else
-    {
-        Debug.LogError("Player GameObject not found!");
-    }
     }
 
     //2. The Evaluate function is where behavior is ran. It is ran every tick.
@@ -62,12 +45,13 @@ public class InRangeNode : ConditionNode
         if (this.rangeType == RangeType.attackRange)
         {
             if(detectors.inAttackRange == true)
-            {                 
+            {    
+                              
                  return BehaviorTreeNodeResult.success;           
             }
             else
             {
-                 audioSource.Play();
+                 fadeSoundFunction.fadeInAudio(playerBreathing);
                  //Debug.Log("Player Removed");
                  behaviorTree.blackboard.Remove("Player");
                  return BehaviorTreeNodeResult.failure;
@@ -83,7 +67,7 @@ public class InRangeNode : ConditionNode
             }
             else
             {
-                 audioSource.Play();
+                 fadeSoundFunction.fadeInAudio(playerBreathing);
                  //Debug.Log("Player Removed");
                  behaviorTree.blackboard.Remove("Player");
                  return BehaviorTreeNodeResult.failure;
