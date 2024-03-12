@@ -546,7 +546,7 @@ public class PlayerMovement : MonoBehaviour
     // this handles playing sound when walking on a 3D object 
     public void objectPlayWalkSprintCrouchSound(string current, float delayAmount)
     {
-        if(current == "Wood")
+        if(current == "Wood" || current == "OutsideWood")
         {
             if (play)
             {
@@ -607,7 +607,7 @@ public class PlayerMovement : MonoBehaviour
                 audio_Source.PlayOneShot(sound);
                 
             }
-            else if(current == "Wood")
+            else if(current == "Wood" || current == "OutsideWood")
             {
                 Debug.Log("Play Wood Jump");
                 sound = woodFootSteps.jumpSound;
@@ -645,7 +645,7 @@ public class PlayerMovement : MonoBehaviour
              sound = gravelFootSteps.landSound;
              audio_Source.PlayOneShot(sound);
         }
-       else if(current == "Wood")
+       else if(current == "Wood" || current == "OutsideWood")
         {
             Debug.Log("Play Wood Land");
             sound = woodFootSteps.landSound;
