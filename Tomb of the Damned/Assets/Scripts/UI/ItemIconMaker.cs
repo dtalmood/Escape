@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor;
 
 public class ItemIconMaker : MonoBehaviour
 {
@@ -12,11 +13,30 @@ public class ItemIconMaker : MonoBehaviour
     [SerializeField]
     private Image m_image;
 
+    public string directory;
+    public string filename;
+
+    public bool Activate;
+    public bool Save;
+
     public KeyCode activationKeycode;
 
-    public void Start()
+    public void OnValidate()
     {
-        GetIcon(m_gameObject, m_camera, m_image);
+        if(Activate)
+        {
+            Activate = false;
+            EditorApplication.delayCall += () =>
+            {
+                GetIcon(m_gameObject, m_camera, m_image);
+            };
+        }
+
+        if(Save)
+        {
+            Save = false;
+            SaveImage(m_image, directory + filename);
+        }
     }
 
     public void Update()
@@ -27,8 +47,15 @@ public class ItemIconMaker : MonoBehaviour
         }
     }
 
+    public static void SaveImage(Image img, string filepath)
+    {
+        byte[] bytes = img.sprite.texture.EncodeToPNG();
+        System.IO.File.WriteAllBytes(filepath, bytes);
+    }
+
     public static Sprite GetIcon(GameObject item, Camera cam, Image icon)
     {
+        cam.enabled = true;
         cam.orthographicSize = item.GetComponent<Renderer>().bounds.extents.y + 0.1f;
 
         int xResolution = cam.pixelWidth;
@@ -64,10 +91,12 @@ public class ItemIconMaker : MonoBehaviour
         cam.targetTexture = null;
         RenderTexture.active = null;
 
-        Destroy(renderTex);
+        DestroyImmediate(renderTex);
 
         Sprite result = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0, 0));
         icon.sprite = result;
+
+        cam.enabled = false;
         return result;
     }
 }
