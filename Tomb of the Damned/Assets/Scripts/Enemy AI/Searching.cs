@@ -52,7 +52,7 @@ public class Searching : ConditionNode
     
     protected override BehaviorTreeNodeResult Evaluate(BehaviorTree behaviorTree)
     {
-        fadeSoundFunction.fadeInOutsideMusic(outsideMusic);
+        fadeSoundFunction.fadeInSoundEffects(outsideMusic);
         animator?.SetBool("Chase",false);
         patrol(behaviorTree);
         return BehaviorTreeNodeResult.success;
