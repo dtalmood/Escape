@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6553dff3c6dd6bc4794db73ef33e3df1, type: 3}
   m_Name: Car Part 4
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 3
   uiDisplay: {fileID: 21300000, guid: a19b58222e66a934693b1777bf58e843, type: 3}
   type: 0
   description: 
