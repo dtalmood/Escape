@@ -49,7 +49,7 @@ public class InRangeNode : ConditionNode
         {
             if(detectors.inAttackRange == true)
             {    
-                              
+                Debug.Log("In Attack Range");           
                  return BehaviorTreeNodeResult.success;           
             }
             else
