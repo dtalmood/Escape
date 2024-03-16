@@ -8,6 +8,7 @@ using UnityEngine.AI;
 
 public class Attack : TaskNode
 {
+    GameObject cam;
     GameObject player;
     //public FadeSound fadeSoundFunction;
     PlayerHealthBar playerHealth;
@@ -22,10 +23,11 @@ public class Attack : TaskNode
         //for the detectors
         // Find the player GameObject by tag
         player = GameObject.FindGameObjectWithTag("Player");
+        cam = GameObject.FindGameObjectWithTag("Camera");
         //fadeSoundFunction = player.GetComponent<FadeSound>();
         anim = behaviorTree.GetComponentInChildren<Animator>();
         agent = behaviorTree.GetComponent<NavMeshAgent>(); 
-        playerHealth = player.GetComponentInChildren<PlayerHealthBar>();
+        playerHealth = cam.GetComponentInChildren<PlayerHealthBar>();
 
     }
     protected override BehaviorTreeNodeResult Evaluate(BehaviorTree behaviorTree)
@@ -33,15 +35,12 @@ public class Attack : TaskNode
         // Current Time - Last Tiem monster Attached  > Attack Cooldown 
         if(Time.time - lastAttackTimestamp > attackCooldown)
         {
-            Debug.Log("Monster Attack Pass");
+            //Debug.Log("Monster Attack Pass");
             anim.Play("Monster Attack"); 
             behaviorTree.StartCoroutine(WhileAttacking());
+            playerHealth.monsterDamage();
             lastAttackTimestamp = Time.time;
             return BehaviorTreeNodeResult.success;
-        }
-        else
-        {
-            Debug.Log("Monster Attack failure");
         }
         return BehaviorTreeNodeResult.failure;
     }

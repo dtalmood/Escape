@@ -54,7 +54,6 @@ public class ChasePlayer : ConditionNode
     protected override BehaviorTreeNodeResult Evaluate(BehaviorTree behaviorTree)
     {
         agent.speed = 2f;
-        Debug.Log("Speed in Chase: "+agent.speed);
         //fadeSoundFunction.fadeInChaseMusic(chaseMusic);
         //Debug.Log("Chase is Running");
         animator?.SetBool("Chase",true);

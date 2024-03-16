@@ -28,8 +28,8 @@ public class PlayerHealthBar : MonoBehaviour
 
     public void monsterDamage()
     {
-        StartCoroutine(ApplyDamageOverTime(30, 0.05f, 10f));
-            Debug.Log("Large");
+        StartCoroutine(ApplyDamageOverTime(30, 0.05f, 1f));
+        Debug.Log("Large");
     }
 
     // We will reduce player health in this location
