@@ -39,11 +39,6 @@ public class Attack : TaskNode
             lastAttackTimestamp = Time.time;
             return BehaviorTreeNodeResult.success;
         }
-        else
-        {
-            Debug.Log("Attack Failure");
-        }
-        
         return BehaviorTreeNodeResult.failure;
     }
 

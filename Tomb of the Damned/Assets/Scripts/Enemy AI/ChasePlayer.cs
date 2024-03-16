@@ -54,16 +54,7 @@ public class ChasePlayer : ConditionNode
     
     protected override BehaviorTreeNodeResult Evaluate(BehaviorTree behaviorTree)
     {
-        // if(animator.GetBool("Idle") || animator.GetBool("Attack"))
-        // {
-        //     agent.speed = 0;
-        // }
-        // else{
-        //     agent.speed = speed;
-        // }
-
         //fadeSoundFunction.fadeInChaseMusic(chaseMusic);
-        Debug.Log("Chase is Running");
         animator?.SetBool("Chase",true);
         agent.SetDestination(GetDestination(behaviorTree.transform.position, player.transform.position));
         return BehaviorTreeNodeResult.success;
