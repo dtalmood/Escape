@@ -11,8 +11,13 @@ using UnityEngine.SceneManagement;
     at the top you should see the queue 
 
     the current queue is as follows 
-    0: Main Menu
-    1: Main Game (what we coded all last quarter)
+    Index 0: Main Menu
+    Index 1: Main Game (what we coded all last quarter)
+    Index 2: Game Over
+    Index 3: Foilage
+    Index 4: Inventory User Interface
+
+    
 */
 
 
@@ -58,5 +63,7 @@ public class MainMenu : MonoBehaviour
         Cursor.visible = true; // Make cursor visible when transitioning back to the previous scene
         Cursor.lockState = CursorLockMode.None; // Allow the cursor to move freely
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        // Additively load the foliage scene
+        SceneManager.LoadScene("Foliage", LoadSceneMode.Additive);
     }
 }
