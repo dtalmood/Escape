@@ -18,7 +18,6 @@ public class Searching : ConditionNode
     //[SerializeField] LayerMask playerLayer; // We put player on its own layer becuase when we look for where the palyer is 
     [SerializeField] LayerMask objectLayer;
     [SerializeField] LayerMask groundLayer;
-    public int monsterSpeed;
     
     [SerializeField] 
     [ReadOnly]   
@@ -49,7 +48,6 @@ public class Searching : ConditionNode
 
         player = GameObject.FindGameObjectWithTag("Player");
         fadeSoundFunction = player.GetComponent<FadeSound>();
-        agent.speed = monsterSpeed;
     }
     
     protected override BehaviorTreeNodeResult Evaluate(BehaviorTree behaviorTree)

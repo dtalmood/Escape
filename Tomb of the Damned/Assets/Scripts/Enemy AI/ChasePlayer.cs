@@ -23,7 +23,7 @@ public class ChasePlayer : ConditionNode
     [ReadOnly]   
     private string initalPositionDictionaryKey = "InitalRoamPosition";
     
-    private float speed;
+    public float speed = 2f;
 
     //Patroling
     Vector3 destinationPoint; // where the enemy will be walking to 
@@ -49,12 +49,14 @@ public class ChasePlayer : ConditionNode
         //and the value is the initial position of the game object (The NPC)
         animator = behaviorTree.GetComponentInChildren<Animator>();
         fadeSoundFunction = player.GetComponent<FadeSound>();
-        speed = agent.speed;
     }
     
     protected override BehaviorTreeNodeResult Evaluate(BehaviorTree behaviorTree)
     {
+        agent.speed = 2f;
+        Debug.Log("Speed in Chase: "+agent.speed);
         //fadeSoundFunction.fadeInChaseMusic(chaseMusic);
+        //Debug.Log("Chase is Running");
         animator?.SetBool("Chase",true);
         agent.SetDestination(GetDestination(behaviorTree.transform.position, player.transform.position));
         return BehaviorTreeNodeResult.success;

@@ -29,33 +29,47 @@ public class Attack : TaskNode
     }
     protected override BehaviorTreeNodeResult Evaluate(BehaviorTree behaviorTree)
     {
+        // Current Time - Last Tiem monster Attached  > Attack Cooldown 
         if(Time.time - lastAttackTimestamp > attackCooldown)
         {
-            Debug.Log("Attack Successful");
+            Debug.Log("Monster Attack Pass");
             anim.Play("Monster Attack");
-          
+            float initialSpeed = agent.speed;
+            //Debug.Log("Speed Before Attack: "+initialSpeed);
             behaviorTree.StartCoroutine(WhileAttacking());
-
+            agent.speed = initialSpeed;
+            //Debug.Log("Speed After Attack: "+agent.speed);
             lastAttackTimestamp = Time.time;
             return BehaviorTreeNodeResult.success;
+        }
+        else
+        {
+            Debug.Log("Monster Attack failure");
         }
         return BehaviorTreeNodeResult.failure;
     }
 
     private IEnumerator WhileAttacking()
     {
-        AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
-        float initialSpeed = agent.speed;
-        Debug.Log("Previous Agent Speed = "+ agent.speed);
-        while(stateInfo.IsName("Monster Attack"))
-        {
-            
-            agent.speed = 0;
-            yield return null;
-        }
-        Debug.Log("Current Agent Speed = "+ agent.speed);
-        agent.speed = 2f;
+        Debug.Log("Inside Attack Function");
+        
+        // Wait for the next frame to ensure the Animator state is updated
         yield return null;
+        
+        AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+
+        while(stateInfo.IsName("Monster Attack"))
+        {   
+            agent.speed = 0f;
+            Debug.Log("Speed While Attacking: " + agent.speed);
+            
+            // Wait for the next frame to allow the Animator state to update
+            yield return null;
+            
+            // Update the stateInfo for the next iteration
+            stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+        }
+
     }
 
     public override BehaviorTreeNode Clone()
