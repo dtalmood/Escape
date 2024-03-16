@@ -10,7 +10,7 @@ public class Attack : TaskNode
 {
     GameObject player;
     //public FadeSound fadeSoundFunction;
-
+    PlayerHealthBar playerHealth;
     public Animator anim;
     NavMeshAgent agent; // this variable is used to controll navigation of our enemyGameobjet
     public float lastAttackTimestamp;
@@ -25,6 +25,7 @@ public class Attack : TaskNode
         //fadeSoundFunction = player.GetComponent<FadeSound>();
         anim = behaviorTree.GetComponentInChildren<Animator>();
         agent = behaviorTree.GetComponent<NavMeshAgent>(); 
+        playerHealth = player.GetComponentInChildren<PlayerHealthBar>();
 
     }
     protected override BehaviorTreeNodeResult Evaluate(BehaviorTree behaviorTree)
@@ -33,12 +34,8 @@ public class Attack : TaskNode
         if(Time.time - lastAttackTimestamp > attackCooldown)
         {
             Debug.Log("Monster Attack Pass");
-            anim.Play("Monster Attack");
-            float initialSpeed = agent.speed;
-            //Debug.Log("Speed Before Attack: "+initialSpeed);
+            anim.Play("Monster Attack"); 
             behaviorTree.StartCoroutine(WhileAttacking());
-            agent.speed = initialSpeed;
-            //Debug.Log("Speed After Attack: "+agent.speed);
             lastAttackTimestamp = Time.time;
             return BehaviorTreeNodeResult.success;
         }
@@ -53,7 +50,7 @@ public class Attack : TaskNode
     {
         Debug.Log("Inside Attack Function");
         AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
-
+        float initialSpeed = agent.speed;
         while(stateInfo.IsName("Monster Attack"))
         {   
             
@@ -62,7 +59,7 @@ public class Attack : TaskNode
             yield return null;
             stateInfo = anim.GetCurrentAnimatorStateInfo(0);
         }
-
+        agent.speed = initialSpeed;
         yield return null;
     }
 
