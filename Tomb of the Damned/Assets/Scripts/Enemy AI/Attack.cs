@@ -52,24 +52,18 @@ public class Attack : TaskNode
     private IEnumerator WhileAttacking()
     {
         Debug.Log("Inside Attack Function");
-        
-        // Wait for the next frame to ensure the Animator state is updated
-        yield return null;
-        
         AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
 
         while(stateInfo.IsName("Monster Attack"))
         {   
+            
             agent.speed = 0f;
-            Debug.Log("Speed While Attacking: " + agent.speed);
-            
-            // Wait for the next frame to allow the Animator state to update
+            Debug.Log("Speed While Attacking: "+ agent.speed);
             yield return null;
-            
-            // Update the stateInfo for the next iteration
             stateInfo = anim.GetCurrentAnimatorStateInfo(0);
         }
 
+        yield return null;
     }
 
     public override BehaviorTreeNode Clone()

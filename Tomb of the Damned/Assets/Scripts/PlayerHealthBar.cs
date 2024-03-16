@@ -26,6 +26,11 @@ public class PlayerHealthBar : MonoBehaviour
         //Debug.Log("Initial fillAmount set to: " + playerHealthBarSprite.fillAmount);
     }
 
+    public void monsterDamage()
+    {
+        StartCoroutine(ApplyDamageOverTime(30, 0.05f, 10f));
+            Debug.Log("Large");
+    }
 
     // We will reduce player health in this location
     public void fallDamage(float before, float after)
