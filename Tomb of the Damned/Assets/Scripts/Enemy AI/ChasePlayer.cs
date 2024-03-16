@@ -6,6 +6,7 @@ using System.Reflection;
 using UnityEngine.AI;
 using System.Text;
 using Unity.VisualScripting;
+using UnityEditor;
 
 public class ChasePlayer : ConditionNode
 {
@@ -22,6 +23,7 @@ public class ChasePlayer : ConditionNode
     [ReadOnly]   
     private string initalPositionDictionaryKey = "InitalRoamPosition";
     
+    public float speed = 2f;
 
     //Patroling
     Vector3 destinationPoint; // where the enemy will be walking to 
@@ -51,13 +53,21 @@ public class ChasePlayer : ConditionNode
     
     protected override BehaviorTreeNodeResult Evaluate(BehaviorTree behaviorTree)
     {
+        agent.speed = 2f;
         //fadeSoundFunction.fadeInChaseMusic(chaseMusic);
-        Debug.Log("Chase is Running");
+        //Debug.Log("Chase is Running");
         animator?.SetBool("Chase",true);
-        agent.SetDestination(player.transform.position);
+        agent.SetDestination(GetDestination(behaviorTree.transform.position, player.transform.position));
         return BehaviorTreeNodeResult.success;
     }
     
+    public Vector3 GetDestination(Vector3 currentPosition, Vector3 target)
+    {
+        float distanceFromTarget = 1f;
+        Vector3 des = target + (currentPosition - target).normalized * distanceFromTarget;
+        return des;
+    } 
+
     public override BehaviorTreeNode Clone()
     {
         ChasePlayer clonedNode = CreateInstance<ChasePlayer>();

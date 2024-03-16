@@ -34,7 +34,7 @@ public class FadeSound : MonoBehaviour
         //We are defining a hook that will get called when the audio pool starts playing our clip.     
         UnityAction<AudioSource> hook = new UnityAction<AudioSource>(source => {});
         hook = new UnityAction<AudioSource>((source) => {
-            Debug.Log($"Called hook. onPlayAudioSource with clip: {source.clip.name}");
+            //Debug.Log($"Called hook. onPlayAudioSource with clip: {source.clip.name}");
             //If the audio source that the pool  just started playing is the one we just received in our hook
             if(audioSource.clip == clip)
             {

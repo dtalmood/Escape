@@ -49,7 +49,6 @@ public class InRangeNode : ConditionNode
         {
             if(detectors.inAttackRange == true)
             {    
-                              
                  return BehaviorTreeNodeResult.success;           
             }
             else
