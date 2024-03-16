@@ -54,7 +54,7 @@ public class Searching : ConditionNode
     {
         fadeSoundFunction.fadeInSoundEffects(outsideMusic);
         animator?.SetBool("Chase",false);
-        //patrol(behaviorTree);
+        patrol(behaviorTree);
         return BehaviorTreeNodeResult.success;
     }
     
