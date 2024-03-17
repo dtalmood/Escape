@@ -1,45 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8243996791628273332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d474ea6a11b774a19b4364fd216d4747, type: 3}
-  m_Name: Attack
-  m_EditorClassIdentifier: 
-  lastStatus: 1
-  anim: {fileID: 0}
-  lastAttackTimestamp: 0
-  attackCooldown: 0.5
---- !u!114 &-7343442908045377925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01fd5ab1f463f4378b602db35ed837e9, type: 3}
-  m_Name: Searching
-  m_EditorClassIdentifier: 
-  lastStatus: 1
-  fadeSoundFunction: {fileID: 0}
-  outsideMusic: {fileID: 8300000, guid: 9549786ad132f46619deaf8c8714c455, type: 3}
-  objectLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  initalPositionDictionaryKey: InitalRoamPosition
-  range: 20
---- !u!114 &-6911773355368489345
+--- !u!114 &-8423808135523692762
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -52,39 +13,7 @@ MonoBehaviour:
   m_Name: Get Enemy Node
   m_EditorClassIdentifier: 
   lastStatus: 1
---- !u!114 &-6475310408598808100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 741d09e67d856344481642d1a7e1b68e, type: 3}
-  m_Name: Debug Node
-  m_EditorClassIdentifier: 
-  lastStatus: 1
-  debugMessage: Player is being chased
-  debugType: 0
---- !u!114 &-6305722789608224898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e86c9ddfa9e6e49d791731d0a4c8b8b1, type: 3}
-  m_Name: Monster Respawn
-  m_EditorClassIdentifier: 
-  lastStatus: 1
-  enemyPosition: {fileID: 0}
-  playerPosition: {fileID: 0}
-  mainGameTerrain: {fileID: 0}
-  distanceFromMonsterToPlayer: 10
---- !u!114 &-5734989490827308499
+--- !u!114 &-8375956443953185620
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,30 +27,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastStatus: 1
   <children>k__BackingField:
-  - {fileID: 2961497571312187912}
-  - {fileID: -6305722789608224898}
+  - {fileID: -8332542017694569937}
+  - {fileID: -6651273179556021432}
   index: 0
---- !u!114 &-5531259255040224037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b34213cd8390b92469ef757aa7906682, type: 3}
-  m_Name: In Range Node
-  m_EditorClassIdentifier: 
-  lastStatus: 1
-  detector: {fileID: 0}
-  fadeSoundFunction: {fileID: 0}
-  playerBreathing: {fileID: 8300000, guid: d2274ed89a0964c6bb1717bfce4e8d47, type: 3}
-  rangeType: 0
-  detectors: {fileID: 0}
-  inAttackRange: 0
-  inChaseRange: 0
---- !u!114 &-5341333957568807599
+--- !u!114 &-8332542017694569937
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,7 +50,21 @@ MonoBehaviour:
   detectors: {fileID: 0}
   inAttackRange: 0
   inChaseRange: 0
---- !u!114 &-4466891941294729894
+--- !u!114 &-8248062576668803228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea6e0c5854c077142b5e8ad5bf266aa1, type: 3}
+  m_Name: Always Succeed Node
+  m_EditorClassIdentifier: 
+  lastStatus: 1
+  <child>k__BackingField: {fileID: -8375956443953185620}
+--- !u!114 &-8155049260829954833
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,10 +78,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastStatus: 1
   <children>k__BackingField:
-  - {fileID: -5341333957568807599}
-  - {fileID: -8243996791628273332}
+  - {fileID: 1005923843061265500}
+  - {fileID: 344905152987358193}
+  - {fileID: 5711407874877661257}
+  - {fileID: 9157720180943957212}
   index: 0
---- !u!114 &-3713316100607639191
+--- !u!114 &-6651273179556021432
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,12 +92,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea6e0c5854c077142b5e8ad5bf266aa1, type: 3}
-  m_Name: Always Succeed Node
+  m_Script: {fileID: 11500000, guid: d474ea6a11b774a19b4364fd216d4747, type: 3}
+  m_Name: Attack
   m_EditorClassIdentifier: 
   lastStatus: 1
-  <child>k__BackingField: {fileID: -5734989490827308499}
---- !u!114 &-3294284849303145593
+  anim: {fileID: 0}
+  lastAttackTimestamp: 0
+  attackCooldown: 0.5
+--- !u!114 &-892799220056375860
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,12 +108,72 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea6e0c5854c077142b5e8ad5bf266aa1, type: 3}
-  m_Name: Always Succeed Node
+  m_Script: {fileID: 11500000, guid: 2330552b66d49af4d952f15d7e997781, type: 3}
+  m_Name: Inverter Node
   m_EditorClassIdentifier: 
   lastStatus: 1
-  <child>k__BackingField: {fileID: -4466891941294729894}
---- !u!114 &-3288678257392548397
+  <child>k__BackingField: {fileID: -400876346305258123}
+--- !u!114 &-400876346305258123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 362c75caf6c1d428b9f8d74771ec0f82, type: 3}
+  m_Name: Wall Check
+  m_EditorClassIdentifier: 
+  lastStatus: 1
+  playerTransform: {fileID: 0}
+  enemnyTransform: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255d4103c7db56741959a319389d742e, type: 3}
+  m_Name: New Behavior Tree
+  m_EditorClassIdentifier: 
+  lastStatus: 1
+  <child>k__BackingField: {fileID: 1211170934160411689}
+--- !u!114 &330435534566958154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 741d09e67d856344481642d1a7e1b68e, type: 3}
+  m_Name: Debug Node
+  m_EditorClassIdentifier: 
+  lastStatus: 1
+  debugMessage: Player is being chased
+  debugType: 0
+--- !u!114 &344905152987358193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd8ac4653bf232b4d9c852e3443d9c4d, type: 3}
+  m_Name: Wait Node
+  m_EditorClassIdentifier: 
+  lastStatus: 1
+  timeType: 1
+  waitTime: 0
+  counter: 0
+--- !u!114 &710840771163860001
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -210,7 +197,51 @@ MonoBehaviour:
   initalPositionDictionaryKey: InitalRoamPosition
   speed: 2
   range: 0
---- !u!114 &-3281852341008404203
+--- !u!114 &1005923843061265500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77eb46b81488740479fbad26f048212b, type: 3}
+  m_Name: Monster Speed
+  m_EditorClassIdentifier: 
+  lastStatus: 1
+--- !u!114 &1211170934160411689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e773a37097dee344a270e80a73c76af, type: 3}
+  m_Name: Selector Node
+  m_EditorClassIdentifier: 
+  lastStatus: 1
+  <children>k__BackingField:
+  - {fileID: 4002714273456644541}
+  - {fileID: 6105049584252451827}
+  - {fileID: -8155049260829954833}
+--- !u!114 &1732576959526318804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66630461ba1dc344199608fdd95caa6b, type: 3}
+  m_Name: Check Key Node
+  m_EditorClassIdentifier: 
+  lastStatus: 1
+  keyName: Player
+--- !u!114 &2086553678440790717
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -226,7 +257,7 @@ MonoBehaviour:
   keyNode: Player
   enemyPosition: {fileID: 0}
   playerPosition: {fileID: 0}
---- !u!114 &-2893712361876479451
+--- !u!114 &3147444948590036323
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -235,93 +266,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d031d01802183d49963b4f4ac08934c, type: 3}
-  m_Name: Player Detection Sequence
+  m_Script: {fileID: 11500000, guid: b34213cd8390b92469ef757aa7906682, type: 3}
+  m_Name: In Range Node
   m_EditorClassIdentifier: 
   lastStatus: 1
-  <children>k__BackingField:
-  - {fileID: -6911773355368489345}
-  - {fileID: -5531259255040224037}
-  - {fileID: 2007166909167455467}
-  - {fileID: -3281852341008404203}
-  index: 0
---- !u!114 &-2244627958154494739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66630461ba1dc344199608fdd95caa6b, type: 3}
-  m_Name: Check Key Node
-  m_EditorClassIdentifier: 
-  lastStatus: 1
-  keyName: Player
---- !u!114 &-1798635589106613655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd8ac4653bf232b4d9c852e3443d9c4d, type: 3}
-  m_Name: Wait Node
-  m_EditorClassIdentifier: 
-  lastStatus: 1
-  timeType: 1
-  waitTime: 0
-  counter: 0
---- !u!114 &-1678001008054127229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d031d01802183d49963b4f4ac08934c, type: 3}
-  m_Name: Sequencer Node
-  m_EditorClassIdentifier: 
-  lastStatus: 1
-  <children>k__BackingField:
-  - {fileID: -167657397138089748}
-  - {fileID: -1798635589106613655}
-  - {fileID: -7343442908045377925}
-  - {fileID: -3713316100607639191}
-  index: 0
---- !u!114 &-167657397138089748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77eb46b81488740479fbad26f048212b, type: 3}
-  m_Name: Monster Speed
-  m_EditorClassIdentifier: 
-  lastStatus: 1
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 255d4103c7db56741959a319389d742e, type: 3}
-  m_Name: New Behavior Tree
-  m_EditorClassIdentifier: 
-  lastStatus: 1
-  <child>k__BackingField: {fileID: 2189037127201799315}
---- !u!114 &506962766576700542
+  detector: {fileID: 0}
+  fadeSoundFunction: {fileID: 0}
+  playerBreathing: {fileID: 8300000, guid: d2274ed89a0964c6bb1717bfce4e8d47, type: 3}
+  rangeType: 0
+  detectors: {fileID: 0}
+  inAttackRange: 0
+  inChaseRange: 0
+--- !u!114 &4002714273456644541
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -335,12 +291,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastStatus: 1
   <children>k__BackingField:
-  - {fileID: -2244627958154494739}
-  - {fileID: -3288678257392548397}
-  - {fileID: -6475310408598808100}
-  - {fileID: -3294284849303145593}
+  - {fileID: 1732576959526318804}
+  - {fileID: 710840771163860001}
+  - {fileID: 330435534566958154}
+  - {fileID: -8248062576668803228}
   index: 0
---- !u!114 &2007166909167455467
+--- !u!114 &5711407874877661257
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -349,12 +305,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2330552b66d49af4d952f15d7e997781, type: 3}
-  m_Name: Inverter Node
+  m_Script: {fileID: 11500000, guid: 01fd5ab1f463f4378b602db35ed837e9, type: 3}
+  m_Name: Searching
   m_EditorClassIdentifier: 
   lastStatus: 1
-  <child>k__BackingField: {fileID: 4819803500279350687}
---- !u!114 &2189037127201799315
+  fadeSoundFunction: {fileID: 0}
+  outsideMusic: {fileID: 8300000, guid: 9549786ad132f46619deaf8c8714c455, type: 3}
+  objectLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  initalPositionDictionaryKey: InitalRoamPosition
+  range: 20
+--- !u!114 &6105049584252451827
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -363,15 +328,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e773a37097dee344a270e80a73c76af, type: 3}
-  m_Name: Selector Node
+  m_Script: {fileID: 11500000, guid: 5d031d01802183d49963b4f4ac08934c, type: 3}
+  m_Name: Player Detection Sequence
   m_EditorClassIdentifier: 
   lastStatus: 1
   <children>k__BackingField:
-  - {fileID: 506962766576700542}
-  - {fileID: -2893712361876479451}
-  - {fileID: -1678001008054127229}
---- !u!114 &2961497571312187912
+  - {fileID: -8423808135523692762}
+  - {fileID: 3147444948590036323}
+  - {fileID: -892799220056375860}
+  - {fileID: 2086553678440790717}
+  index: 0
+--- !u!114 &6493892339786721093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d031d01802183d49963b4f4ac08934c, type: 3}
+  m_Name: Sequencer Node
+  m_EditorClassIdentifier: 
+  lastStatus: 1
+  <children>k__BackingField:
+  - {fileID: 7412166015205327743}
+  - {fileID: 8020582701879510240}
+  index: 0
+--- !u!114 &7412166015205327743
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -387,7 +371,7 @@ MonoBehaviour:
   timeType: 1
   waitTime: 15
   counter: 0
---- !u!114 &4819803500279350687
+--- !u!114 &8020582701879510240
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -396,9 +380,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 362c75caf6c1d428b9f8d74771ec0f82, type: 3}
-  m_Name: Wall Check
+  m_Script: {fileID: 11500000, guid: e86c9ddfa9e6e49d791731d0a4c8b8b1, type: 3}
+  m_Name: Monster Respawn
   m_EditorClassIdentifier: 
   lastStatus: 1
-  playerTransform: {fileID: 0}
-  enemnyTransform: {fileID: 0}
+  enemyPosition: {fileID: 0}
+  playerPosition: {fileID: 0}
+--- !u!114 &9157720180943957212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea6e0c5854c077142b5e8ad5bf266aa1, type: 3}
+  m_Name: Always Succeed Node
+  m_EditorClassIdentifier: 
+  lastStatus: 1
+  <child>k__BackingField: {fileID: 6493892339786721093}

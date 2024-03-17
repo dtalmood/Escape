@@ -22,6 +22,17 @@ public class ConeCheck : ConditionNode
             Vector3 forward = enemyPosition.transform.TransformDirection(Vector3.forward);
             Vector3 toOther = playerPosition.position - enemyPosition.transform.position;
 
+            /*
+                How the Vector3.Dot(forward, toOther) Works 
+                    1.  Player Looking directly at monster, Output: 1 
+                    2. Player looks a +/- 10 degrees left or right of monstet, Output: 0.9
+                    3. Player looks a +/- 20 degrees left or right of monstet, Output: 0.8
+                    4. Player looks a +/- 30 degrees left or right of monstet, Output: 0.7
+                    5. Player looks a +/- 40 degrees left or right of monstet, Output: 0.6
+                    6. Player looks a +/- 50 degrees left or right of monstet, Output: 0.5
+                    7. Player looks a +/- 60 degrees left or right of monstet, Output: 0.4
+                    7. Player looks a +/- 70 degrees left or right of monstet, Output: 0.3 
+            */
 
             if (Vector3.Dot(forward, toOther) < 0)
             {

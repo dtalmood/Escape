@@ -14,25 +14,25 @@ using Unity.VisualScripting;
 public class MonsterRespawn : TaskNode
 {
 
-    public Transform enemyPosition;
-    public Transform playerPosition;
-    float distanceFromMonsterToPlayer = 20f;
+    public GameObject enemy;
+    public GameObject player;
+    float distanceFromMonsterToPlayer = 30f;
 
     protected override void OnInit(BehaviorTree behaviorTree)
     {
-        playerPosition = GameObject.FindGameObjectWithTag("Player").transform;
-        enemyPosition = GameObject.FindGameObjectWithTag("Enemy").transform;
+        player = GameObject.FindGameObjectWithTag("Player");
+        enemy = GameObject.FindGameObjectWithTag("Enemy");
     }
 
     protected override BehaviorTreeNodeResult Evaluate(BehaviorTree behaviorTree)
     {
-        Debug.Log("Monster Respawn Function Running");
+        Debug.Log("Player Position: " + player.transform.position + ", Monster Position: " + enemy.transform.position);
+
         bool distanceResult = checkDistance(behaviorTree);
 
         // We check if the player is far enough away from the monster to justify the monster to respawn 
         if (distanceResult) // monster is far enough away
         {
-            Debug.Log("Player is far enough away");
             // check and make sure the player is not looking at the monster during the respawn
             
             if (!checkVision(behaviorTree)) // player is looking at the monster so do not respawn 
@@ -40,7 +40,6 @@ public class MonsterRespawn : TaskNode
                 return BehaviorTreeNodeResult.failure; 
             }
             
-            Debug.Log("Player is not looking at the monster");
             respawnMonster();
             return BehaviorTreeNodeResult.success;
         }
@@ -52,22 +51,22 @@ public class MonsterRespawn : TaskNode
     }
     private void respawnMonster()
     {
-        Debug.Log("Rewspawn the monster now");
+        Debug.Log("Respawn monster now");
         // Calculate the direction vector from the monster to the player
-        Vector3 directionToPlayer = (playerPosition.position - enemyPosition.position).normalized;
+        Vector3 directionToPlayer = (player.transform.position - enemy.transform.position).normalized;
 
         // Calculate the new position for the monster slightly closer to the player
-        Vector3 newPosition = enemyPosition.position + directionToPlayer * distanceFromMonsterToPlayer;
+        Vector3 newPosition = enemy.transform.position + directionToPlayer * distanceFromMonsterToPlayer;
 
         // Teleport the monster to the new position
-        enemyPosition.position = newPosition;
+        enemy.transform.position = newPosition;
     }
 
 
     // if distance of the mosnter is large enough to just a respawn it will return True 
     private bool checkDistance(BehaviorTree behaviorTree)
     {
-        float val = Vector3.Distance(enemyPosition.position, playerPosition.position);
+        float val = Vector3.Distance(enemy.transform.position, player.transform.position);
         int distance = (int)val;
 
         Debug.Log("Distance = "+ distance);
@@ -79,12 +78,24 @@ public class MonsterRespawn : TaskNode
 
     private bool checkVision(BehaviorTree behaviorTree)
     {
-        if (playerPosition)
+        if (player.transform)
         {
-            Vector3 forward = playerPosition.transform.TransformDirection(Vector3.forward);
-            Vector3 toOther = enemyPosition.position - playerPosition.transform.position;
+            Vector3 forward = player.transform.TransformDirection(Vector3.forward);
+            Vector3 toOther = enemy.transform.position - player.transform.position;
 
-            if (Vector3.Dot(forward, toOther) < 0)
+            //Debug.Log("Vector 3 Dot: "+Vector3.Dot(forward, toOther));
+            /*
+                How the Vector3.Dot(forward, toOther) Works 
+                    1.  Player Looking directly at monster, Output: 1 
+                    2. Player looks a +/- 10 degrees left or right of monstet, Output: 0.9
+                    3. Player looks a +/- 20 degrees left or right of monstet, Output: 0.8
+                    4. Player looks a +/- 30 degrees left or right of monstet, Output: 0.7
+                    5. Player looks a +/- 40 degrees left or right of monstet, Output: 0.6
+                    6. Player looks a +/- 50 degrees left or right of monstet, Output: 0.5
+                    7. Player looks a +/- 60 degrees left or right of monstet, Output: 0.4
+                    7. Player looks a +/- 70 degrees left or right of monstet, Output: 0.3 
+            */
+            if (Vector3.Dot(forward, toOther) < 0.3)
             {
                 // Debug.Log("Player Removed");
                 behaviorTree.blackboard.Remove("Player");
@@ -92,9 +103,9 @@ public class MonsterRespawn : TaskNode
                 // behaviorTree.blackboard.
                 return true;
             }
-            else if (Vector3.Dot(forward, toOther) > 0)
+            else 
             {
-                Debug.Log("The monster is in front me!");
+                //Debug.Log("The monster is in front me!");
                 return false;
             }
         }
