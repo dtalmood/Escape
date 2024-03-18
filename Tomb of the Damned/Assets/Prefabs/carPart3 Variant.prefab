@@ -8,6 +8,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3067269380427389626, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
+      propertyPath: m_Radius
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067269380427389626, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067269380427389626, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4753388160255227821, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a73703d81fb5dc4580a39cb8d986103, type: 2}
     - target: {fileID: 1664989765304232, guid: 75399c915872efb43ac59982ec88d12a, type: 3}
       propertyPath: m_Name
       value: carPart3 Variant
@@ -68,22 +84,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3067269380427389626, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
-      propertyPath: m_Radius
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3067269380427389626, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3067269380427389626, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4753388160255227821, guid: 24e387e5400326343b41ccd48cc7698c, type: 3}
-      propertyPath: item
-      value: 
-      objectReference: {fileID: 11400000, guid: 7a73703d81fb5dc4580a39cb8d986103, type: 2}
     m_RemovedComponents:
     - {fileID: 65681847775413108, guid: 75399c915872efb43ac59982ec88d12a, type: 3}
     m_RemovedGameObjects: []
@@ -134,4 +134,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cb44b7192c18474a9e94fea4a373774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 7a73703d81fb5dc4580a39cb8d986103, type: 2}
+  item: {fileID: 11400000, guid: be92e721a332bfe45b0573f6d23459a3, type: 2}

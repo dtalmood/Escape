@@ -16,7 +16,7 @@ public class MonsterRespawn : TaskNode
 
     public GameObject enemy;
     public GameObject player;
-    float distanceFromMonsterToPlayer = 30f;
+    // float distanceFromMonsterToPlayer = 1f;
 
     protected override void OnInit(BehaviorTree behaviorTree)
     {
@@ -56,7 +56,9 @@ public class MonsterRespawn : TaskNode
         Vector3 directionToPlayer = (player.transform.position - enemy.transform.position).normalized;
 
         // Calculate the new position for the monster slightly closer to the player
-        Vector3 newPosition = enemy.transform.position + directionToPlayer * distanceFromMonsterToPlayer;
+        // Vector3 newPosition = enemy.transform.position + directionToPlayer * distanceFromMonsterToPlayer;
+        Vector3 bufferVector = new Vector3(5, 0, 5);
+        Vector3 newPosition = player.transform.position + directionToPlayer + bufferVector;
 
         // Teleport the monster to the new position
         enemy.transform.position = newPosition;
