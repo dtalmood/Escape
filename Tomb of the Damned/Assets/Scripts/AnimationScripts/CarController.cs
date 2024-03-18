@@ -27,46 +27,66 @@ public class CarController : MonoBehaviour
             );
         } 
     }
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+
+    public bool CanApplyWheel {
+        get { return false; }
     }
 
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-
-    public void HoodUI()
-    {
         if (CanApplyEnginePart)
         {
-            //Set the canvas active if it is not active
-            if(!partApplicationCanvas.gameObject.activeSelf)
-            {
-                partApplicationCanvas.gameObject.SetActive(true);
-            }
-            CarPart part = PartInInventory(playerInventory, out Item it);
-            UpdatePromptText(part, true);
-            
-            if(Input.GetKey(KeyCode.E) && part != CarPart.NotCarPart)
-            {
-                InstallPart(playerInventory, it);
-            }
+            CarUI(true);
+        }
+        else if(CanApplyWheel)
+        {
+            CarUI(false);
         }
         else
         {
-
+            if (partApplicationCanvas.gameObject.activeSelf)
+            {
+                partApplicationCanvas.gameObject.SetActive(false);
+            }
         }
     }
 
-    private void TryApplyCarPart()
-    {
+    /// <summary>
+    /// Set up the car UI. If hood it true, sets it up for the engine parts. Otherwise sets it up at the wheel.
+    /// </summary>
+    public void CarUI(bool hood)
+    {   
+        //Set the canvas active if it is not active
+        if(!partApplicationCanvas.gameObject.activeSelf)
+        {
+            partApplicationCanvas.gameObject.SetActive(true);
+        }
+        CarPart part = PartInInventory(playerInventory, hood, out Item it);
+        UpdatePromptPosition(hood);
+        UpdatePromptText(part, hood);
+               
+        if(Input.GetKey(KeyCode.E) && part != CarPart.NotCarPart)
+        {
+            InstallPart(playerInventory, it);
+        }
+    }
 
+    /// <summary>
+    /// Update the position and rotation of the canvas with the prompt.
+    /// </summary>
+    private void UpdatePromptPosition(bool hood)
+    {
+        if(hood)
+        {
+            partApplicationCanvas.transform.position = new Vector3();
+            partApplicationCanvas.transform.eulerAngles = new Vector3();
+        }
+        else
+        {
+            partApplicationCanvas.transform.position = new Vector3();
+            partApplicationCanvas.transform.eulerAngles = new Vector3();
+        }
     }
 
 
@@ -90,31 +110,49 @@ public class CarController : MonoBehaviour
         currentPromptPart = part;
     }
 
-    private CarPart PartInInventory(InventoryObject inventory, out Item item)
+    /// <summary>
+    /// Gets the first car part in the inventory that we can apply to the car
+    /// </summary>
+    private CarPart PartInInventory(InventoryObject inventory, bool EnginePartsOnly, out Item item)
     {
         foreach(InventorySlot slot in inventory.Container.Items)
         {
-            //We are going to use the item ID of the various car parts to get the display name
-            switch(slot.item.Id)
+            //Only get engine parts
+            if(EnginePartsOnly)
             {
-                case 0: item = slot.item; return CarPart.Tube;
-                case 2: item = slot.item; return CarPart.Radiator;
-                case 3: item = slot.item; return CarPart.Piston;
-                //Should fall to the wheel last
-                case 1: item = slot.item; return CarPart.Wheel;
+                //We are going to use the item ID of the various car parts to get the display name
+                switch (slot.item.Id)
+                {
+                    case 0: item = slot.item; return CarPart.Tube;
+                    case 2: item = slot.item; return CarPart.Radiator;
+                    case 3: item = slot.item; return CarPart.Piston;
+                }
+            }
+            //If not at the engine, we should be trying to apply a wheel
+            else
+            {
+                if(slot.item.Id == 1)
+                {
+                    item = slot.item; return CarPart.Wheel;
+                }
             }
         }
 
+        //If none of the inventory items were the correct part, we return null and no car part
         item = null;
         return CarPart.NotCarPart;
     }
 
+    /// <summary>
+    /// Add the car part item to the car and remove it from the player inventory. End the game if we have all parts.
+    /// </summary>
     public void InstallPart(InventoryObject inventory,  Item item)
     {
+        //If the installed items list is null create a new list
         installedItems ??= new List<Item>();
         installedItems.Add(item);
-
         inventory.RemoveItem(item, 1);
+        
         if(AllPartsInstalled())
         {
             WinGame();
