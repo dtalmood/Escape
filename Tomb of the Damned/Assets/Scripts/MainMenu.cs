@@ -49,6 +49,8 @@ public class MainMenu : MonoBehaviour
         Cursor.visible = false; // Make cursor invisible when transitioning to the next scene
         Cursor.lockState = CursorLockMode.Locked; // Lock the cursor in the center of the screen
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        // Additively load the foliage scene
+        SceneManager.LoadScene("Foliage", LoadSceneMode.Additive);
     }
 
     public void quitGame()
