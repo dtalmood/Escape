@@ -88,6 +88,17 @@ public class CarDoor : MonoBehaviour
             }
         }
     }
+    /// <summary>
+    /// Returns true if the hood is open, false otherwise.
+    /// </summary>
+    public bool GetHoodStatus() => hoodStatus;
+
+    /// <summary>
+    /// Is the player in range to interact with the hood?
+    /// </summary>
+    public bool GetInHoodRange() => playerInHoodRange;
+
+
 
     IEnumerator PlaySoundWithDelay(AudioClip sound, float delayAmount)
     {

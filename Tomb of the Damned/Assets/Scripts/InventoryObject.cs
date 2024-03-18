@@ -45,6 +45,25 @@ public class InventoryObject : ScriptableObject, ISavable
         onAddItem?.Invoke();
     }
 
+    public void RemoveItem(Item _item, int amount)
+    {
+        // check if item is in inv
+        for (int i = 0; i < Container.Items.Count; i++)
+        {
+            // if it's in the player inv
+            if (Container.Items[i].item.Id == _item.Id)
+            {
+                // add to it
+                Container.Items[i].RemoveAmount(amount);
+                if(Container.Items[i].amount <= 0)
+                {
+                    Container.RemoveSlot(_item);
+                }
+                return;
+            }
+        }
+    }
+
     [ContextMenu("Save")]
     public void Save()
     {
@@ -88,6 +107,21 @@ public class Inventory
 {
     public List<InventorySlot> Items = new List<InventorySlot>();
 
+    public void RemoveSlot(Item item)
+    {
+        //create a temporary list and add all slots that aren't the item
+        List<InventorySlot> temp = new List<InventorySlot>();
+        for(int i = 0; i < Items.Count; i++)
+        {
+            if(Items[i].ID == item.Id)
+            {
+                continue;
+            }
+            temp.Add(Items[i]);
+        }
+        //Assign the new list to our items list
+        this.Items = temp;
+    }
 }
 [System.Serializable]
 public class InventorySlot
@@ -109,6 +143,11 @@ public class InventorySlot
     {
         // add the value to the current amount
         amount += value;
+    }
+
+    public void RemoveAmount(int value)
+    {
+        amount -= value;
     }
 
 }
