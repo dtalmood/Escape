@@ -49,11 +49,12 @@ public class InRangeNode : ConditionNode
         {
             if(detectors.inAttackRange == true)
             {    
+                 fadeSoundFunction.fadeInSoundEffects(playerBreathing);
                  return BehaviorTreeNodeResult.success;           
             }
             else
             {
-                 fadeSoundFunction.fadeInSoundEffects(playerBreathing);
+                 
                  //Debug.Log("Player Removed");
                  behaviorTree.blackboard.Remove("Player");
                  return BehaviorTreeNodeResult.failure;
@@ -65,11 +66,12 @@ public class InRangeNode : ConditionNode
         {
             if(detectors.inChaseRange == true)
             {
+                 fadeSoundFunction.fadeInSoundEffects(playerBreathing);
                  return BehaviorTreeNodeResult.success;           
             }
             else
             {
-                 fadeSoundFunction.fadeInSoundEffects(playerBreathing);
+                 
                  //Debug.Log("Player Removed");
                  behaviorTree.blackboard.Remove("Player");
                  return BehaviorTreeNodeResult.failure;
