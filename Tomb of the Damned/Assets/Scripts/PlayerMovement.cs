@@ -501,7 +501,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if(state == MovementState.air)
         {
-            Debug.Log("Current terrain/object: " + current);
+            //Debug.Log("Current terrain/object: " + current);
             //current = terrainDetector.getLayerName();
             playJumpSound(current);
         }

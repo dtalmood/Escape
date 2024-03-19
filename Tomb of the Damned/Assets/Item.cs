@@ -29,12 +29,12 @@ public class ItemComponent : MonoBehaviour
 
     public void Update()
     {
-        if (playerInRange && Input.GetKeyDown(KeyCode.F))
+        if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("item" + item);
+            //Debug.Log("item" + item);
             if (item)
             {
-                Debug.Log("Found item");
+                //Debug.Log("Found item");
                 playerInventory.inventory.AddItem(new Item(item), 1);
                 Destroy(this.gameObject);
             }

@@ -26,7 +26,7 @@ public class MonsterRespawn : TaskNode
 
     protected override BehaviorTreeNodeResult Evaluate(BehaviorTree behaviorTree)
     {
-        Debug.Log("Player Position: " + player.transform.position + ", Monster Position: " + enemy.transform.position);
+        //Debug.Log("Player Position: " + player.transform.position + ", Monster Position: " + enemy.transform.position);
 
         bool distanceResult = checkDistance(behaviorTree);
 
@@ -45,7 +45,7 @@ public class MonsterRespawn : TaskNode
         }
         else // monster is still close 
         {
-            Debug.Log("Monster is too close to intiate a respawn");
+            //Debug.Log("Monster is too close to intiate a respawn");
             return BehaviorTreeNodeResult.failure;
         }
     }
@@ -71,7 +71,7 @@ public class MonsterRespawn : TaskNode
         float val = Vector3.Distance(enemy.transform.position, player.transform.position);
         int distance = (int)val;
 
-        Debug.Log("Distance = "+ distance);
+        //Debug.Log("Distance = "+ distance);
         if(distance > 20)
             return true; 
         
@@ -101,7 +101,7 @@ public class MonsterRespawn : TaskNode
             {
                 // Debug.Log("Player Removed");
                 behaviorTree.blackboard.Remove("Player");
-                Debug.Log("The Monster is behind me!");
+                //Debug.Log("The Monster is behind me!");
                 // behaviorTree.blackboard.
                 return true;
             }
