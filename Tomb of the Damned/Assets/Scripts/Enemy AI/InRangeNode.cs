@@ -49,7 +49,7 @@ public class InRangeNode : ConditionNode
         {
             if(detectors.inAttackRange == true)
             {    
-                 fadeSoundFunction.fadeInSoundEffects(playerBreathing, true);
+                 fadeSoundFunction.fadeInSoundEffects(playerBreathing, false);
                  return BehaviorTreeNodeResult.success;           
             }
             else
@@ -66,7 +66,7 @@ public class InRangeNode : ConditionNode
         {
             if(detectors.inChaseRange == true)
             {
-                 fadeSoundFunction.fadeInSoundEffects(playerBreathing, true);
+                 fadeSoundFunction.fadeInSoundEffects(playerBreathing, false);
                  return BehaviorTreeNodeResult.success;           
             }
             else

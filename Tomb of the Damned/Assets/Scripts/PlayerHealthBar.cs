@@ -28,7 +28,7 @@ public class PlayerHealthBar : MonoBehaviour
 
     public void monsterDamage()
     {
-        StartCoroutine(ApplyDamageOverTime(30, 0.05f, 1f));
+        StartCoroutine(ApplyDamageOverTime(30, 0.05f, 0.5f));
         Debug.Log("Large");
     }
 
