@@ -18,7 +18,6 @@ public class FadeSound : MonoBehaviour
 
     AudioSourcePool sourcePool;
 
-    public List<string> awaitedSounds;
 
 
     void Start()
@@ -28,18 +27,12 @@ public class FadeSound : MonoBehaviour
         detector = player.GetComponent<TerrainDetector>();
         sourcePool = gameObject.AddComponent<AudioSourcePool>();
         sourcePool.onPlayAudioSource ??= new AudioSourceEvent();
-        awaitedSounds ??= new List<string>();
-
+        
         sourcePool.onPlayAudioSource.AddListener(AudioSourcePlayedCallback);
     }
 
     public void AudioSourcePlayedCallback(AudioSource source)
     {
-        if(!awaitedSounds.Contains(source.clip.name))
-        {
-            return;
-        }
-        awaitedSounds.Remove(source.clip.name);
         AudioClip clip = source.clip;
 
        if (audioSource == null)
@@ -53,15 +46,15 @@ public class FadeSound : MonoBehaviour
             Debug.Log("audio source CLIP is null");
         }
         //Debug.Log($"Called hook. onPlayAudioSource with clip: {source.clip.name}");
-        StartCoroutine(FadeAudio(clip, source));
+        
     }
 
     // Method to fade in sounds such as player running, heartbeat, etc . . . 
     public void fadeInSoundEffects(AudioClip clip, float initialVolume = 0)
     {
-        awaitedSounds.Add(clip.name);
         //Play the clip
-        sourcePool.PlayClip(clip, initialVolume);
+        AudioSource source = sourcePool.PlayClip(clip, initialVolume);
+        StartCoroutine(FadeAudio(clip, source));
     }
 
     // Method to fade in Music when player is outside 

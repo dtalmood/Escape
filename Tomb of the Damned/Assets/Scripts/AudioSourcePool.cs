@@ -14,12 +14,12 @@ public class AudioSourcePool : MonoBehaviour
     public List<AudioSource> availableSources;
     public List<AudioSource> activeSources;
    
-   public void PlayClip(AudioClip clip, float volume)
+   public AudioSource PlayClip(AudioClip clip, float volume)
     {
         InitLists();
-        if(!PlayingClip(clip))
+        AudioSource source;
+        if(!PlayingClip(clip, out source))
         {
-            AudioSource source;
             //If we have no available sources, create a new one.
             if (availableSources.Count == 0)
             {
@@ -47,6 +47,7 @@ public class AudioSourcePool : MonoBehaviour
             onPlayAudioSource?.Invoke(source);
             StartCoroutine(PlayClipEnumerator(source, volume));
         }
+        return source;
     }
     
     private void InitLists()
@@ -61,16 +62,18 @@ public class AudioSourcePool : MonoBehaviour
 
  
 
-    private bool PlayingClip(AudioClip clip)
+    private bool PlayingClip(AudioClip clip, out AudioSource source)
     {
         for(int i =0; i < activeSources.Count; i++)
         {
             if(activeSources[i].clip == clip && activeSources[i].isPlaying)
             {
+                source = activeSources[i];
                 //Debug.Log($"Already Playing sound effect {clip.name}");
                 return true;
             }
         }
+        source = null;
         return false;
     }
 
