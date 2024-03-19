@@ -21,21 +21,21 @@ public class RandomCarPartSpawns : MonoBehaviour
         randomNum = RandomValue();
         if (randomNum == 0)
         {
-            Debug.Log("0");
+            //Debug.Log("0");
             // Vector3 randomSpawnPosition = new Vector3(191.100006f, 7.22800016f, 652.599976f);
             Vector3 randomSpawnPosition = new Vector3(310.5302f, 3.440027f, 555.7f);
             Instantiate(carPart1, randomSpawnPosition, Quaternion.identity);
         }
         else if (randomNum == 1) 
         {
-            Debug.Log("1");
+           // Debug.Log("1");
             // Vector3 randomSpawnPosition = new Vector3(193.100006f, 7.22800016f, 650.599976f);
             Vector3 randomSpawnPosition = new Vector3(308.084f, 2.606f, 556.929f);
             Instantiate(carPart1, randomSpawnPosition, Quaternion.identity);
         }
         else
         {
-            Debug.Log("2");
+            //Debug.Log("2");
             // Vector3 randomSpawnPosition = new Vector3(195.100006f, 7.22800016f, 659.599976f);
             Vector3 randomSpawnPosition = new Vector3(312.75f, 2.438f, 558.71f);
             Instantiate(carPart1, randomSpawnPosition, Quaternion.identity);

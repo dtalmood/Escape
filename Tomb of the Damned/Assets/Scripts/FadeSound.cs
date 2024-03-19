@@ -18,6 +18,9 @@ public class FadeSound : MonoBehaviour
 
     AudioSourcePool sourcePool;
 
+    public List<string> awaitedSounds;
+
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -25,32 +28,40 @@ public class FadeSound : MonoBehaviour
         detector = player.GetComponent<TerrainDetector>();
         sourcePool = gameObject.AddComponent<AudioSourcePool>();
         sourcePool.onPlayAudioSource ??= new AudioSourceEvent();
-  
+        awaitedSounds ??= new List<string>();
+
+        sourcePool.onPlayAudioSource.AddListener(AudioSourcePlayedCallback);
+    }
+
+    public void AudioSourcePlayedCallback(AudioSource source)
+    {
+        if(!awaitedSounds.Contains(source.clip.name))
+        {
+            return;
+        }
+        awaitedSounds.Remove(source.clip.name);
+        AudioClip clip = source.clip;
+
+       if (audioSource == null)
+       {
+            Debug.Log("audio source is null");
+            return;
+       }
+
+        if (source.clip == null)
+        {
+            Debug.Log("audio source CLIP is null");
+        }
+        //Debug.Log($"Called hook. onPlayAudioSource with clip: {source.clip.name}");
+        StartCoroutine(FadeAudio(clip, source));
     }
 
     // Method to fade in sounds such as player running, heartbeat, etc . . . 
     public void fadeInSoundEffects(AudioClip clip, float initialVolume = 0)
-    { 
-        //We are defining a hook that will get called when the audio pool starts playing our clip.     
-        UnityAction<AudioSource> hook = new UnityAction<AudioSource>(source => {});
-        hook = new UnityAction<AudioSource>((source) => {
-            //Debug.Log($"Called hook. onPlayAudioSource with clip: {source.clip.name}");
-            //If the audio source that the pool  just started playing is the one we just received in our hook
-            if(audioSource.clip == clip)
-            {
-                StartCoroutine(FadeAudio(clip, source));        
-                //After the hook is called, remove it from listeners (gets called once only)
-                sourcePool.onPlayAudioSource.RemoveListener(hook);
-            }
-        });
-
-
-        //Add the hook to source pool event
-        sourcePool.onPlayAudioSource.AddListener(hook);
-
+    {
+        awaitedSounds.Add(clip.name);
         //Play the clip
         sourcePool.PlayClip(clip, initialVolume);
-
     }
 
     // Method to fade in Music when player is outside 
@@ -77,10 +88,9 @@ public class FadeSound : MonoBehaviour
     // Function that fades in Audio and plays needed Sound Effect
     IEnumerator FadeAudio(AudioClip clip, AudioSource source, float initialVolume = 0)
     {
-        if(myClips == null) 
-        {
-            myClips = new List<AudioClip>();
-        }
+        Debug.Log(source);
+        
+        myClips ??= new List<AudioClip>();
         if(myClips.Contains(clip))// Checks if the audio clip we are attempting to paly is already playig 
         {
             Debug.Log($"my clips contains audio clip already: {clip.name}");
@@ -91,9 +101,12 @@ public class FadeSound : MonoBehaviour
         float targetVolume = 1.0f; // Assuming fade in effect
         // Set clip and play
         source.volume = initialVolume;
-        source.clip = clip;
-        
-        if(!source.isPlaying)
+        if(source.clip != clip)
+        {
+            source.clip = clip;
+        }
+
+        if (!source.isPlaying)
         {
             source.Play();
         }
@@ -104,9 +117,5 @@ public class FadeSound : MonoBehaviour
             source.volume += Time.deltaTime / 2f; // Adjust the time duration as needed
             yield return null;
         }
-
     }
-    
-     
-    
 }
