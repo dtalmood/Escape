@@ -50,10 +50,10 @@ public class FadeSound : MonoBehaviour
     }
 
     // Method to fade in sounds such as player running, heartbeat, etc . . . 
-    public void fadeInSoundEffects(AudioClip clip, float initialVolume = 0)
+    public void fadeInSoundEffects(AudioClip clip, bool loop, float initialVolume = 0)
     {
         //Play the clip
-        AudioSource source = sourcePool.PlayClip(clip, initialVolume);
+        AudioSource source = sourcePool.PlayClip(clip, loop, initialVolume);
         StartCoroutine(FadeAudio(clip, source));
     }
 

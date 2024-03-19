@@ -14,7 +14,7 @@ public class AudioSourcePool : MonoBehaviour
     public List<AudioSource> availableSources;
     public List<AudioSource> activeSources;
    
-   public AudioSource PlayClip(AudioClip clip, float volume)
+   public AudioSource PlayClip(AudioClip clip, bool loop, float volume)
     {
         InitLists();
         AudioSource source;
@@ -42,6 +42,7 @@ public class AudioSourcePool : MonoBehaviour
             //Play the clip at the volume
             source.volume = volume;
             source.clip = clip;
+            source.loop = loop;
             source.Play();
             activeSources.Add(source);
             onPlayAudioSource?.Invoke(source);
