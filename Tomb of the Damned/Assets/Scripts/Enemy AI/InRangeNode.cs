@@ -53,7 +53,7 @@ public class InRangeNode : ConditionNode
             }
             else
             {
-                 fadeSoundFunction.fadeInSoundEffects(playerBreathing);
+                 fadeSoundFunction.fadeInSoundEffects(playerBreathing, true);
                  //Debug.Log("Player Removed");
                  behaviorTree.blackboard.Remove("Player");
                  return BehaviorTreeNodeResult.failure;
@@ -69,7 +69,7 @@ public class InRangeNode : ConditionNode
             }
             else
             {
-                 fadeSoundFunction.fadeInSoundEffects(playerBreathing);
+                 fadeSoundFunction.fadeInSoundEffects(playerBreathing, true);
                  //Debug.Log("Player Removed");
                  behaviorTree.blackboard.Remove("Player");
                  return BehaviorTreeNodeResult.failure;
