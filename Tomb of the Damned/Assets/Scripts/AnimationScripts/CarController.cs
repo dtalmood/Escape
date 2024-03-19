@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class CarController : MonoBehaviour
 {
+    public SceneReference gameWonScene;
+
     public enum CarPart {Piston, Tube, Radiator,Wheel, NotCarPart}
     public CarPart currentPromptPart;
 
@@ -14,7 +17,11 @@ public class CarController : MonoBehaviour
     public InventoryObject playerInventory;
 
     public List<Item> installedItems;
-    public List<Item> requiredItems;
+    public List<ItemObject> requiredItems;
+    
+
+    public Transform wheelTransform;
+    public Transform playerTransform;
 
     /// <summary>
     /// Returns true if the player is in range of the hood and the hood is open.
@@ -23,13 +30,26 @@ public class CarController : MonoBehaviour
         get {
             return (
                 carDoor.GetHoodStatus() && 
-                carDoor.GetInHoodRange()
+                carDoor.GetInHoodRange() &&
+                HasEnginePart()
             );
         } 
     }
 
     public bool CanApplyWheel {
-        get { return false; }
+        get {
+            //distance on x and z axis. Ignore vertical distance
+            float distanceToWheel = Vector2.Distance(
+                new Vector2(wheelTransform.position.x, wheelTransform.transform.position.z),
+                new Vector2(playerTransform.position.x, playerTransform.transform.position.z)
+            );
+            bool distanceWithinTolerance = distanceToWheel < 1.5f;
+            bool hasPart = HasWheelPart();
+
+            //Debug.Log($"distanceWithinTolerance: {distanceWithinTolerance}, hasPart {hasPart}");
+
+            return distanceWithinTolerance && hasPart; 
+        }
     }
 
     // Update is called once per frame
@@ -40,7 +60,7 @@ public class CarController : MonoBehaviour
             CarUI(true);
         }
         else if(CanApplyWheel)
-        {
+        { 
             CarUI(false);
         }
         else
@@ -63,10 +83,11 @@ public class CarController : MonoBehaviour
             partApplicationCanvas.gameObject.SetActive(true);
         }
         CarPart part = PartInInventory(playerInventory, hood, out Item it);
+        //Debug.Log($"part in inventory: {part}");
         UpdatePromptPosition(hood);
         UpdatePromptText(part, hood);
                
-        if(Input.GetKey(KeyCode.E) && part != CarPart.NotCarPart)
+        if(Input.GetKeyDown(KeyCode.E) && part != CarPart.NotCarPart)
         {
             InstallPart(playerInventory, it);
         }
@@ -79,24 +100,34 @@ public class CarController : MonoBehaviour
     {
         if(hood)
         {
-            partApplicationCanvas.transform.position = new Vector3();
-            partApplicationCanvas.transform.eulerAngles = new Vector3();
+            partApplicationCanvas.transform.localPosition =  new Vector3(-0.115f, 1, 2.65f);
+            partApplicationCanvas.transform.localRotation = Quaternion.Euler( new Vector3(0, 180, 0));
         }
         else
         {
-            partApplicationCanvas.transform.position = new Vector3();
-            partApplicationCanvas.transform.eulerAngles = new Vector3();
+            partApplicationCanvas.transform.localPosition = new Vector3(-1.3f, 0.65f, -1.5f);
+            partApplicationCanvas.transform.localRotation = Quaternion.Euler( new Vector3(0, 90f, 0));
         }
+
     }
 
 
     private void UpdatePromptText(CarPart part, bool hood)
     {
         //If we are already prompting to install the car part, we  don't need to update the text
-        if(part == currentPromptPart || part == CarPart.NotCarPart)
+        if(part == currentPromptPart)
         {
             return;
         }
+
+        if(part == CarPart.NotCarPart)
+        {
+            promptText.text = "";
+            //Store the part type we are currently prompting the user to install
+            currentPromptPart = part;
+            return;
+        }
+
         //If we are standing at the hood, we shouldn't add the wheel.
         //If not at the hood (this should be the case at the back of the car), we should not 
         //be able to add engine parts, only the wheel
@@ -109,6 +140,19 @@ public class CarController : MonoBehaviour
         //Store the part type we are currently prompting the user to install
         currentPromptPart = part;
     }
+
+    private bool HasWheelPart()
+    {
+        CarPart p = PartInInventory(playerInventory, false, out Item it);
+        return (p == CarPart.Wheel);
+    }
+
+    private bool HasEnginePart()
+    {
+        CarPart p = PartInInventory(playerInventory, true, out Item it);
+        return !(p == CarPart.NotCarPart || p == CarPart.Wheel);
+    }
+
 
     /// <summary>
     /// Gets the first car part in the inventory that we can apply to the car
@@ -151,7 +195,7 @@ public class CarController : MonoBehaviour
         //If the installed items list is null create a new list
         installedItems ??= new List<Item>();
         installedItems.Add(item);
-        inventory.RemoveItem(item, 1);
+        inventory.RemoveItem(item, 100);
         
         if(AllPartsInstalled())
         {
@@ -169,7 +213,9 @@ public class CarController : MonoBehaviour
 
     private void WinGame()
     {
-
+        Time.timeScale = 0;
+        SceneManager.LoadSceneAsync(gameWonScene, LoadSceneMode.Additive);
+        Debug.Log("You win!");
     }
 
 }

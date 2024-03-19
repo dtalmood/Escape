@@ -41,22 +41,22 @@ public class PlayerHealthBar : MonoBehaviour
         // Debug.Log("Before: " + before);
         // Debug.Log("After: " + after);
         difference = before - after;
-         Debug.Log("Fell Height of: " + difference);
+         //Debug.Log("Fell Height of: " + difference);
 
         if (difference >= 4 && difference <= 6) // Small Amount of Damage
         {
             StartCoroutine(ApplyDamageOverTime(10, 0.05f, 1f));
-            Debug.Log("Small");
+            //Debug.Log("Small");
         }
         else if (difference >= 7 && difference <= 10) // Medium Amount of Damage
         {
             StartCoroutine(ApplyDamageOverTime(20, 0.05f, 100f)); 
-            Debug.Log("Medium");
+            //Debug.Log("Medium");
         }
         else if(difference >= 11) // Large Amount of Damage
         {
             StartCoroutine(ApplyDamageOverTime(30, 0.05f, 100f));
-            Debug.Log("Large");
+            //Debug.Log("Large");
         }
     }
 

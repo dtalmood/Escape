@@ -23,6 +23,8 @@ public class CarDoor : MonoBehaviour
 
     private Coroutine chimeCoroutine; // Coroutine reference for the chime loop
 
+    public CarController carController;
+
     void Awake()
     {
         if (carAnimation == null)
@@ -72,7 +74,7 @@ public class CarDoor : MonoBehaviour
                 StopCoroutine(chimeCoroutine);
             }
         }
-        else if (Input.GetKeyDown(KeyCode.E) && playerInHoodRange) // Player is standing in front of the hood of the car
+        else if (Input.GetKeyDown(KeyCode.E) && playerInHoodRange && !carController.CanApplyEnginePart) // Player is standing in front of the hood of the car
         {
             if (!hoodStatus) // Hood IS CLOSED
             {
@@ -123,12 +125,12 @@ public class CarDoor : MonoBehaviour
         {
             if (gameObject.CompareTag("CarDoor"))
             {
-                Debug.Log("Press 'E' to interact with the door.");
+                //Debug.Log("Press 'E' to interact with the door.");
                 playerInCarRange = true;
             }
             else
             {
-                Debug.Log("Press 'E' to interact with the Hood.");
+                //Debug.Log("Press 'E' to interact with the Hood.");
                 playerInHoodRange = true;
             }
         }
@@ -140,12 +142,12 @@ public class CarDoor : MonoBehaviour
         {
             if (gameObject.CompareTag("CarDoor"))
             {
-                Debug.Log("Out of Door Range");
+                //Debug.Log("Out of Door Range");
                 playerInCarRange = false;
             }
             else
             {
-                Debug.Log("Out of Hood Range");
+                //Debug.Log("Out of Hood Range");
                 playerInHoodRange = false;
             }
         }
