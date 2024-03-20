@@ -13,16 +13,23 @@ Are you ready to experience fear like never before? Prepare to explore the chill
   9. Throw Object
   10. Drop Object
   11. Scriptable Object
-  12. Simple Inventory System to keep track of items picked up by the player
-  13. Save and Load button, to keep items from previous time playing
-
+  12. Inventory that you can view your items you have picked up 
+  13. Monster which hunts the player
+  14. Monster roams and searces for the player 
+  15. Detailed Enviornment
+  16. House the player can explore
+  17. Open and close Hood of Car
+  18. Enivoornemnts sounds
+  19. Open and close door in house
+  20. Main Memu
+  21. Game Over
+  22. Win Screen
+  23. If you open hood can you repair the car to end the game
 
 **Future Updates:** 
-  1. Flash Light
-  2. Game Over Screen 
-  3. Usable Health Potions
-  4. Non Playable Characters
-
+  1. Chase Music when mosnter is chasing the player
+  2. Better Enviornment sound
+  3. Different Level for a full length Story 
 
 **System Requirments:**
 As the game is still in its early development stages, the graphical components can be run by most low-end computers.
@@ -49,7 +56,7 @@ As the game is still in its early development stages, the graphical components c
   - s: Backwards
   - d: Right
   - space: Jump
-  - f: Pick up Sciptable Items
-  - e: Pick up 3D objects, hit e again to drop the item you are holding
+  - f: turn on flash light
+  - e: Pick up 3D objects, hit e again to drop the item you are holding, interact with truck, and pick up scriptable objects
   - q: Throw 3D object
   
